@@ -64,7 +64,7 @@ function getAdjective() {
 }
 
 async function connectNew(username) {
-    let json = await axios.post('/new_ball', {
+    let json = await axios.post('nathangolfingjourney/new_ball', {
         username
     }).then(res => res.data);
 
