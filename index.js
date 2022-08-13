@@ -12,7 +12,7 @@ db.connect();
 
 const app = express();
 app.use(bodyParser.json());
-app.use(express.static('dist'));
+app.use('/nathangolfingjourney', express.static('dist'));
 const server = http.createServer(app);
 
 const io = new Server(server);
@@ -160,13 +160,13 @@ io.on('connection', async (socket, data) => {
                     } else if (args.length == 1 && args[0] == 'help') {
                         sendChatMessageTo(socket, 'command help:', [200, 200, 200]);
                         sendChatMessageTo(socket, '/reset or /r - resets your ball', [200, 200, 200]);
-                    } else if (args.length == 2 && args[0] == 'tp') {
+                    } else if (false && args.length == 2 && args[0] == 'tp') {
                         teleportPlayer(socket.id, parseInt(args[1]))
                         sendChatMessageTo(socket, 'teleported you to level ' + args[1], [200, 200, 200]);
-                    } else if (args.length == 1 && args[0] == 'tptest') {
+                    } else if (false && args.length == 1 && args[0] == 'tptest') {
                         player.ball.tpTick = 0;
                         sendChatMessage('starting tp test!', player.ball.color);
-                    } else if (args.length == 1 && args[0] == 'autosave') {
+                    } else if (false && args.length == 1 && args[0] == 'autosave') {
                         autoSave();
                     } else {
                         sendChatMessageTo(socket, 'invalid command!', [255, 0, 0]);
@@ -196,7 +196,7 @@ function sendChatMessageTo(socket, message, color) {
     });
 }
 
-app.post('/new_ball', async (req, res) => {
+app.post('/nathangolfingjourney/new_ball', async (req, res) => {
     let username = req.body.username || "anotherball" + Math.floor(Math.random() * 10000000);
     if (username.length > 16) {
         username = username.substring(0, 16);
@@ -214,11 +214,11 @@ app.post('/new_ball', async (req, res) => {
     });
 });
 
-app.get('/test', (req, res) => {
+app.get('/nathangolfingjourney/test', (req, res) => {
     res.send('Hello World!');
 });
 
-server.listen(process.env.PORT || 3000, async () => {
+server.listen(process.env.PORT || 8080, async () => {
   console.log('server up and running');
 
   await db.updateDatabase();
