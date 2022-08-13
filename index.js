@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 app.use('/nathangolfingjourney', express.static('dist'));
 const server = http.createServer(app);
 
-const io = new Server(server);
+const io = new Server(server, { path: '/nathangolfingjourney/socket.io' });
 
 let physics = Matter.Engine.create();
 physics.gravity = Matter.Vector.create(0, 0.1);
