@@ -64,7 +64,7 @@ function getAdjective() {
 }
 
 async function connectNew(username) {
-    let json = await axios.post('nathangolfingjourney/new_ball', {
+    let json = await axios.post('/nathangolfingjourney/new_ball', {
         username
     }).then(res => res.data);
 
@@ -100,7 +100,7 @@ async function connect() {
         aimPower: 0,
     }
 
-    game.socket = io({query: "id=" + id});
+    game.socket = io({query: "id=" + id, path: '/nathangolfingjourney/socket.io'});
 
     game.socket.on('accept', (data) => {
 
