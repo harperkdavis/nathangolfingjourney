@@ -35,7 +35,7 @@ io.on('connection', async (socket, data) => {
     let dbBall = await db.getBall(id);
 
     if (!dbBall.exists) {
-        socket.emit('accept', { success: false, error: "your progress couldn't be loaded on the server!"});
+        socket.emit('accept', { success: false, error: "your progress couldn't be loaded on the server! (if this doesn't resolve, clear your local storage)"});
         return;
     }
 
