@@ -5,17 +5,21 @@ const { Server } = require("socket.io");
 const { Ball } = require('./shared');
 const Matter = require('matter-js');
 
+const BASE_PATH = '';
+const PORT = 8080;
+
 let tick = 0;
 
 const db = require('./db');
+
 db.connect();
 
 const app = express();
 app.use(bodyParser.json());
-app.use('/nathangolfingjourney', express.static('dist'));
+app.use(`${BASE_PATH}/`, express.static('dist'));
 const server = http.createServer(app);
 
-const io = new Server(server, { path: '/nathangolfingjourney/socket.io' });
+const io = new Server(server, { path: `${BASE_PATH}/socket.io` });
 
 let physics = Matter.Engine.create();
 physics.gravity = Matter.Vector.create(0, 0.1);
@@ -196,7 +200,7 @@ function sendChatMessageTo(socket, message, color) {
     });
 }
 
-app.post('/nathangolfingjourney/new_ball', async (req, res) => {
+app.post(`${BASE_PATH}/new_ball`, async (req, res) => {
     let username = req.body.username || "anotherball" + Math.floor(Math.random() * 10000000);
     if (username.length > 16) {
         username = username.substring(0, 16);
@@ -214,11 +218,11 @@ app.post('/nathangolfingjourney/new_ball', async (req, res) => {
     });
 });
 
-app.get('/nathangolfingjourney/test', (req, res) => {
+app.get(`${BASE_PATH}/test`, (req, res) => {
     res.send('Hello World!');
 });
 
-server.listen(process.env.PORT || 8080, async () => {
+server.listen(process.env.PORT || PORT, async () => {
   console.log('server up and running');
 
   await db.updateDatabase();

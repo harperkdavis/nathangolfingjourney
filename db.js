@@ -6,6 +6,7 @@ const hash = require('string-hash');
 async function connect() {
     try {
         await mongoose.connect(`mongodb+srv://admin:${ process.env.MONGO_DB_PASSWORD }@hked.mwinf.mongodb.net/nathangolfingjourney?retryWrites=true&w=majority`);
+        console.log('connected to database!');
     } catch (e) {
         console.error(e);
         setTimeout(connect, 5000);
