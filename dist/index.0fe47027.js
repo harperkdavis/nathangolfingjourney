@@ -52,11 +52,11 @@ function isWithin(x, y, x1, y1, w, h) {
 function intersect(x1, y1, x2, y2, x3, y3, x4, y4) {
     // Check if none of the lines are of length 0
     if (x1 === x2 && y1 === y2 || x3 === x4 && y3 === y4) return false;
-    const denominator = (y4 - y3) * (x2 - x1) - (x4 - x3) * (y2 - y1);
+    const denominator1 = (y4 - y3) * (x2 - x1) - (x4 - x3) * (y2 - y1);
     // Lines are parallel
-    if (denominator === 0) return false;
-    let ua = ((x4 - x3) * (y1 - y3) - (y4 - y3) * (x1 - x3)) / denominator;
-    let ub = ((x2 - x1) * (y1 - y3) - (y2 - y1) * (x1 - x3)) / denominator;
+    if (denominator1 === 0) return false;
+    let ua = ((x4 - x3) * (y1 - y3) - (y4 - y3) * (x1 - x3)) / denominator1;
+    let ub = ((x2 - x1) * (y1 - y3) - (y2 - y1) * (x1 - x3)) / denominator1;
     // Return a object with the x and y coordinates of the intersection
     let x = x1 + ua * (x2 - x1);
     let y = y1 + ua * (y2 - y1);
@@ -84,7 +84,7 @@ function intersectPoint(x1, y1, x2, y2, x3, y3, x4, y4) {
     };
 }
 // https://stackoverflow.com/questions/849211/shortest-distance-between-a-point-and-a-line-segment
-function distToSegment(p1, v1, w1) {
+function distToSegment(p, v, w) {
     function sqr(x) {
         return x * x;
     }
@@ -101,7 +101,7 @@ function distToSegment(p1, v1, w1) {
             y: v.y + t * (w.y - v.y)
         });
     }
-    return Math.sqrt(distToSegmentSquared(p1, v1, w1));
+    return Math.sqrt(distToSegmentSquared(p, v, w));
 }
 try {
     module.exports = {

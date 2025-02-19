@@ -1,15 +1,15 @@
-/** [p5.sound]  Version: 1.0.1 - 2021-05-25 */ !function(n1) {
-    var i1 = {};
+/** [p5.sound]  Version: 1.0.1 - 2021-05-25 */ !function(n) {
+    var i = {};
     function r(t) {
-        if (i1[t]) return i1[t].exports;
-        var e = i1[t] = {
+        if (i[t]) return i[t].exports;
+        var e = i[t] = {
             i: t,
             l: !1,
             exports: {}
         };
-        return n1[t].call(e.exports, e, e.exports, r), e.l = !0, e.exports;
+        return n[t].call(e.exports, e, e.exports, r), e.l = !0, e.exports;
     }
-    r.m = n1, r.c = i1, r.d = function(t, e, n) {
+    r.m = n, r.c = i, r.d = function(t, e, n) {
         r.o(t, e) || Object.defineProperty(t, e, {
             enumerable: !0,
             get: n
@@ -20,14 +20,14 @@
         }), Object.defineProperty(t, "__esModule", {
             value: !0
         });
-    }, r.t = function(e, t1) {
-        if (1 & t1 && (e = r(e)), 8 & t1) return e;
-        if (4 & t1 && "object" == typeof e && e && e.__esModule) return e;
+    }, r.t = function(e, t) {
+        if (1 & t && (e = r(e)), 8 & t) return e;
+        if (4 & t && "object" == typeof e && e && e.__esModule) return e;
         var n = Object.create(null);
         if (r.r(n), Object.defineProperty(n, "default", {
             enumerable: !0,
             value: e
-        }), 2 & t1 && "string" != typeof e) for(var i in e)r.d(n, i, (function(t) {
+        }), 2 & t && "string" != typeof e) for(var i in e)r.d(n, i, (function(t) {
             return e[t];
         }).bind(null, i));
         return n;
@@ -42,14 +42,14 @@
         return Object.prototype.hasOwnProperty.call(t, e);
     }, r.p = "", r(r.s = 40);
 }([
-    function(t2, e1, n2) {
-        var i2;
-        void 0 === (i2 = (function() {
+    function(t, e, n) {
+        var i;
+        void 0 === (i = (function() {
             "use strict";
             function l(t, e) {
                 this.isUndef(t) || 1 === t ? this.input = this.context.createGain() : 1 < t && (this.input = new Array(t)), this.isUndef(e) || 1 === e ? this.output = this.context.createGain() : 1 < e && (this.output = new Array(t));
             }
-            var e2;
+            var e;
             return l.prototype.set = function(t, e, n) {
                 if (this.isObject(t)) n = e;
                 else if (this.isString(t)) {
@@ -188,10 +188,10 @@
                 l.prototype.isUndef(e) && (e = l), n.prototype = e.prototype, t.prototype = new n, (t.prototype.constructor = t)._super = e;
             }, Object.defineProperty(l, "context", {
                 get: function() {
-                    return e2;
+                    return e;
                 },
                 set: function(t) {
-                    e2 = l.Context && t instanceof l.Context ? t : new l.Context(t), l.Context && l.Context.emit("init", e2);
+                    e = l.Context && t instanceof l.Context ? t : new l.Context(t), l.Context && l.Context.emit("init", e);
                 }
             }), Object.defineProperty(l.prototype, "context", {
                 get: function() {
@@ -213,9 +213,9 @@
                     return t && e && n;
                 }
             }), l.version = "r10", window.TONE_SILENCE_VERSION_LOGGING, l;
-        }).call(e1, n2, e1, t2)) || (t2.exports = i2);
+        }).call(e, n, e, t)) || (t.exports = i);
     },
-    function(t3, e3, n) {
+    function(t, e, n) {
         var i, r;
         i = [
             n(0),
@@ -228,9 +228,9 @@
             }, e.extend(e.Multiply, e.Signal), e.Multiply.prototype.dispose = function() {
                 return e.prototype.dispose.call(this), this._mult.dispose(), this._mult = null, this._param = null, this;
             }, e.Multiply;
-        }).apply(e3, i)) || (t3.exports = r);
+        }).apply(e, i)) || (t.exports = r);
     },
-    function(t4, e4, n) {
+    function(t, e, n) {
         var i, r;
         i = [
             n(0),
@@ -253,33 +253,33 @@
             }, e.Signal.prototype.connect = e.SignalBase.prototype.connect, e.Signal.prototype.dispose = function() {
                 return e.Param.prototype.dispose.call(this), this._param = null, this._gain.disconnect(), this._gain = null, this;
             }, e.Signal;
-        }).apply(e4, i)) || (t4.exports = r);
+        }).apply(e, i)) || (t.exports = r);
     },
-    function(t5, u, c) {
+    function(t, u, c) {
         "use strict";
-        (function(t6) {
+        (function(t) {
             c.d(u, "b", function() {
                 return s;
             }), c.d(u, "c", function() {
                 return a;
             });
-            var e5 = c(22), i = c.n(e5), n3 = c(0), r = c.n(n3);
+            var e = c(22), i = c.n(e), n = c(0), r = c.n(n);
             c(12);
-            t6.TONE_SILENCE_VERSION_LOGGING = !0;
+            t.TONE_SILENCE_VERSION_LOGGING = !0;
             var o = new window.AudioContext;
             function s() {
                 return o;
             }
-            function a(t7, e) {
-                var n = t7;
-                return t7 instanceof p5.Element ? n = t7.elt : t7 instanceof Array && t7[0] instanceof p5.Element && (n = t7.map(function(t) {
+            function a(t, e) {
+                var n = t;
+                return t instanceof p5.Element ? n = t.elt : t instanceof Array && t[0] instanceof p5.Element && (n = t.map(function(t) {
                     return t.elt;
                 })), i()(o, n, e);
             }
             r.a.setContext(o), u.a = o;
         }).call(this, c(26));
     },
-    function(t8, e6, n) {
+    function(t, e, n) {
         var i, r;
         i = [
             n(0),
@@ -292,7 +292,7 @@
             }, e.extend(e.Add, e.Signal), e.Add.prototype.dispose = function() {
                 return e.prototype.dispose.call(this), this._sum.dispose(), this._sum = null, this._param.dispose(), this._param = null, this;
             }, e.Add;
-        }).apply(e6, i)) || (t8.exports = r);
+        }).apply(e, i)) || (t.exports = r);
     },
     function(t, e) {
         t.exports = {
@@ -301,29 +301,29 @@
             amplitudeProcessor: "amplitude-processor"
         };
     },
-    function(t9, e7, n4) {
-        var i3, r;
-        i3 = [
-            n4(0),
-            n4(15)
-        ], void 0 === (r = (function(t10) {
+    function(t, e, n) {
+        var i, r;
+        i = [
+            n(0),
+            n(15)
+        ], void 0 === (r = (function(t) {
             "use strict";
-            return t10.WaveShaper = function(t, e) {
+            return t.WaveShaper = function(t, e) {
                 this._shaper = this.input = this.output = this.context.createWaveShaper(), this._curve = null, Array.isArray(t) ? this.curve = t : isFinite(t) || this.isUndef(t) ? this._curve = new Float32Array(this.defaultArg(t, 1024)) : this.isFunction(t) && (this._curve = new Float32Array(this.defaultArg(e, 1024)), this.setMap(t));
-            }, t10.extend(t10.WaveShaper, t10.SignalBase), t10.WaveShaper.prototype.setMap = function(t) {
+            }, t.extend(t.WaveShaper, t.SignalBase), t.WaveShaper.prototype.setMap = function(t) {
                 for(var e = 0, n = this._curve.length; e < n; e++){
                     var i = e / (n - 1) * 2 - 1;
                     this._curve[e] = t(i, e);
                 }
                 return this._shaper.curve = this._curve, this;
-            }, Object.defineProperty(t10.WaveShaper.prototype, "curve", {
+            }, Object.defineProperty(t.WaveShaper.prototype, "curve", {
                 get: function() {
                     return this._shaper.curve;
                 },
                 set: function(t) {
                     this._curve = new Float32Array(t), this._shaper.curve = this._curve;
                 }
-            }), Object.defineProperty(t10.WaveShaper.prototype, "oversample", {
+            }), Object.defineProperty(t.WaveShaper.prototype, "oversample", {
                 get: function() {
                     return this._shaper.oversample;
                 },
@@ -335,32 +335,32 @@
                     ].indexOf(t)) throw new RangeError("Tone.WaveShaper: oversampling must be either 'none', '2x', or '4x'");
                     this._shaper.oversample = t;
                 }
-            }), t10.WaveShaper.prototype.dispose = function() {
-                return t10.prototype.dispose.call(this), this._shaper.disconnect(), this._shaper = null, this._curve = null, this;
-            }, t10.WaveShaper;
-        }).apply(e7, i3)) || (t9.exports = r);
+            }), t.WaveShaper.prototype.dispose = function() {
+                return t.prototype.dispose.call(this), this._shaper.disconnect(), this._shaper = null, this._curve = null, this;
+            }, t.WaveShaper;
+        }).apply(e, i)) || (t.exports = r);
     },
-    function(t11, e8, n5) {
-        var i4, r1;
-        i4 = [
-            n5(0),
-            n5(2),
-            n5(19)
-        ], void 0 === (r1 = (function(u1) {
+    function(t, e, n) {
+        var i, r;
+        i = [
+            n(0),
+            n(2),
+            n(19)
+        ], void 0 === (r = (function(u) {
             "use strict";
-            return u1.TimelineSignal = function() {
+            return u.TimelineSignal = function() {
                 var t = this.optionsObject(arguments, [
                     "value",
                     "units"
-                ], u1.Signal.defaults);
-                this._events = new u1.Timeline(10), u1.Signal.apply(this, t), t.param = this._param, u1.Param.call(this, t), this._initial = this._fromUnits(this._param.value);
-            }, u1.extend(u1.TimelineSignal, u1.Param), u1.TimelineSignal.Type = {
+                ], u.Signal.defaults);
+                this._events = new u.Timeline(10), u.Signal.apply(this, t), t.param = this._param, u.Param.call(this, t), this._initial = this._fromUnits(this._param.value);
+            }, u.extend(u.TimelineSignal, u.Param), u.TimelineSignal.Type = {
                 Linear: "linear",
                 Exponential: "exponential",
                 Target: "target",
                 Curve: "curve",
                 Set: "set"
-            }, Object.defineProperty(u1.TimelineSignal.prototype, "value", {
+            }, Object.defineProperty(u.TimelineSignal.prototype, "value", {
                 get: function() {
                     var t = this.now(), e = this.getValueAtTime(t);
                     return this._toUnits(e);
@@ -369,40 +369,40 @@
                     var e = this._fromUnits(t);
                     this._initial = e, this.cancelScheduledValues(), this._param.value = e;
                 }
-            }), u1.TimelineSignal.prototype.setValueAtTime = function(t, e) {
+            }), u.TimelineSignal.prototype.setValueAtTime = function(t, e) {
                 return t = this._fromUnits(t), e = this.toSeconds(e), this._events.add({
-                    type: u1.TimelineSignal.Type.Set,
+                    type: u.TimelineSignal.Type.Set,
                     value: t,
                     time: e
                 }), this._param.setValueAtTime(t, e), this;
-            }, u1.TimelineSignal.prototype.linearRampToValueAtTime = function(t, e) {
+            }, u.TimelineSignal.prototype.linearRampToValueAtTime = function(t, e) {
                 return t = this._fromUnits(t), e = this.toSeconds(e), this._events.add({
-                    type: u1.TimelineSignal.Type.Linear,
+                    type: u.TimelineSignal.Type.Linear,
                     value: t,
                     time: e
                 }), this._param.linearRampToValueAtTime(t, e), this;
-            }, u1.TimelineSignal.prototype.exponentialRampToValueAtTime = function(t, e) {
+            }, u.TimelineSignal.prototype.exponentialRampToValueAtTime = function(t, e) {
                 e = this.toSeconds(e);
                 var n = this._searchBefore(e);
                 n && 0 === n.value && this.setValueAtTime(this._minOutput, n.time), t = this._fromUnits(t);
                 var i = Math.max(t, this._minOutput);
                 return this._events.add({
-                    type: u1.TimelineSignal.Type.Exponential,
+                    type: u.TimelineSignal.Type.Exponential,
                     value: i,
                     time: e
                 }), t < this._minOutput ? (this._param.exponentialRampToValueAtTime(this._minOutput, e - this.sampleTime), this.setValueAtTime(0, e)) : this._param.exponentialRampToValueAtTime(t, e), this;
-            }, u1.TimelineSignal.prototype.setTargetAtTime = function(t, e, n) {
+            }, u.TimelineSignal.prototype.setTargetAtTime = function(t, e, n) {
                 return t = this._fromUnits(t), t = Math.max(this._minOutput, t), n = Math.max(this._minOutput, n), e = this.toSeconds(e), this._events.add({
-                    type: u1.TimelineSignal.Type.Target,
+                    type: u.TimelineSignal.Type.Target,
                     value: t,
                     time: e,
                     constant: n
                 }), this._param.setTargetAtTime(t, e, n), this;
-            }, u1.TimelineSignal.prototype.setValueCurveAtTime = function(t, e, n, i) {
+            }, u.TimelineSignal.prototype.setValueCurveAtTime = function(t, e, n, i) {
                 i = this.defaultArg(i, 1);
                 for(var r = new Array(t.length), o = 0; o < r.length; o++)r[o] = this._fromUnits(t[o]) * i;
                 e = this.toSeconds(e), n = this.toSeconds(n), this._events.add({
-                    type: u1.TimelineSignal.Type.Curve,
+                    type: u.TimelineSignal.Type.Curve,
                     value: r,
                     time: e,
                     duration: n
@@ -412,59 +412,59 @@
                     this._param.linearRampToValueAtTime(r[s], a);
                 }
                 return this;
-            }, u1.TimelineSignal.prototype.cancelScheduledValues = function(t) {
+            }, u.TimelineSignal.prototype.cancelScheduledValues = function(t) {
                 return t = this.toSeconds(t), this._events.cancel(t), this._param.cancelScheduledValues(t), this;
-            }, u1.TimelineSignal.prototype.setRampPoint = function(t) {
+            }, u.TimelineSignal.prototype.setRampPoint = function(t) {
                 t = this.toSeconds(t);
                 var e = this._toUnits(this.getValueAtTime(t)), n = this._searchBefore(t);
                 if (n && n.time === t) this.cancelScheduledValues(t + this.sampleTime);
-                else if (n && n.type === u1.TimelineSignal.Type.Curve && n.time + n.duration > t) this.cancelScheduledValues(t), this.linearRampToValueAtTime(e, t);
+                else if (n && n.type === u.TimelineSignal.Type.Curve && n.time + n.duration > t) this.cancelScheduledValues(t), this.linearRampToValueAtTime(e, t);
                 else {
                     var i = this._searchAfter(t);
-                    i && (this.cancelScheduledValues(t), i.type === u1.TimelineSignal.Type.Linear ? this.linearRampToValueAtTime(e, t) : i.type === u1.TimelineSignal.Type.Exponential && this.exponentialRampToValueAtTime(e, t)), this.setValueAtTime(e, t);
+                    i && (this.cancelScheduledValues(t), i.type === u.TimelineSignal.Type.Linear ? this.linearRampToValueAtTime(e, t) : i.type === u.TimelineSignal.Type.Exponential && this.exponentialRampToValueAtTime(e, t)), this.setValueAtTime(e, t);
                 }
                 return this;
-            }, u1.TimelineSignal.prototype.linearRampToValueBetween = function(t, e, n) {
+            }, u.TimelineSignal.prototype.linearRampToValueBetween = function(t, e, n) {
                 return this.setRampPoint(e), this.linearRampToValueAtTime(t, n), this;
-            }, u1.TimelineSignal.prototype.exponentialRampToValueBetween = function(t, e, n) {
+            }, u.TimelineSignal.prototype.exponentialRampToValueBetween = function(t, e, n) {
                 return this.setRampPoint(e), this.exponentialRampToValueAtTime(t, n), this;
-            }, u1.TimelineSignal.prototype._searchBefore = function(t) {
+            }, u.TimelineSignal.prototype._searchBefore = function(t) {
                 return this._events.get(t);
-            }, u1.TimelineSignal.prototype._searchAfter = function(t) {
+            }, u.TimelineSignal.prototype._searchAfter = function(t) {
                 return this._events.getAfter(t);
-            }, u1.TimelineSignal.prototype.getValueAtTime = function(t) {
+            }, u.TimelineSignal.prototype.getValueAtTime = function(t) {
                 t = this.toSeconds(t);
                 var e = this._searchAfter(t), n = this._searchBefore(t), i = this._initial;
                 if (null === n) i = this._initial;
-                else if (n.type === u1.TimelineSignal.Type.Target) {
+                else if (n.type === u.TimelineSignal.Type.Target) {
                     var r, o = this._events.getBefore(n.time);
                     r = null === o ? this._initial : o.value, i = this._exponentialApproach(n.time, r, n.value, n.constant, t);
-                } else i = n.type === u1.TimelineSignal.Type.Curve ? this._curveInterpolate(n.time, n.value, n.duration, t) : null === e ? n.value : e.type === u1.TimelineSignal.Type.Linear ? this._linearInterpolate(n.time, n.value, e.time, e.value, t) : e.type === u1.TimelineSignal.Type.Exponential ? this._exponentialInterpolate(n.time, n.value, e.time, e.value, t) : n.value;
+                } else i = n.type === u.TimelineSignal.Type.Curve ? this._curveInterpolate(n.time, n.value, n.duration, t) : null === e ? n.value : e.type === u.TimelineSignal.Type.Linear ? this._linearInterpolate(n.time, n.value, e.time, e.value, t) : e.type === u.TimelineSignal.Type.Exponential ? this._exponentialInterpolate(n.time, n.value, e.time, e.value, t) : n.value;
                 return i;
-            }, u1.TimelineSignal.prototype.connect = u1.SignalBase.prototype.connect, u1.TimelineSignal.prototype._exponentialApproach = function(t, e, n, i, r) {
+            }, u.TimelineSignal.prototype.connect = u.SignalBase.prototype.connect, u.TimelineSignal.prototype._exponentialApproach = function(t, e, n, i, r) {
                 return n + (e - n) * Math.exp(-(r - t) / i);
-            }, u1.TimelineSignal.prototype._linearInterpolate = function(t, e, n, i, r) {
+            }, u.TimelineSignal.prototype._linearInterpolate = function(t, e, n, i, r) {
                 return e + (r - t) / (n - t) * (i - e);
-            }, u1.TimelineSignal.prototype._exponentialInterpolate = function(t, e, n, i, r) {
+            }, u.TimelineSignal.prototype._exponentialInterpolate = function(t, e, n, i, r) {
                 return (e = Math.max(this._minOutput, e)) * Math.pow(i / e, (r - t) / (n - t));
-            }, u1.TimelineSignal.prototype._curveInterpolate = function(t, e, n, i) {
+            }, u.TimelineSignal.prototype._curveInterpolate = function(t, e, n, i) {
                 var r = e.length;
                 if (t + n <= i) return e[r - 1];
                 if (i <= t) return e[0];
                 var o = (i - t) / n, s = Math.floor((r - 1) * o), a = Math.ceil((r - 1) * o), u = e[s], c = e[a];
                 return a === s ? u : this._linearInterpolate(s, u, a, c, o * (r - 1));
-            }, u1.TimelineSignal.prototype.dispose = function() {
-                u1.Signal.prototype.dispose.call(this), u1.Param.prototype.dispose.call(this), this._events.dispose(), this._events = null;
-            }, u1.TimelineSignal;
-        }).apply(e8, i4)) || (t11.exports = r1);
+            }, u.TimelineSignal.prototype.dispose = function() {
+                u.Signal.prototype.dispose.call(this), u.Param.prototype.dispose.call(this), this._events.dispose(), this._events = null;
+            }, u.TimelineSignal;
+        }).apply(e, i)) || (t.exports = r);
     },
-    function(t12, e9, n6) {
+    function(t, e, n) {
         var i, r;
         i = [
-            n6(0),
-            n6(4),
-            n6(1),
-            n6(2)
+            n(0),
+            n(4),
+            n(1),
+            n(2)
         ], void 0 === (r = (function(n) {
             "use strict";
             return n.Scale = function(t, e) {
@@ -488,9 +488,9 @@
             }, n.Scale.prototype.dispose = function() {
                 return n.prototype.dispose.call(this), this._add.dispose(), this._add = null, this._scale.dispose(), this._scale = null, this;
             }, n.Scale;
-        }).apply(e9, i)) || (t12.exports = r);
+        }).apply(e, i)) || (t.exports = r);
     },
-    function(t13, e10, n) {
+    function(t, e, n) {
         var i, r;
         i = [
             n(0),
@@ -528,14 +528,14 @@
             }, e.prototype.toTicks = function(t) {
                 return this.isNumber(t) || this.isString(t) ? new e.TransportTime(t).toTicks() : this.isUndef(t) ? e.Transport.ticks : t instanceof e.TimeBase ? t.toTicks() : void 0;
             }, e;
-        }).apply(e10, i)) || (t13.exports = r);
+        }).apply(e, i)) || (t.exports = r);
     },
-    function(t14, e11, n7) {
+    function(t, e, n) {
         var i, r;
         i = [
-            n7(0),
-            n7(18),
-            n7(9)
+            n(0),
+            n(18),
+            n(9)
         ], void 0 === (r = (function(n) {
             "use strict";
             return window.GainNode && !AudioContext.prototype.createGain && (AudioContext.prototype.createGain = AudioContext.prototype.createGainNode), n.Gain = function() {
@@ -557,17 +557,17 @@
             }, n.prototype.createInsOuts = function(t, e) {
                 1 === t ? this.input = new n.Gain : 1 < t && (this.input = new Array(t)), 1 === e ? this.output = new n.Gain : 1 < e && (this.output = new Array(t));
             }, n.Gain;
-        }).apply(e11, i)) || (t14.exports = r);
+        }).apply(e, i)) || (t.exports = r);
     },
-    function(t15, e12, n8) {
-        var i5, r2;
-        i5 = [
-            n8(0),
-            n8(7),
-            n8(39),
-            n8(14),
-            n8(12)
-        ], void 0 === (r2 = (function(r) {
+    function(t, e, n) {
+        var i, r;
+        i = [
+            n(0),
+            n(7),
+            n(39),
+            n(14),
+            n(12)
+        ], void 0 === (r = (function(r) {
             "use strict";
             return r.Clock = function() {
                 r.Emitter.call(this);
@@ -610,27 +610,27 @@
             }, r.Clock.prototype.dispose = function() {
                 r.Emitter.prototype.dispose.call(this), this.context.off("tick", this._boundLoop), this._writable("frequency"), this.frequency.dispose(), this.frequency = null, this._boundLoop = null, this._nextTick = 1 / 0, this.callback = null, this._state.dispose(), this._state = null;
             }, r.Clock;
-        }).apply(e12, i5)) || (t15.exports = r2);
+        }).apply(e, i)) || (t.exports = r);
     },
-    function(t16, e13, n9) {
-        var i6, r3;
-        i6 = [
-            n9(0),
-            n9(14)
-        ], void 0 === (r3 = (function(i7) {
-            function t17(t, e, n) {
-                if (t.input) Array.isArray(t.input) ? (i7.prototype.isUndef(n) && (n = 0), this.connect(t.input[n])) : this.connect(t.input, e, n);
+    function(t, e, n) {
+        var i, r;
+        i = [
+            n(0),
+            n(14)
+        ], void 0 === (r = (function(i) {
+            function t(t, e, n) {
+                if (t.input) Array.isArray(t.input) ? (i.prototype.isUndef(n) && (n = 0), this.connect(t.input[n])) : this.connect(t.input, e, n);
                 else try {
-                    t instanceof AudioNode ? r4.call(this, t, e, n) : r4.call(this, t, e);
-                } catch (e14) {
-                    throw new Error("error connecting to node: " + t + "\n" + e14);
+                    t instanceof AudioNode ? r.call(this, t, e, n) : r.call(this, t, e);
+                } catch (e) {
+                    throw new Error("error connecting to node: " + t + "\n" + e);
                 }
             }
-            var r4, o;
-            return !window.hasOwnProperty("AudioContext") && window.hasOwnProperty("webkitAudioContext") && (window.AudioContext = window.webkitAudioContext), i7.Context = function(t) {
-                for(var e in i7.Emitter.call(this), t = t || new window.AudioContext, this._context = t, this._context)this._defineProperty(this._context, e);
+            var r, o;
+            return !window.hasOwnProperty("AudioContext") && window.hasOwnProperty("webkitAudioContext") && (window.AudioContext = window.webkitAudioContext), i.Context = function(t) {
+                for(var e in i.Emitter.call(this), t = t || new window.AudioContext, this._context = t, this._context)this._defineProperty(this._context, e);
                 this._latencyHint = "interactive", this._lookAhead = .1, this._updateInterval = this._lookAhead / 3, this._computedUpdateInterval = 0, this._worker = this._createWorker(), this._constants = {};
-            }, i7.extend(i7.Context, i7.Emitter), i7.Emitter.mixin(i7.Context), i7.Context.prototype._defineProperty = function(e, n) {
+            }, i.extend(i.Context, i.Emitter), i.Emitter.mixin(i.Context), i.Context.prototype._defineProperty = function(e, n) {
                 this.isUndef(this[n]) && Object.defineProperty(this, n, {
                     get: function() {
                         return "function" == typeof e[n] ? e[n].bind(e) : e[n];
@@ -639,13 +639,13 @@
                         e[n] = t;
                     }
                 });
-            }, i7.Context.prototype.now = function() {
+            }, i.Context.prototype.now = function() {
                 return this._context.currentTime;
-            }, i7.Context.prototype._createWorker = function() {
+            }, i.Context.prototype._createWorker = function() {
                 window.URL = window.URL || window.webkitURL;
-                var t18 = new Blob([
-                    "var timeoutTime = " + (1e3 * this._updateInterval).toFixed(1) + ";self.onmessage = function(msg){	timeoutTime = parseInt(msg.data);};function tick(){	setTimeout(tick, timeoutTime);	self.postMessage('tick');}tick();"
-                ]), e15 = URL.createObjectURL(t18), n = new Worker(e15);
+                var t = new Blob([
+                    "var timeoutTime = " + (1e3 * this._updateInterval).toFixed(1) + ";self.onmessage = function(msg){\ttimeoutTime = parseInt(msg.data);};function tick(){\tsetTimeout(tick, timeoutTime);\tself.postMessage('tick');}tick();"
+                ]), e = URL.createObjectURL(t), n = new Worker(e);
                 return n.addEventListener("message", (function() {
                     this.emit("tick");
                 }).bind(this)), n.addEventListener("message", (function() {
@@ -656,31 +656,31 @@
                     }
                     this._lastUpdate = t;
                 }).bind(this)), n;
-            }, i7.Context.prototype.getConstant = function(t) {
+            }, i.Context.prototype.getConstant = function(t) {
                 if (this._constants[t]) return this._constants[t];
                 for(var e = this._context.createBuffer(1, 128, this._context.sampleRate), n = e.getChannelData(0), i = 0; i < n.length; i++)n[i] = t;
                 var r = this._context.createBufferSource();
                 return r.channelCount = 1, r.channelCountMode = "explicit", r.buffer = e, r.loop = !0, r.start(0), this._constants[t] = r;
-            }, Object.defineProperty(i7.Context.prototype, "lag", {
+            }, Object.defineProperty(i.Context.prototype, "lag", {
                 get: function() {
                     var t = this._computedUpdateInterval - this._updateInterval;
                     return Math.max(t, 0);
                 }
-            }), Object.defineProperty(i7.Context.prototype, "lookAhead", {
+            }), Object.defineProperty(i.Context.prototype, "lookAhead", {
                 get: function() {
                     return this._lookAhead;
                 },
                 set: function(t) {
                     this._lookAhead = t;
                 }
-            }), Object.defineProperty(i7.Context.prototype, "updateInterval", {
+            }), Object.defineProperty(i.Context.prototype, "updateInterval", {
                 get: function() {
                     return this._updateInterval;
                 },
                 set: function(t) {
-                    this._updateInterval = Math.max(t, i7.prototype.blockTime), this._worker.postMessage(Math.max(1e3 * t, 1));
+                    this._updateInterval = Math.max(t, i.prototype.blockTime), this._worker.postMessage(Math.max(1e3 * t, 1));
                 }
-            }), Object.defineProperty(i7.Context.prototype, "latencyHint", {
+            }), Object.defineProperty(i.Context.prototype, "latencyHint", {
                 get: function() {
                     return this._latencyHint;
                 },
@@ -701,18 +701,18 @@
                     }
                     this.lookAhead = e, this.updateInterval = e / 3;
                 }
-            }), i7.supported && (r4 = AudioNode.prototype.connect, o = AudioNode.prototype.disconnect, AudioNode.prototype.connect !== t17 && (AudioNode.prototype.connect = t17, AudioNode.prototype.disconnect = function(t, e, n) {
-                if (t && t.input && Array.isArray(t.input)) i7.prototype.isUndef(n) && (n = 0), this.disconnect(t.input[n], e, n);
+            }), i.supported && (r = AudioNode.prototype.connect, o = AudioNode.prototype.disconnect, AudioNode.prototype.connect !== t && (AudioNode.prototype.connect = t, AudioNode.prototype.disconnect = function(t, e, n) {
+                if (t && t.input && Array.isArray(t.input)) i.prototype.isUndef(n) && (n = 0), this.disconnect(t.input[n], e, n);
                 else if (t && t.input) this.disconnect(t.input, e, n);
                 else try {
                     o.apply(this, arguments);
-                } catch (e16) {
-                    throw new Error("error disconnecting node: " + t + "\n" + e16);
+                } catch (e) {
+                    throw new Error("error disconnecting node: " + t + "\n" + e);
                 }
-            }), i7.context = new i7.Context), i7.Context;
-        }).apply(e13, i6)) || (t16.exports = r3);
+            }), i.context = new i.Context), i.Context;
+        }).apply(e, i)) || (t.exports = r);
     },
-    function(t19, e17, n) {
+    function(t, e, n) {
         var i, r;
         i = [
             n(0),
@@ -727,13 +727,13 @@
             }, e.extend(e.Subtract, e.Signal), e.Subtract.prototype.dispose = function() {
                 return e.prototype.dispose.call(this), this._neg.dispose(), this._neg = null, this._sum.disconnect(), this._sum = null, this._param.dispose(), this._param = null, this;
             }, e.Subtract;
-        }).apply(e17, i)) || (t19.exports = r);
+        }).apply(e, i)) || (t.exports = r);
     },
-    function(t20, e18, n10) {
-        var i8, r5;
-        i8 = [
-            n10(0)
-        ], void 0 === (r5 = (function(s) {
+    function(t, e, n) {
+        var i, r;
+        i = [
+            n(0)
+        ], void 0 === (r = (function(s) {
             "use strict";
             return s.Emitter = function() {
                 this._events = {};
@@ -769,49 +769,49 @@
             }, s.Emitter.prototype.dispose = function() {
                 return s.prototype.dispose.call(this), this._events = null, this;
             }, s.Emitter;
-        }).apply(e18, i8)) || (t20.exports = r5);
+        }).apply(e, i)) || (t.exports = r);
     },
-    function(t21, e19, n11) {
-        var i9, r;
-        i9 = [
-            n11(0)
+    function(t, e, n) {
+        var i, r;
+        i = [
+            n(0)
         ], void 0 === (r = (function(i) {
             "use strict";
             return i.SignalBase = function() {}, i.extend(i.SignalBase), i.SignalBase.prototype.connect = function(t, e, n) {
                 return i.Signal && i.Signal === t.constructor || i.Param && i.Param === t.constructor || i.TimelineSignal && i.TimelineSignal === t.constructor ? (t._param.cancelScheduledValues(0), t._param.value = 0, t.overridden = !0) : t instanceof AudioParam && (t.cancelScheduledValues(0), t.value = 0), i.prototype.connect.call(this, t, e, n), this;
             }, i.SignalBase;
-        }).apply(e19, i9)) || (t21.exports = r);
+        }).apply(e, i)) || (t.exports = r);
     },
-    function(t22, e20, n12) {
-        var i10, r6;
-        i10 = [
-            n12(0),
-            n12(17)
-        ], void 0 === (r6 = (function(n13) {
-            return n13.Time = function(t, e) {
-                if (!(this instanceof n13.Time)) return new n13.Time(t, e);
-                this._plusNow = !1, n13.TimeBase.call(this, t, e);
-            }, n13.extend(n13.Time, n13.TimeBase), n13.Time.prototype._unaryExpressions = Object.create(n13.TimeBase.prototype._unaryExpressions), n13.Time.prototype._unaryExpressions.quantize = {
+    function(t, e, n) {
+        var i, r;
+        i = [
+            n(0),
+            n(17)
+        ], void 0 === (r = (function(n) {
+            return n.Time = function(t, e) {
+                if (!(this instanceof n.Time)) return new n.Time(t, e);
+                this._plusNow = !1, n.TimeBase.call(this, t, e);
+            }, n.extend(n.Time, n.TimeBase), n.Time.prototype._unaryExpressions = Object.create(n.TimeBase.prototype._unaryExpressions), n.Time.prototype._unaryExpressions.quantize = {
                 regexp: /^@/,
                 method: function(t) {
-                    return n13.Transport.nextSubdivision(t());
+                    return n.Transport.nextSubdivision(t());
                 }
-            }, n13.Time.prototype._unaryExpressions.now = {
+            }, n.Time.prototype._unaryExpressions.now = {
                 regexp: /^\+/,
                 method: function(t) {
                     return this._plusNow = !0, t();
                 }
-            }, n13.Time.prototype.quantize = function(t23, e21) {
-                return e21 = this.defaultArg(e21, 1), this._expr = (function(t, e, n) {
+            }, n.Time.prototype.quantize = function(t, e) {
+                return e = this.defaultArg(e, 1), this._expr = (function(t, e, n) {
                     return t = t(), e = e.toSeconds(), t + (Math.round(t / e) * e - t) * n;
-                }).bind(this, this._expr, new this.constructor(t23), e21), this;
-            }, n13.Time.prototype.addNow = function() {
+                }).bind(this, this._expr, new this.constructor(t), e), this;
+            }, n.Time.prototype.addNow = function() {
                 return this._plusNow = !0, this;
-            }, n13.Time.prototype._defaultExpr = function() {
+            }, n.Time.prototype._defaultExpr = function() {
                 return this._plusNow = !0, this._noOp;
-            }, n13.Time.prototype.copy = function(t) {
-                return n13.TimeBase.prototype.copy.call(this, t), this._plusNow = t._plusNow, this;
-            }, n13.Time.prototype.toNotation = function() {
+            }, n.Time.prototype.copy = function(t) {
+                return n.TimeBase.prototype.copy.call(this, t), this._plusNow = t._plusNow, this;
+            }, n.Time.prototype.toNotation = function() {
                 var t = this.toSeconds(), e = this._toNotationHelper(t, [
                     "1m",
                     "2n",
@@ -838,7 +838,7 @@
                     "128n"
                 ]);
                 return n.split("+").length < e.split("+").length ? n : e;
-            }, n13.Time.prototype._toNotationHelper = function(t, e) {
+            }, n.Time.prototype._toNotationHelper = function(t, e) {
                 for(var n = this._notationToUnits(e[e.length - 1]), i = "", r = 0; r < e.length; r++){
                     var o = this._notationToUnits(e[r]), s = t / o;
                     if (1 - s % 1 < 1e-6 && (s += 1e-6), 0 < (s = Math.floor(s))) {
@@ -847,7 +847,7 @@
                     }
                 }
                 return "" === i && (i = "0"), i;
-            }, n13.Time.prototype._notationToUnits = function(t) {
+            }, n.Time.prototype._notationToUnits = function(t) {
                 for(var e = this._primaryExpressions, n = [
                     e.n,
                     e.t,
@@ -856,51 +856,51 @@
                     var r = n[i], o = t.match(r.regexp);
                     if (o) return r.method.call(this, o[1]);
                 }
-            }, n13.Time.prototype.toBarsBeatsSixteenths = function() {
+            }, n.Time.prototype.toBarsBeatsSixteenths = function() {
                 var t = this._beatsToUnits(1), e = this.toSeconds() / t, n = Math.floor(e / this._timeSignature()), i = e % 1 * 4;
                 return e = Math.floor(e) % this._timeSignature(), 3 < (i = i.toString()).length && (i = parseFloat(i).toFixed(3)), [
                     n,
                     e,
                     i
                 ].join(":");
-            }, n13.Time.prototype.toTicks = function() {
+            }, n.Time.prototype.toTicks = function() {
                 var t = this._beatsToUnits(1), e = this.valueOf() / t;
-                return Math.floor(e * n13.Transport.PPQ);
-            }, n13.Time.prototype.toSamples = function() {
+                return Math.floor(e * n.Transport.PPQ);
+            }, n.Time.prototype.toSamples = function() {
                 return this.toSeconds() * this.context.sampleRate;
-            }, n13.Time.prototype.toFrequency = function() {
+            }, n.Time.prototype.toFrequency = function() {
                 return 1 / this.toSeconds();
-            }, n13.Time.prototype.toSeconds = function() {
+            }, n.Time.prototype.toSeconds = function() {
                 return this.valueOf();
-            }, n13.Time.prototype.toMilliseconds = function() {
+            }, n.Time.prototype.toMilliseconds = function() {
                 return 1e3 * this.toSeconds();
-            }, n13.Time.prototype.valueOf = function() {
+            }, n.Time.prototype.valueOf = function() {
                 return this._expr() + (this._plusNow ? this.now() : 0);
-            }, n13.Time;
-        }).apply(e20, i10)) || (t22.exports = r6);
+            }, n.Time;
+        }).apply(e, i)) || (t.exports = r);
     },
-    function(t24, e22, n14) {
-        var i11, r7;
-        i11 = [
-            n14(0)
-        ], void 0 === (r7 = (function(i12) {
-            return i12.TimeBase = function(t, e) {
-                if (!(this instanceof i12.TimeBase)) return new i12.TimeBase(t, e);
-                if (this._expr = this._noOp, t instanceof i12.TimeBase) this.copy(t);
+    function(t, e, n) {
+        var i, r;
+        i = [
+            n(0)
+        ], void 0 === (r = (function(i) {
+            return i.TimeBase = function(t, e) {
+                if (!(this instanceof i.TimeBase)) return new i.TimeBase(t, e);
+                if (this._expr = this._noOp, t instanceof i.TimeBase) this.copy(t);
                 else if (!this.isUndef(e) || this.isNumber(t)) {
                     e = this.defaultArg(e, this._defaultUnits);
                     var n = this._primaryExpressions[e].method;
                     this._expr = n.bind(this, t);
                 } else this.isString(t) ? this.set(t) : this.isUndef(t) && (this._expr = this._defaultExpr());
-            }, i12.extend(i12.TimeBase), i12.TimeBase.prototype.set = function(t) {
+            }, i.extend(i.TimeBase), i.TimeBase.prototype.set = function(t) {
                 return this._expr = this._parseExprString(t), this;
-            }, i12.TimeBase.prototype.clone = function() {
+            }, i.TimeBase.prototype.clone = function() {
                 var t = new this.constructor;
                 return t.copy(this), t;
-            }, i12.TimeBase.prototype.copy = function(t) {
+            }, i.TimeBase.prototype.copy = function(t) {
                 var e = t._expr();
                 return this.set(e);
-            }, i12.TimeBase.prototype._primaryExpressions = {
+            }, i.TimeBase.prototype._primaryExpressions = {
                 n: {
                     regexp: /^(\d+)n/i,
                     method: function(t) {
@@ -956,7 +956,7 @@
                         return this._primaryExpressions[this._defaultUnits].method.call(this, t);
                     }
                 }
-            }, i12.TimeBase.prototype._binaryExpressions = {
+            }, i.TimeBase.prototype._binaryExpressions = {
                 "+": {
                     regexp: /^\+/,
                     precedence: 2,
@@ -985,26 +985,26 @@
                         return t() / e();
                     }
                 }
-            }, i12.TimeBase.prototype._unaryExpressions = {
+            }, i.TimeBase.prototype._unaryExpressions = {
                 neg: {
                     regexp: /^\-/,
                     method: function(t) {
                         return -t();
                     }
                 }
-            }, i12.TimeBase.prototype._syntaxGlue = {
+            }, i.TimeBase.prototype._syntaxGlue = {
                 "(": {
                     regexp: /^\(/
                 },
                 ")": {
                     regexp: /^\)/
                 }
-            }, i12.TimeBase.prototype._tokenize = function(t25) {
-                for(var e23 = -1, n15 = []; 0 < t25.length;){
-                    var i = r8(t25 = t25.trim(), this);
-                    n15.push(i), t25 = t25.substr(i.value.length);
+            }, i.TimeBase.prototype._tokenize = function(t) {
+                for(var e = -1, n = []; 0 < t.length;){
+                    var i = r(t = t.trim(), this);
+                    n.push(i), t = t.substr(i.value.length);
                 }
-                function r8(t, e) {
+                function r(t, e) {
                     for(var n = [
                         "_binaryExpressions",
                         "_unaryExpressions",
@@ -1026,13 +1026,13 @@
                 }
                 return {
                     next: function() {
-                        return n15[++e23];
+                        return n[++e];
                     },
                     peek: function() {
-                        return n15[e23 + 1];
+                        return n[e + 1];
                     }
                 };
-            }, i12.TimeBase.prototype._matchGroup = function(t, e, n) {
+            }, i.TimeBase.prototype._matchGroup = function(t, e, n) {
                 if (!this.isUndef(t)) for(var i in e){
                     var r = e[i];
                     if (r.regexp.test(t.value)) {
@@ -1041,17 +1041,17 @@
                     }
                 }
                 return !1;
-            }, i12.TimeBase.prototype._parseBinary = function(t, e) {
+            }, i.TimeBase.prototype._parseBinary = function(t, e) {
                 var n;
                 this.isUndef(e) && (e = 2), n = e < 0 ? this._parseUnary(t) : this._parseBinary(t, e - 1);
                 for(var i = t.peek(); i && this._matchGroup(i, this._binaryExpressions, e);)n = (i = t.next()).method.bind(this, n, this._parseBinary(t, e - 1)), i = t.peek();
                 return n;
-            }, i12.TimeBase.prototype._parseUnary = function(t) {
+            }, i.TimeBase.prototype._parseUnary = function(t) {
                 var e, n;
                 e = t.peek();
                 var i = this._matchGroup(e, this._unaryExpressions);
                 return i ? (e = t.next(), n = this._parseUnary(t), i.method.bind(this, n)) : this._parsePrimary(t);
-            }, i12.TimeBase.prototype._parsePrimary = function(t) {
+            }, i.TimeBase.prototype._parsePrimary = function(t) {
                 var e, n;
                 if (e = t.peek(), this.isUndef(e)) throw new SyntaxError("Tone.TimeBase: Unexpected end of expression");
                 if (this._matchGroup(e, this._primaryExpressions)) {
@@ -1063,149 +1063,149 @@
                     return n;
                 }
                 throw new SyntaxError("Tone.TimeBase: Cannot process token " + e.value);
-            }, i12.TimeBase.prototype._parseExprString = function(t) {
+            }, i.TimeBase.prototype._parseExprString = function(t) {
                 this.isString(t) || (t = t.toString());
                 var e = this._tokenize(t);
                 return this._parseBinary(e);
-            }, i12.TimeBase.prototype._noOp = function() {
+            }, i.TimeBase.prototype._noOp = function() {
                 return 0;
-            }, i12.TimeBase.prototype._defaultExpr = function() {
+            }, i.TimeBase.prototype._defaultExpr = function() {
                 return this._noOp;
-            }, i12.TimeBase.prototype._defaultUnits = "s", i12.TimeBase.prototype._frequencyToUnits = function(t) {
+            }, i.TimeBase.prototype._defaultUnits = "s", i.TimeBase.prototype._frequencyToUnits = function(t) {
                 return 1 / t;
-            }, i12.TimeBase.prototype._beatsToUnits = function(t) {
-                return 60 / i12.Transport.bpm.value * t;
-            }, i12.TimeBase.prototype._secondsToUnits = function(t) {
+            }, i.TimeBase.prototype._beatsToUnits = function(t) {
+                return 60 / i.Transport.bpm.value * t;
+            }, i.TimeBase.prototype._secondsToUnits = function(t) {
                 return t;
-            }, i12.TimeBase.prototype._ticksToUnits = function(t) {
-                return t * (this._beatsToUnits(1) / i12.Transport.PPQ);
-            }, i12.TimeBase.prototype._timeSignature = function() {
-                return i12.Transport.timeSignature;
-            }, i12.TimeBase.prototype._pushExpr = function(t, e, n) {
-                return t instanceof i12.TimeBase || (t = new this.constructor(t, n)), this._expr = this._binaryExpressions[e].method.bind(this, this._expr, t._expr), this;
-            }, i12.TimeBase.prototype.add = function(t, e) {
+            }, i.TimeBase.prototype._ticksToUnits = function(t) {
+                return t * (this._beatsToUnits(1) / i.Transport.PPQ);
+            }, i.TimeBase.prototype._timeSignature = function() {
+                return i.Transport.timeSignature;
+            }, i.TimeBase.prototype._pushExpr = function(t, e, n) {
+                return t instanceof i.TimeBase || (t = new this.constructor(t, n)), this._expr = this._binaryExpressions[e].method.bind(this, this._expr, t._expr), this;
+            }, i.TimeBase.prototype.add = function(t, e) {
                 return this._pushExpr(t, "+", e);
-            }, i12.TimeBase.prototype.sub = function(t, e) {
+            }, i.TimeBase.prototype.sub = function(t, e) {
                 return this._pushExpr(t, "-", e);
-            }, i12.TimeBase.prototype.mult = function(t, e) {
+            }, i.TimeBase.prototype.mult = function(t, e) {
                 return this._pushExpr(t, "*", e);
-            }, i12.TimeBase.prototype.div = function(t, e) {
+            }, i.TimeBase.prototype.div = function(t, e) {
                 return this._pushExpr(t, "/", e);
-            }, i12.TimeBase.prototype.valueOf = function() {
+            }, i.TimeBase.prototype.valueOf = function() {
                 return this._expr();
-            }, i12.TimeBase.prototype.dispose = function() {
+            }, i.TimeBase.prototype.dispose = function() {
                 this._expr = null;
-            }, i12.TimeBase;
-        }).apply(e22, i11)) || (t24.exports = r7);
+            }, i.TimeBase;
+        }).apply(e, i)) || (t.exports = r);
     },
-    function(t26, e24, n16) {
-        var i13, r;
-        i13 = [
-            n16(0),
-            n16(9)
-        ], void 0 === (r = (function(i14) {
+    function(t, e, n) {
+        var i, r;
+        i = [
+            n(0),
+            n(9)
+        ], void 0 === (r = (function(i) {
             "use strict";
-            return i14.Param = function() {
+            return i.Param = function() {
                 var t = this.optionsObject(arguments, [
                     "param",
                     "units",
                     "convert"
-                ], i14.Param.defaults);
+                ], i.Param.defaults);
                 this._param = this.input = t.param, this.units = t.units, this.convert = t.convert, this.overridden = !1, this._lfo = null, this.isObject(t.lfo) ? this.value = t.lfo : this.isUndef(t.value) || (this.value = t.value);
-            }, i14.extend(i14.Param), i14.Param.defaults = {
-                units: i14.Type.Default,
+            }, i.extend(i.Param), i.Param.defaults = {
+                units: i.Type.Default,
                 convert: !0,
                 param: void 0
-            }, Object.defineProperty(i14.Param.prototype, "value", {
+            }, Object.defineProperty(i.Param.prototype, "value", {
                 get: function() {
                     return this._toUnits(this._param.value);
                 },
                 set: function(t) {
                     if (this.isObject(t)) {
-                        if (this.isUndef(i14.LFO)) throw new Error("Include 'Tone.LFO' to use an LFO as a Param value.");
-                        this._lfo && this._lfo.dispose(), this._lfo = new i14.LFO(t).start(), this._lfo.connect(this.input);
+                        if (this.isUndef(i.LFO)) throw new Error("Include 'Tone.LFO' to use an LFO as a Param value.");
+                        this._lfo && this._lfo.dispose(), this._lfo = new i.LFO(t).start(), this._lfo.connect(this.input);
                     } else {
                         var e = this._fromUnits(t);
                         this._param.cancelScheduledValues(0), this._param.value = e;
                     }
                 }
-            }), i14.Param.prototype._fromUnits = function(t) {
+            }), i.Param.prototype._fromUnits = function(t) {
                 if (!this.convert && !this.isUndef(this.convert)) return t;
                 switch(this.units){
-                    case i14.Type.Time:
+                    case i.Type.Time:
                         return this.toSeconds(t);
-                    case i14.Type.Frequency:
+                    case i.Type.Frequency:
                         return this.toFrequency(t);
-                    case i14.Type.Decibels:
+                    case i.Type.Decibels:
                         return this.dbToGain(t);
-                    case i14.Type.NormalRange:
+                    case i.Type.NormalRange:
                         return Math.min(Math.max(t, 0), 1);
-                    case i14.Type.AudioRange:
+                    case i.Type.AudioRange:
                         return Math.min(Math.max(t, -1), 1);
-                    case i14.Type.Positive:
+                    case i.Type.Positive:
                         return Math.max(t, 0);
                     default:
                         return t;
                 }
-            }, i14.Param.prototype._toUnits = function(t) {
+            }, i.Param.prototype._toUnits = function(t) {
                 if (!this.convert && !this.isUndef(this.convert)) return t;
                 switch(this.units){
-                    case i14.Type.Decibels:
+                    case i.Type.Decibels:
                         return this.gainToDb(t);
                     default:
                         return t;
                 }
-            }, i14.Param.prototype._minOutput = 1e-5, i14.Param.prototype.setValueAtTime = function(t, e) {
+            }, i.Param.prototype._minOutput = 1e-5, i.Param.prototype.setValueAtTime = function(t, e) {
                 return t = this._fromUnits(t), (e = this.toSeconds(e)) <= this.now() + this.blockTime ? this._param.value = t : this._param.setValueAtTime(t, e), this;
-            }, i14.Param.prototype.setRampPoint = function(t) {
+            }, i.Param.prototype.setRampPoint = function(t) {
                 t = this.defaultArg(t, this.now());
                 var e = this._param.value;
                 return 0 === e && (e = this._minOutput), this._param.setValueAtTime(e, t), this;
-            }, i14.Param.prototype.linearRampToValueAtTime = function(t, e) {
+            }, i.Param.prototype.linearRampToValueAtTime = function(t, e) {
                 return t = this._fromUnits(t), this._param.linearRampToValueAtTime(t, this.toSeconds(e)), this;
-            }, i14.Param.prototype.exponentialRampToValueAtTime = function(t, e) {
+            }, i.Param.prototype.exponentialRampToValueAtTime = function(t, e) {
                 return t = this._fromUnits(t), t = Math.max(this._minOutput, t), this._param.exponentialRampToValueAtTime(t, this.toSeconds(e)), this;
-            }, i14.Param.prototype.exponentialRampToValue = function(t, e, n) {
+            }, i.Param.prototype.exponentialRampToValue = function(t, e, n) {
                 return n = this.toSeconds(n), this.setRampPoint(n), this.exponentialRampToValueAtTime(t, n + this.toSeconds(e)), this;
-            }, i14.Param.prototype.linearRampToValue = function(t, e, n) {
+            }, i.Param.prototype.linearRampToValue = function(t, e, n) {
                 return n = this.toSeconds(n), this.setRampPoint(n), this.linearRampToValueAtTime(t, n + this.toSeconds(e)), this;
-            }, i14.Param.prototype.setTargetAtTime = function(t, e, n) {
+            }, i.Param.prototype.setTargetAtTime = function(t, e, n) {
                 return t = this._fromUnits(t), t = Math.max(this._minOutput, t), n = Math.max(this._minOutput, n), this._param.setTargetAtTime(t, this.toSeconds(e), n), this;
-            }, i14.Param.prototype.setValueCurveAtTime = function(t, e, n) {
+            }, i.Param.prototype.setValueCurveAtTime = function(t, e, n) {
                 for(var i = 0; i < t.length; i++)t[i] = this._fromUnits(t[i]);
                 return this._param.setValueCurveAtTime(t, this.toSeconds(e), this.toSeconds(n)), this;
-            }, i14.Param.prototype.cancelScheduledValues = function(t) {
+            }, i.Param.prototype.cancelScheduledValues = function(t) {
                 return this._param.cancelScheduledValues(this.toSeconds(t)), this;
-            }, i14.Param.prototype.rampTo = function(t, e, n) {
-                return e = this.defaultArg(e, 0), this.units === i14.Type.Frequency || this.units === i14.Type.BPM || this.units === i14.Type.Decibels ? this.exponentialRampToValue(t, e, n) : this.linearRampToValue(t, e, n), this;
-            }, Object.defineProperty(i14.Param.prototype, "lfo", {
+            }, i.Param.prototype.rampTo = function(t, e, n) {
+                return e = this.defaultArg(e, 0), this.units === i.Type.Frequency || this.units === i.Type.BPM || this.units === i.Type.Decibels ? this.exponentialRampToValue(t, e, n) : this.linearRampToValue(t, e, n), this;
+            }, Object.defineProperty(i.Param.prototype, "lfo", {
                 get: function() {
                     return this._lfo;
                 }
-            }), i14.Param.prototype.dispose = function() {
-                return i14.prototype.dispose.call(this), this._param = null, this._lfo && (this._lfo.dispose(), this._lfo = null), this;
-            }, i14.Param;
-        }).apply(e24, i13)) || (t26.exports = r);
+            }), i.Param.prototype.dispose = function() {
+                return i.prototype.dispose.call(this), this._param = null, this._lfo && (this._lfo.dispose(), this._lfo = null), this;
+            }, i.Param;
+        }).apply(e, i)) || (t.exports = r);
     },
-    function(t27, e25, n17) {
-        var i15, r9;
-        i15 = [
-            n17(0),
-            n17(9)
-        ], void 0 === (r9 = (function(e26) {
+    function(t, e, n) {
+        var i, r;
+        i = [
+            n(0),
+            n(9)
+        ], void 0 === (r = (function(e) {
             "use strict";
-            return e26.Timeline = function() {
+            return e.Timeline = function() {
                 var t = this.optionsObject(arguments, [
                     "memory"
-                ], e26.Timeline.defaults);
+                ], e.Timeline.defaults);
                 this._timeline = [], this._toRemove = [], this._iterating = !1, this.memory = t.memory;
-            }, e26.extend(e26.Timeline), e26.Timeline.defaults = {
+            }, e.extend(e.Timeline), e.Timeline.defaults = {
                 memory: 1 / 0
-            }, Object.defineProperty(e26.Timeline.prototype, "length", {
+            }, Object.defineProperty(e.Timeline.prototype, "length", {
                 get: function() {
                     return this._timeline.length;
                 }
-            }), e26.Timeline.prototype.add = function(t) {
+            }), e.Timeline.prototype.add = function(t) {
                 if (this.isUndef(t.time)) throw new Error("Tone.Timeline: events must have a time attribute");
                 if (this._timeline.length) {
                     var e = this._search(t.time);
@@ -1216,29 +1216,29 @@
                     this._timeline.splice(0, n);
                 }
                 return this;
-            }, e26.Timeline.prototype.remove = function(t) {
+            }, e.Timeline.prototype.remove = function(t) {
                 if (this._iterating) this._toRemove.push(t);
                 else {
                     var e = this._timeline.indexOf(t);
                     -1 !== e && this._timeline.splice(e, 1);
                 }
                 return this;
-            }, e26.Timeline.prototype.get = function(t) {
+            }, e.Timeline.prototype.get = function(t) {
                 var e = this._search(t);
                 return -1 !== e ? this._timeline[e] : null;
-            }, e26.Timeline.prototype.peek = function() {
+            }, e.Timeline.prototype.peek = function() {
                 return this._timeline[0];
-            }, e26.Timeline.prototype.shift = function() {
+            }, e.Timeline.prototype.shift = function() {
                 return this._timeline.shift();
-            }, e26.Timeline.prototype.getAfter = function(t) {
+            }, e.Timeline.prototype.getAfter = function(t) {
                 var e = this._search(t);
                 return e + 1 < this._timeline.length ? this._timeline[e + 1] : null;
-            }, e26.Timeline.prototype.getBefore = function(t) {
+            }, e.Timeline.prototype.getBefore = function(t) {
                 var e = this._timeline.length;
                 if (0 < e && this._timeline[e - 1].time < t) return this._timeline[e - 1];
                 var n = this._search(t);
                 return 0 <= n - 1 ? this._timeline[n - 1] : null;
-            }, e26.Timeline.prototype.cancel = function(t) {
+            }, e.Timeline.prototype.cancel = function(t) {
                 if (1 < this._timeline.length) {
                     var e = this._search(t);
                     if (0 <= e) {
@@ -1249,13 +1249,13 @@
                     } else this._timeline = [];
                 } else 1 === this._timeline.length && this._timeline[0].time >= t && (this._timeline = []);
                 return this;
-            }, e26.Timeline.prototype.cancelBefore = function(t) {
+            }, e.Timeline.prototype.cancelBefore = function(t) {
                 if (this._timeline.length) {
                     var e = this._search(t);
                     0 <= e && (this._timeline = this._timeline.slice(e + 1));
                 }
                 return this;
-            }, e26.Timeline.prototype._search = function(t) {
+            }, e.Timeline.prototype._search = function(t) {
                 var e = 0, n = this._timeline.length, i = n;
                 if (0 < n && this._timeline[n - 1].time <= t) return n - 1;
                 for(; e < i;){
@@ -1268,7 +1268,7 @@
                     o.time > t ? i = r : o.time < t && (e = r + 1);
                 }
                 return -1;
-            }, e26.Timeline.prototype._iterate = function(t, e, n) {
+            }, e.Timeline.prototype._iterate = function(t, e, n) {
                 this._iterating = !0, e = this.defaultArg(e, 0), n = this.defaultArg(n, this._timeline.length - 1);
                 for(var i = e; i <= n; i++)t(this._timeline[i]);
                 if (this._iterating = !1, 0 < this._toRemove.length) {
@@ -1278,28 +1278,28 @@
                     }
                     this._toRemove = [];
                 }
-            }, e26.Timeline.prototype.forEach = function(t) {
+            }, e.Timeline.prototype.forEach = function(t) {
                 return this._iterate(t), this;
-            }, e26.Timeline.prototype.forEachBefore = function(t, e) {
+            }, e.Timeline.prototype.forEachBefore = function(t, e) {
                 var n = this._search(t);
                 return -1 !== n && this._iterate(e, 0, n), this;
-            }, e26.Timeline.prototype.forEachAfter = function(t, e) {
+            }, e.Timeline.prototype.forEachAfter = function(t, e) {
                 var n = this._search(t);
                 return this._iterate(e, n + 1), this;
-            }, e26.Timeline.prototype.forEachFrom = function(t, e) {
+            }, e.Timeline.prototype.forEachFrom = function(t, e) {
                 for(var n = this._search(t); 0 <= n && this._timeline[n].time >= t;)n--;
                 return this._iterate(e, n + 1), this;
-            }, e26.Timeline.prototype.forEachAtTime = function(e, n) {
-                var t28 = this._search(e);
-                return -1 !== t28 && this._iterate(function(t) {
+            }, e.Timeline.prototype.forEachAtTime = function(e, n) {
+                var t = this._search(e);
+                return -1 !== t && this._iterate(function(t) {
                     t.time === e && n(t);
-                }, 0, t28), this;
-            }, e26.Timeline.prototype.dispose = function() {
-                e26.prototype.dispose.call(this), this._timeline = null, this._toRemove = null;
-            }, e26.Timeline;
-        }).apply(e25, i15)) || (t27.exports = r9);
+                }, 0, t), this;
+            }, e.Timeline.prototype.dispose = function() {
+                e.prototype.dispose.call(this), this._timeline = null, this._toRemove = null;
+            }, e.Timeline;
+        }).apply(e, i)) || (t.exports = r);
     },
-    function(t29, e, n) {
+    function(t, e, n) {
         var i, r;
         i = [
             n(0),
@@ -1312,52 +1312,52 @@
             }, t.extend(t.Negate, t.SignalBase), t.Negate.prototype.dispose = function() {
                 return t.prototype.dispose.call(this), this._multiply.dispose(), this._multiply = null, this;
             }, t.Negate;
-        }).apply(e, i)) || (t29.exports = r);
+        }).apply(e, i)) || (t.exports = r);
     },
-    function(t30, e, n) {
+    function(t, e, n) {
         var i, r;
         i = [
             n(0),
             n(2),
             n(1),
             n(6)
-        ], void 0 === (r = (function(t31) {
+        ], void 0 === (r = (function(t) {
             "use strict";
-            return t31.GreaterThanZero = function() {
-                this._thresh = this.output = new t31.WaveShaper(function(t) {
+            return t.GreaterThanZero = function() {
+                this._thresh = this.output = new t.WaveShaper(function(t) {
                     return t <= 0 ? 0 : 1;
-                }, 127), this._scale = this.input = new t31.Multiply(1e4), this._scale.connect(this._thresh);
-            }, t31.extend(t31.GreaterThanZero, t31.SignalBase), t31.GreaterThanZero.prototype.dispose = function() {
-                return t31.prototype.dispose.call(this), this._scale.dispose(), this._scale = null, this._thresh.dispose(), this._thresh = null, this;
-            }, t31.GreaterThanZero;
-        }).apply(e, i)) || (t30.exports = r);
+                }, 127), this._scale = this.input = new t.Multiply(1e4), this._scale.connect(this._thresh);
+            }, t.extend(t.GreaterThanZero, t.SignalBase), t.GreaterThanZero.prototype.dispose = function() {
+                return t.prototype.dispose.call(this), this._scale.dispose(), this._scale = null, this._thresh.dispose(), this._thresh = null, this;
+            }, t.GreaterThanZero;
+        }).apply(e, i)) || (t.exports = r);
     },
-    function(t32, e27, n18) {
-        var i16, r10, o1;
-        r10 = [], void 0 === (o1 = "function" == typeof (i16 = function() {
+    function(t, e, n) {
+        var i, r, o;
+        r = [], void 0 === (o = "function" == typeof (i = function() {
             var s = function(t, e) {
                 this._dragged = !1, this._element = t, this._bindedMove = this._moved.bind(this), this._bindedEnd = this._ended.bind(this, e), t.addEventListener("touchstart", this._bindedEnd), t.addEventListener("touchmove", this._bindedMove), t.addEventListener("touchend", this._bindedEnd), t.addEventListener("mouseup", this._bindedEnd);
             };
-            function o2(t) {
+            function o(t) {
                 return "running" === t.state;
             }
             return s.prototype._moved = function(t) {
                 this._dragged = !0;
-            }, s.prototype._ended = function(t33) {
+            }, s.prototype._ended = function(t) {
                 this._dragged || function(t) {
                     var e = t.createBuffer(1, 1, t.sampleRate), n = t.createBufferSource();
                     n.buffer = e, n.connect(t.destination), n.start(0), t.resume && t.resume();
-                }(t33), this._dragged = !1;
+                }(t), this._dragged = !1;
             }, s.prototype.dispose = function() {
                 this._element.removeEventListener("touchstart", this._bindedEnd), this._element.removeEventListener("touchmove", this._bindedMove), this._element.removeEventListener("touchend", this._bindedEnd), this._element.removeEventListener("mouseup", this._bindedEnd), this._bindedMove = null, this._bindedEnd = null, this._element = null;
-            }, function(e28, t34, n19) {
-                var i17 = new Promise(function(t35) {
+            }, function(e, t, n) {
+                var i = new Promise(function(t) {
                     !function(e, n) {
-                        o2(e) ? n() : function t() {
-                            o2(e) ? n() : (requestAnimationFrame(t), e.resume && e.resume());
+                        o(e) ? n() : function t() {
+                            o(e) ? n() : (requestAnimationFrame(t), e.resume && e.resume());
                         }();
-                    }(e28, t35);
-                }), r11 = [];
+                    }(e, t);
+                }), r = [];
                 return function t(e, n, i) {
                     if (Array.isArray(e) || NodeList && e instanceof NodeList) for(var r = 0; r < e.length; r++)t(e[r], n, i);
                     else if ("string" == typeof e) t(document.querySelectorAll(e), n, i);
@@ -1366,14 +1366,14 @@
                         var o = new s(e, i);
                         n.push(o);
                     }
-                }(t34 = t34 || document.body, r11, e28), i17.then(function() {
-                    for(var t = 0; t < r11.length; t++)r11[t].dispose();
-                    r11 = null, n19 && n19();
-                }), i17;
+                }(t = t || document.body, r, e), i.then(function() {
+                    for(var t = 0; t < r.length; t++)r[t].dispose();
+                    r = null, n && n();
+                }), i;
             };
-        }) ? i16.apply(e27, r10) : i16) || (t32.exports = o1);
+        }) ? i.apply(e, r) : i) || (t.exports = o);
     },
-    function(t36, e29, n) {
+    function(t, e, n) {
         var i, r;
         i = [
             n(0),
@@ -1388,34 +1388,34 @@
             }, e.extend(e.CrossFade), e.CrossFade.prototype.dispose = function() {
                 return e.prototype.dispose.call(this), this._writable("fade"), this._equalPowerA.dispose(), this._equalPowerA = null, this._equalPowerB.dispose(), this._equalPowerB = null, this.fade.dispose(), this.fade = null, this._invert.dispose(), this._invert = null, this.a.dispose(), this.a = null, this.b.dispose(), this.b = null, this;
             }, e.CrossFade;
-        }).apply(e29, i)) || (t36.exports = r);
+        }).apply(e, i)) || (t.exports = r);
     },
-    function(t37, e30) {
-        function l(t38) {
+    function(t, e) {
+        function l(t) {
             var i = this, r = {}, o = -1;
             this.parameters.forEach(function(t, e) {
-                var n = a1[++o] || (a1[o] = new Float32Array(i.bufferSize));
+                var n = a[++o] || (a[o] = new Float32Array(i.bufferSize));
                 n.fill(t.value), r[e] = n;
             }), this.processor.realm.exec("self.sampleRate=sampleRate=" + this.context.sampleRate + ";self.currentTime=currentTime=" + this.context.currentTime);
-            var e31 = s1(t38.inputBuffer), n21 = s1(t38.outputBuffer);
+            var e = s(t.inputBuffer), n = s(t.outputBuffer);
             this.instance.process([
-                e31
+                e
             ], [
-                n21
+                n
             ], r);
         }
-        function s1(t) {
+        function s(t) {
             for(var e = [], n = 0; n < t.numberOfChannels; n++)e[n] = t.getChannelData(n);
             return e;
         }
         function h(t) {
             return t.$$processors || (t.$$processors = {});
         }
-        function n20(t) {
+        function n(t) {
             this.$$context = t;
         }
-        var p, a1;
-        a1 = [], "function" != typeof AudioWorkletNode && (self.AudioWorkletNode = function(t, e, n) {
+        var p, a;
+        a = [], "function" != typeof AudioWorkletNode && (self.AudioWorkletNode = function(t, e, n) {
             var i = h(t)[e], r = t.createScriptProcessor(void 0, 2, n && n.outputChannelCount ? n.outputChannelCount[0] : 2);
             if (r.parameters = new Map, i.properties) for(var o = 0; o < i.properties.length; o++){
                 var s = i.properties[o], a = t.createGain().gain;
@@ -1429,27 +1429,27 @@
             get: function() {
                 return this.$$audioWorklet || (this.$$audioWorklet = new self.AudioWorklet(this));
             }
-        }), self.AudioWorklet = (n20.prototype.addModule = function(t39, e32) {
-            var r12 = this;
-            return fetch(t39).then(function(t) {
+        }), self.AudioWorklet = (n.prototype.addModule = function(t, e) {
+            var r = this;
+            return fetch(t).then(function(t) {
                 if (!t.ok) throw Error(t.status);
                 return t.text();
-            }).then(function(t40) {
-                var n22 = {
+            }).then(function(t) {
+                var n = {
                     sampleRate: 0,
                     currentTime: 0,
                     AudioWorkletProcessor: function() {
                         this.port = p;
                     },
                     registerProcessor: function(t, e) {
-                        h(r12.$$context)[t] = {
-                            realm: i18,
-                            context: n22,
+                        h(r.$$context)[t] = {
+                            realm: i,
+                            context: n,
                             Processor: e,
                             properties: e.parameterDescriptors || []
                         };
                     }
-                }, i18 = new function(t, e) {
+                }, i = new function(t, e) {
                     var n = document.createElement("iframe");
                     n.style.cssText = "position:absolute;left:0;top:-999px;width:1px;height:1px;", e.appendChild(n);
                     var i = n.contentWindow, r = i.document, o = "var window,$hook";
@@ -1457,21 +1457,21 @@
                     for(var a in t)o += ",", o += a, o += "=self.", o += a;
                     var u = r.createElement("script");
                     u.appendChild(r.createTextNode('function $hook(self,console) {"use strict";\n        ' + o + ";return function() {return eval(arguments[0])}}")), r.body.appendChild(u), this.exec = i.$hook(t, console);
-                }(n22.self = n22, document.documentElement);
-                return i18.exec((e32 && e32.transpile || String)(t40)), null;
+                }(n.self = n, document.documentElement);
+                return i.exec((e && e.transpile || String)(t)), null;
             });
-        }, n20));
+        }, n));
     },
-    function(t41, e33) {
-        function n23(t) {
+    function(t, e) {
+        function n(t) {
             t && (t.setTargetAtTime || (t.setTargetAtTime = t.setTargetValueAtTime));
         }
         window, window.hasOwnProperty("webkitAudioContext") && !window.hasOwnProperty("AudioContext") && (window.AudioContext = window.webkitAudioContext, "function" != typeof AudioContext.prototype.createGain && (AudioContext.prototype.createGain = AudioContext.prototype.createGainNode), "function" != typeof AudioContext.prototype.createDelay && (AudioContext.prototype.createDelay = AudioContext.prototype.createDelayNode), "function" != typeof AudioContext.prototype.createScriptProcessor && (AudioContext.prototype.createScriptProcessor = AudioContext.prototype.createJavaScriptNode), "function" != typeof AudioContext.prototype.createPeriodicWave && (AudioContext.prototype.createPeriodicWave = AudioContext.prototype.createWaveTable), AudioContext.prototype.internal_createGain = AudioContext.prototype.createGain, AudioContext.prototype.createGain = function() {
             var t = this.internal_createGain();
-            return n23(t.gain), t;
+            return n(t.gain), t;
         }, AudioContext.prototype.internal_createDelay = AudioContext.prototype.createDelay, AudioContext.prototype.createDelay = function(t) {
             var e = t ? this.internal_createDelay(t) : this.internal_createDelay();
-            return n23(e.delayTime), e;
+            return n(e.delayTime), e;
         }, AudioContext.prototype.internal_createBufferSource = AudioContext.prototype.createBufferSource, AudioContext.prototype.createBufferSource = function() {
             var i = this.internal_createBufferSource();
             return i.start ? (i.internal_start = i.start, i.start = function(t, e, n) {
@@ -1482,13 +1482,13 @@
                 i.internal_stop(t || 0);
             }) : i.stop = function(t) {
                 this.noteOff(t || 0);
-            }, n23(i.playbackRate), i;
+            }, n(i.playbackRate), i;
         }, AudioContext.prototype.internal_createDynamicsCompressor = AudioContext.prototype.createDynamicsCompressor, AudioContext.prototype.createDynamicsCompressor = function() {
             var t = this.internal_createDynamicsCompressor();
-            return n23(t.threshold), n23(t.knee), n23(t.ratio), n23(t.reduction), n23(t.attack), n23(t.release), t;
+            return n(t.threshold), n(t.knee), n(t.ratio), n(t.reduction), n(t.attack), n(t.release), t;
         }, AudioContext.prototype.internal_createBiquadFilter = AudioContext.prototype.createBiquadFilter, AudioContext.prototype.createBiquadFilter = function() {
             var t = this.internal_createBiquadFilter();
-            return n23(t.frequency), n23(t.detune), n23(t.Q), n23(t.gain), t;
+            return n(t.frequency), n(t.detune), n(t.Q), n(t.gain), t;
         }, "function" != typeof AudioContext.prototype.createOscillator && (AudioContext.prototype.internal_createOscillator = AudioContext.prototype.createOscillator, AudioContext.prototype.createOscillator = function() {
             var e = this.internal_createOscillator();
             return e.start ? (e.internal_start = e.start, e.start = function(t) {
@@ -1499,27 +1499,27 @@
                 e.internal_stop(t || 0);
             }) : e.stop = function(t) {
                 this.noteOff(t || 0);
-            }, e.setPeriodicWave || (e.setPeriodicWave = e.setWaveTable), n23(e.frequency), n23(e.detune), e;
+            }, e.setPeriodicWave || (e.setPeriodicWave = e.setWaveTable), n(e.frequency), n(e.detune), e;
         })), window.hasOwnProperty("webkitOfflineAudioContext") && !window.hasOwnProperty("OfflineAudioContext") && (window.OfflineAudioContext = window.webkitOfflineAudioContext), navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
-        var i19 = document.createElement("audio");
+        var i = document.createElement("audio");
         p5.prototype.isSupported = function() {
-            return !!i19.canPlayType;
+            return !!i.canPlayType;
         };
         p5.prototype.isFileSupported = function(t) {
             switch(t.toLowerCase()){
                 case "mp3":
-                    return !!i19.canPlayType && i19.canPlayType("audio/mpeg;");
+                    return !!i.canPlayType && i.canPlayType("audio/mpeg;");
                 case "wav":
-                    return !!i19.canPlayType && i19.canPlayType('audio/wav; codecs="1"');
+                    return !!i.canPlayType && i.canPlayType('audio/wav; codecs="1"');
                 case "ogg":
-                    return !!i19.canPlayType && i19.canPlayType('audio/ogg; codecs="vorbis"');
+                    return !!i.canPlayType && i.canPlayType('audio/ogg; codecs="vorbis"');
                 case "aac":
                 case "m4a":
                 case "mp4":
-                    return !!i19.canPlayType && (i19.canPlayType("audio/x-m4a;") || i19.canPlayType("audio/aac;"));
+                    return !!i.canPlayType && (i.canPlayType("audio/x-m4a;") || i.canPlayType("audio/aac;"));
                 case "aif":
                 case "aiff":
-                    return !!i19.canPlayType && i19.canPlayType("audio/x-aiff;");
+                    return !!i.canPlayType && i.canPlayType("audio/x-aiff;");
                 default:
                     return !1;
             }
@@ -1532,7 +1532,7 @@
         }();
         try {
             n = n || new Function("return this")();
-        } catch (t42) {
+        } catch (t) {
             "object" == typeof window && (n = window);
         }
         t.exports = n;
@@ -1549,63 +1549,63 @@
         "use strict";
         n.r(e), e.default = 'function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }\n\nfunction _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }\n\nfunction _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn\'t been initialised - super() hasn\'t been called"); } return self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }\n\nfunction _wrapNativeSuper(Class) { var _cache = typeof Map === "function" ? new Map() : undefined; _wrapNativeSuper = function _wrapNativeSuper(Class) { if (Class === null || !_isNativeFunction(Class)) return Class; if (typeof Class !== "function") { throw new TypeError("Super expression must either be null or a function"); } if (typeof _cache !== "undefined") { if (_cache.has(Class)) return _cache.get(Class); _cache.set(Class, Wrapper); } function Wrapper() { return _construct(Class, arguments, _getPrototypeOf(this).constructor); } Wrapper.prototype = Object.create(Class.prototype, { constructor: { value: Wrapper, enumerable: false, writable: true, configurable: true } }); return _setPrototypeOf(Wrapper, Class); }; return _wrapNativeSuper(Class); }\n\nfunction isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }\n\nfunction _construct(Parent, args, Class) { if (isNativeReflectConstruct()) { _construct = Reflect.construct; } else { _construct = function _construct(Parent, args, Class) { var a = [null]; a.push.apply(a, args); var Constructor = Function.bind.apply(Parent, a); var instance = new Constructor(); if (Class) _setPrototypeOf(instance, Class.prototype); return instance; }; } return _construct.apply(null, arguments); }\n\nfunction _isNativeFunction(fn) { return Function.toString.call(fn).indexOf("[native code]") !== -1; }\n\nfunction _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }\n\nfunction _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\n// import dependencies via preval.require so that they\'re available as values at compile time\nvar processorNames = {\n  "recorderProcessor": "recorder-processor",\n  "soundFileProcessor": "sound-file-processor",\n  "amplitudeProcessor": "amplitude-processor"\n};\nvar RingBuffer = {\n  "default":\n  /*#__PURE__*/\n  function () {\n    /**\n     * @constructor\n     * @param  {number} length Buffer length in frames.\n     * @param  {number} channelCount Buffer channel count.\n     */\n    function RingBuffer(length, channelCount) {\n      _classCallCheck(this, RingBuffer);\n\n      this._readIndex = 0;\n      this._writeIndex = 0;\n      this._framesAvailable = 0;\n      this._channelCount = channelCount;\n      this._length = length;\n      this._channelData = [];\n\n      for (var i = 0; i < this._channelCount; ++i) {\n        this._channelData[i] = new Float32Array(length);\n      }\n    }\n    /**\n     * Getter for Available frames in buffer.\n     *\n     * @return {number} Available frames in buffer.\n     */\n\n\n    _createClass(RingBuffer, [{\n      key: "push",\n\n      /**\n       * Push a sequence of Float32Arrays to buffer.\n       *\n       * @param  {array} arraySequence A sequence of Float32Arrays.\n       */\n      value: function push(arraySequence) {\n        // The channel count of arraySequence and the length of each channel must\n        // match with this buffer obejct.\n        // Transfer data from the |arraySequence| storage to the internal buffer.\n        var sourceLength = arraySequence[0] ? arraySequence[0].length : 0;\n\n        for (var i = 0; i < sourceLength; ++i) {\n          var writeIndex = (this._writeIndex + i) % this._length;\n\n          for (var channel = 0; channel < this._channelCount; ++channel) {\n            this._channelData[channel][writeIndex] = arraySequence[channel][i];\n          }\n        }\n\n        this._writeIndex += sourceLength;\n\n        if (this._writeIndex >= this._length) {\n          this._writeIndex = 0;\n        } // For excessive frames, the buffer will be overwritten.\n\n\n        this._framesAvailable += sourceLength;\n\n        if (this._framesAvailable > this._length) {\n          this._framesAvailable = this._length;\n        }\n      }\n      /**\n       * Pull data out of buffer and fill a given sequence of Float32Arrays.\n       *\n       * @param  {array} arraySequence An array of Float32Arrays.\n       */\n\n    }, {\n      key: "pull",\n      value: function pull(arraySequence) {\n        // The channel count of arraySequence and the length of each channel must\n        // match with this buffer obejct.\n        // If the FIFO is completely empty, do nothing.\n        if (this._framesAvailable === 0) {\n          return;\n        }\n\n        var destinationLength = arraySequence[0].length; // Transfer data from the internal buffer to the |arraySequence| storage.\n\n        for (var i = 0; i < destinationLength; ++i) {\n          var readIndex = (this._readIndex + i) % this._length;\n\n          for (var channel = 0; channel < this._channelCount; ++channel) {\n            arraySequence[channel][i] = this._channelData[channel][readIndex];\n          }\n        }\n\n        this._readIndex += destinationLength;\n\n        if (this._readIndex >= this._length) {\n          this._readIndex = 0;\n        }\n\n        this._framesAvailable -= destinationLength;\n\n        if (this._framesAvailable < 0) {\n          this._framesAvailable = 0;\n        }\n      }\n    }, {\n      key: "framesAvailable",\n      get: function get() {\n        return this._framesAvailable;\n      }\n    }]);\n\n    return RingBuffer;\n  }()\n}["default"];\n\nvar AmplitudeProcessor =\n/*#__PURE__*/\nfunction (_AudioWorkletProcesso) {\n  _inherits(AmplitudeProcessor, _AudioWorkletProcesso);\n\n  function AmplitudeProcessor(options) {\n    var _this;\n\n    _classCallCheck(this, AmplitudeProcessor);\n\n    _this = _possibleConstructorReturn(this, _getPrototypeOf(AmplitudeProcessor).call(this));\n    var processorOptions = options.processorOptions || {};\n    _this.numOutputChannels = options.outputChannelCount || 1;\n    _this.numInputChannels = processorOptions.numInputChannels || 2;\n    _this.normalize = processorOptions.normalize || false;\n    _this.smoothing = processorOptions.smoothing || 0;\n    _this.bufferSize = processorOptions.bufferSize || 2048;\n    _this.inputRingBuffer = new RingBuffer(_this.bufferSize, _this.numInputChannels);\n    _this.outputRingBuffer = new RingBuffer(_this.bufferSize, _this.numOutputChannels);\n    _this.inputRingBufferArraySequence = new Array(_this.numInputChannels).fill(null).map(function () {\n      return new Float32Array(_this.bufferSize);\n    });\n    _this.stereoVol = [0, 0];\n    _this.stereoVolNorm = [0, 0];\n    _this.volMax = 0.001;\n\n    _this.port.onmessage = function (event) {\n      var data = event.data;\n\n      if (data.name === \'toggleNormalize\') {\n        _this.normalize = data.normalize;\n      } else if (data.name === \'smoothing\') {\n        _this.smoothing = Math.max(0, Math.min(1, data.smoothing));\n      }\n    };\n\n    return _this;\n  } // TO DO make this stereo / dependent on # of audio channels\n\n\n  _createClass(AmplitudeProcessor, [{\n    key: "process",\n    value: function process(inputs, outputs) {\n      var input = inputs[0];\n      var output = outputs[0];\n      var smoothing = this.smoothing;\n      this.inputRingBuffer.push(input);\n\n      if (this.inputRingBuffer.framesAvailable >= this.bufferSize) {\n        this.inputRingBuffer.pull(this.inputRingBufferArraySequence);\n\n        for (var channel = 0; channel < this.numInputChannels; ++channel) {\n          var inputBuffer = this.inputRingBufferArraySequence[channel];\n          var bufLength = inputBuffer.length;\n          var sum = 0;\n\n          for (var i = 0; i < bufLength; i++) {\n            var x = inputBuffer[i];\n\n            if (this.normalize) {\n              sum += Math.max(Math.min(x / this.volMax, 1), -1) * Math.max(Math.min(x / this.volMax, 1), -1);\n            } else {\n              sum += x * x;\n            }\n          } // ... then take the square root of the sum.\n\n\n          var rms = Math.sqrt(sum / bufLength);\n          this.stereoVol[channel] = Math.max(rms, this.stereoVol[channel] * smoothing);\n          this.volMax = Math.max(this.stereoVol[channel], this.volMax);\n        } // calculate stero normalized volume and add volume from all channels together\n\n\n        var volSum = 0;\n\n        for (var index = 0; index < this.stereoVol.length; index++) {\n          this.stereoVolNorm[index] = Math.max(Math.min(this.stereoVol[index] / this.volMax, 1), 0);\n          volSum += this.stereoVol[index];\n        } // volume is average of channels\n\n\n        var volume = volSum / this.stereoVol.length; // normalized value\n\n        var volNorm = Math.max(Math.min(volume / this.volMax, 1), 0);\n        this.port.postMessage({\n          name: \'amplitude\',\n          volume: volume,\n          volNorm: volNorm,\n          stereoVol: this.stereoVol,\n          stereoVolNorm: this.stereoVolNorm\n        }); // pass input through to output\n\n        this.outputRingBuffer.push(this.inputRingBufferArraySequence);\n      } // pull 128 frames out of the ring buffer\n      // if the ring buffer does not have enough frames, the output will be silent\n\n\n      this.outputRingBuffer.pull(output);\n      return true;\n    }\n  }]);\n\n  return AmplitudeProcessor;\n}(_wrapNativeSuper(AudioWorkletProcessor));\n\nregisterProcessor(processorNames.amplitudeProcessor, AmplitudeProcessor);';
     },
-    function(t43, e34, n24) {
-        var i20, r13;
-        i20 = [
-            n24(0),
-            n24(17)
-        ], void 0 === (r13 = (function(r14) {
-            r14.Frequency = function(t, e) {
-                if (!(this instanceof r14.Frequency)) return new r14.Frequency(t, e);
-                r14.TimeBase.call(this, t, e);
-            }, r14.extend(r14.Frequency, r14.TimeBase), r14.Frequency.prototype._primaryExpressions = Object.create(r14.TimeBase.prototype._primaryExpressions), r14.Frequency.prototype._primaryExpressions.midi = {
+    function(t, e, n) {
+        var i, r;
+        i = [
+            n(0),
+            n(17)
+        ], void 0 === (r = (function(r) {
+            r.Frequency = function(t, e) {
+                if (!(this instanceof r.Frequency)) return new r.Frequency(t, e);
+                r.TimeBase.call(this, t, e);
+            }, r.extend(r.Frequency, r.TimeBase), r.Frequency.prototype._primaryExpressions = Object.create(r.TimeBase.prototype._primaryExpressions), r.Frequency.prototype._primaryExpressions.midi = {
                 regexp: /^(\d+(?:\.\d+)?midi)/,
                 method: function(t) {
                     return this.midiToFrequency(t);
                 }
-            }, r14.Frequency.prototype._primaryExpressions.note = {
+            }, r.Frequency.prototype._primaryExpressions.note = {
                 regexp: /^([a-g]{1}(?:b|#|x|bb)?)(-?[0-9]+)/i,
                 method: function(t, e) {
-                    var n = i21[t.toLowerCase()] + 12 * (parseInt(e) + 1);
+                    var n = i[t.toLowerCase()] + 12 * (parseInt(e) + 1);
                     return this.midiToFrequency(n);
                 }
-            }, r14.Frequency.prototype._primaryExpressions.tr = {
+            }, r.Frequency.prototype._primaryExpressions.tr = {
                 regexp: /^(\d+(?:\.\d+)?):(\d+(?:\.\d+)?):?(\d+(?:\.\d+)?)?/,
                 method: function(t, e, n) {
                     var i = 1;
                     return t && "0" !== t && (i *= this._beatsToUnits(this._timeSignature() * parseFloat(t))), e && "0" !== e && (i *= this._beatsToUnits(parseFloat(e))), n && "0" !== n && (i *= this._beatsToUnits(parseFloat(n) / 4)), i;
                 }
-            }, r14.Frequency.prototype.transpose = function(t44) {
+            }, r.Frequency.prototype.transpose = function(t) {
                 return this._expr = (function(t, e) {
                     return t() * this.intervalToFrequencyRatio(e);
-                }).bind(this, this._expr, t44), this;
-            }, r14.Frequency.prototype.harmonize = function(t45) {
+                }).bind(this, this._expr, t), this;
+            }, r.Frequency.prototype.harmonize = function(t) {
                 return this._expr = (function(t, e) {
                     for(var n = t(), i = [], r = 0; r < e.length; r++)i[r] = n * this.intervalToFrequencyRatio(e[r]);
                     return i;
-                }).bind(this, this._expr, t45), this;
-            }, r14.Frequency.prototype.toMidi = function() {
+                }).bind(this, this._expr, t), this;
+            }, r.Frequency.prototype.toMidi = function() {
                 return this.frequencyToMidi(this.valueOf());
-            }, r14.Frequency.prototype.toNote = function() {
-                var t = this.valueOf(), e = Math.log(t / r14.Frequency.A4) / Math.LN2, n = Math.round(12 * e) + 57, i = Math.floor(n / 12);
+            }, r.Frequency.prototype.toNote = function() {
+                var t = this.valueOf(), e = Math.log(t / r.Frequency.A4) / Math.LN2, n = Math.round(12 * e) + 57, i = Math.floor(n / 12);
                 return i < 0 && (n += -12 * i), o[n % 12] + i.toString();
-            }, r14.Frequency.prototype.toSeconds = function() {
+            }, r.Frequency.prototype.toSeconds = function() {
                 return 1 / this.valueOf();
-            }, r14.Frequency.prototype.toFrequency = function() {
+            }, r.Frequency.prototype.toFrequency = function() {
                 return this.valueOf();
-            }, r14.Frequency.prototype.toTicks = function() {
+            }, r.Frequency.prototype.toTicks = function() {
                 var t = this._beatsToUnits(1), e = this.valueOf() / t;
-                return Math.floor(e * r14.Transport.PPQ);
-            }, r14.Frequency.prototype._frequencyToUnits = function(t) {
+                return Math.floor(e * r.Transport.PPQ);
+            }, r.Frequency.prototype._frequencyToUnits = function(t) {
                 return t;
-            }, r14.Frequency.prototype._ticksToUnits = function(t) {
-                return 1 / (60 * t / (r14.Transport.bpm.value * r14.Transport.PPQ));
-            }, r14.Frequency.prototype._beatsToUnits = function(t) {
-                return 1 / r14.TimeBase.prototype._beatsToUnits.call(this, t);
-            }, r14.Frequency.prototype._secondsToUnits = function(t) {
+            }, r.Frequency.prototype._ticksToUnits = function(t) {
+                return 1 / (60 * t / (r.Transport.bpm.value * r.Transport.PPQ));
+            }, r.Frequency.prototype._beatsToUnits = function(t) {
+                return 1 / r.TimeBase.prototype._beatsToUnits.call(this, t);
+            }, r.Frequency.prototype._secondsToUnits = function(t) {
                 return 1 / t;
-            }, r14.Frequency.prototype._defaultUnits = "hz";
-            var i21 = {
+            }, r.Frequency.prototype._defaultUnits = "hz";
+            var i = {
                 cbb: -2,
                 cb: -1,
                 c: 0,
@@ -1655,18 +1655,18 @@
                 "A#",
                 "B"
             ];
-            return r14.Frequency.A4 = 440, r14.Frequency.prototype.midiToFrequency = function(t) {
-                return r14.Frequency.A4 * Math.pow(2, (t - 69) / 12);
-            }, r14.Frequency.prototype.frequencyToMidi = function(t) {
-                return 69 + 12 * Math.log(t / r14.Frequency.A4) / Math.LN2;
-            }, r14.Frequency;
-        }).apply(e34, i20)) || (t43.exports = r13);
+            return r.Frequency.A4 = 440, r.Frequency.prototype.midiToFrequency = function(t) {
+                return r.Frequency.A4 * Math.pow(2, (t - 69) / 12);
+            }, r.Frequency.prototype.frequencyToMidi = function(t) {
+                return 69 + 12 * Math.log(t / r.Frequency.A4) / Math.LN2;
+            }, r.Frequency;
+        }).apply(e, i)) || (t.exports = r);
     },
-    function(t46, e35, n25) {
-        var i22, r;
-        i22 = [
-            n25(0),
-            n25(16)
+    function(t, e, n) {
+        var i, r;
+        i = [
+            n(0),
+            n(16)
         ], void 0 === (r = (function(i) {
             return i.TransportTime = function(t, e) {
                 if (!(this instanceof i.TransportTime)) return new i.TransportTime(t, e);
@@ -1689,36 +1689,36 @@
             }, i.TransportTime.prototype.toFrequency = function() {
                 return 1 / this.toSeconds();
             }, i.TransportTime;
-        }).apply(e35, i22)) || (t46.exports = r);
+        }).apply(e, i)) || (t.exports = r);
     },
-    function(t47, e36, n26) {
-        var i23, r15;
-        i23 = [
-            n26(0),
-            n26(4),
-            n26(13),
-            n26(1),
-            n26(33),
-            n26(21),
-            n26(34),
-            n26(20),
-            n26(35),
-            n26(36),
-            n26(37)
-        ], void 0 === (r15 = (function(u) {
+    function(t, e, n) {
+        var i, r;
+        i = [
+            n(0),
+            n(4),
+            n(13),
+            n(1),
+            n(33),
+            n(21),
+            n(34),
+            n(20),
+            n(35),
+            n(36),
+            n(37)
+        ], void 0 === (r = (function(u) {
             "use strict";
-            function n27(t, e, n) {
+            function n(t, e, n) {
                 var i = new t;
                 return n._eval(e[0]).connect(i, 0, 0), n._eval(e[1]).connect(i, 0, 1), i;
             }
-            function i24(t, e, n) {
+            function i(t, e, n) {
                 var i = new t;
                 return n._eval(e[0]).connect(i, 0, 0), i;
             }
-            function r16(t) {
+            function r(t) {
                 return t ? parseFloat(t) : void 0;
             }
-            function o3(t) {
+            function o(t) {
                 return t && t.args ? parseFloat(t.args) : void 0;
             }
             return u.Expr = function() {
@@ -1728,7 +1728,7 @@
                 var i, r = this._parseTree(t);
                 try {
                     i = this._eval(r);
-                } catch (e37) {
+                } catch (e) {
                     throw this._disposeNodes(), new Error("Tone.Expr: Could evaluate expression: " + t);
                 }
                 this.output = i;
@@ -1737,13 +1737,13 @@
                     signal: {
                         regexp: /^\d+\.\d+|^\d+/,
                         method: function(t) {
-                            return new u.Signal(r16(t));
+                            return new u.Signal(r(t));
                         }
                     },
                     input: {
                         regexp: /^\$\d/,
                         method: function(t, e) {
-                            return e.input[r16(t.substr(1))];
+                            return e.input[r(t.substr(1))];
                         }
                     }
                 },
@@ -1761,19 +1761,19 @@
                 func: {
                     abs: {
                         regexp: /^abs/,
-                        method: i24.bind(this, u.Abs)
+                        method: i.bind(this, u.Abs)
                     },
                     mod: {
                         regexp: /^mod/,
                         method: function(t, e) {
-                            var n = o3(t[1]), i = new u.Modulo(n);
+                            var n = o(t[1]), i = new u.Modulo(n);
                             return e._eval(t[0]).connect(i), i;
                         }
                     },
                     pow: {
                         regexp: /^pow/,
                         method: function(t, e) {
-                            var n = o3(t[1]), i = new u.Pow(n);
+                            var n = o(t[1]), i = new u.Pow(n);
                             return e._eval(t[0]).connect(i), i;
                         }
                     },
@@ -1789,29 +1789,29 @@
                     "+": {
                         regexp: /^\+/,
                         precedence: 1,
-                        method: n27.bind(this, u.Add)
+                        method: n.bind(this, u.Add)
                     },
                     "-": {
                         regexp: /^\-/,
                         precedence: 1,
                         method: function(t, e) {
-                            return 1 === t.length ? i24(u.Negate, t, e) : n27(u.Subtract, t, e);
+                            return 1 === t.length ? i(u.Negate, t, e) : n(u.Subtract, t, e);
                         }
                     },
                     "*": {
                         regexp: /^\*/,
                         precedence: 0,
-                        method: n27.bind(this, u.Multiply)
+                        method: n.bind(this, u.Multiply)
                     }
                 },
                 unary: {
                     "-": {
                         regexp: /^\-/,
-                        method: i24.bind(this, u.Negate)
+                        method: i.bind(this, u.Negate)
                     },
                     "!": {
                         regexp: /^\!/,
-                        method: i24.bind(this, u.NOT)
+                        method: i.bind(this, u.NOT)
                     }
                 }
             }, u.Expr.prototype._parseInputs = function(t) {
@@ -1824,12 +1824,12 @@
             }, u.Expr.prototype._replacements = function(t) {
                 for(var e = t.shift(), n = 0; n < t.length; n++)e = e.replace(/\%/i, t[n]);
                 return e;
-            }, u.Expr.prototype._tokenize = function(t48) {
-                for(var e38 = -1, n28 = []; 0 < t48.length;){
-                    var i = r17(t48 = t48.trim());
-                    n28.push(i), t48 = t48.substr(i.value.length);
+            }, u.Expr.prototype._tokenize = function(t) {
+                for(var e = -1, n = []; 0 < t.length;){
+                    var i = r(t = t.trim());
+                    n.push(i), t = t.substr(i.value.length);
                 }
-                function r17(t) {
+                function r(t) {
                     for(var e in u.Expr._Expressions){
                         var n = u.Expr._Expressions[e];
                         for(var i in n){
@@ -1845,18 +1845,18 @@
                 }
                 return {
                     next: function() {
-                        return n28[++e38];
+                        return n[++e];
                     },
                     peek: function() {
-                        return n28[e38 + 1];
+                        return n[e + 1];
                     }
                 };
-            }, u.Expr.prototype._parseTree = function(t49) {
-                var i25 = this._tokenize(t49), s = this.isUndef.bind(this);
-                function r18(t, e) {
+            }, u.Expr.prototype._parseTree = function(t) {
+                var i = this._tokenize(t), s = this.isUndef.bind(this);
+                function r(t, e) {
                     return !s(t) && "glue" === t.type && t.value === e;
                 }
-                function o4(t, e, n) {
+                function o(t, e, n) {
                     var i = u.Expr._Expressions[e];
                     if (!s(t)) for(var r in i){
                         var o = i[r];
@@ -1867,52 +1867,52 @@
                     }
                     return !1;
                 }
-                function a(t50) {
-                    var e39;
-                    s(t50) && (t50 = 5), e39 = t50 < 0 ? function t51() {
-                        var e40, n;
-                        return o4(e40 = i25.peek(), "unary") ? (e40 = i25.next(), n = t51(), {
-                            operator: e40.value,
-                            method: e40.method,
+                function a(t) {
+                    var e;
+                    s(t) && (t = 5), e = t < 0 ? function t() {
+                        var e, n;
+                        return o(e = i.peek(), "unary") ? (e = i.next(), n = t(), {
+                            operator: e.value,
+                            method: e.method,
                             args: [
                                 n
                             ]
                         }) : function() {
-                            var t52, e41;
-                            if (t52 = i25.peek(), s(t52)) throw new SyntaxError("Tone.Expr: Unexpected termination of expression");
-                            if ("func" === t52.type) return function(t53) {
-                                var e42 = [];
-                                if (!r18(i25.next(), "(")) throw new SyntaxError('Tone.Expr: Expected ( in a function call "' + t53.value + '"');
-                                if (r18(i25.peek(), ")") || (e42 = function() {
-                                    for(var t, e = []; t = a(), !s(t) && (e.push(t), r18(i25.peek(), ","));)i25.next();
+                            var t, e;
+                            if (t = i.peek(), s(t)) throw new SyntaxError("Tone.Expr: Unexpected termination of expression");
+                            if ("func" === t.type) return function(t) {
+                                var e = [];
+                                if (!r(i.next(), "(")) throw new SyntaxError('Tone.Expr: Expected ( in a function call "' + t.value + '"');
+                                if (r(i.peek(), ")") || (e = function() {
+                                    for(var t, e = []; t = a(), !s(t) && (e.push(t), r(i.peek(), ","));)i.next();
                                     return e;
-                                }()), r18(i25.next(), ")")) return {
-                                    method: t53.method,
-                                    args: e42,
+                                }()), r(i.next(), ")")) return {
+                                    method: t.method,
+                                    args: e,
                                     name: name
                                 };
-                                throw new SyntaxError('Tone.Expr: Expected ) in a function call "' + t53.value + '"');
-                            }(t52 = i25.next());
-                            if ("value" === t52.type) return {
-                                method: (t52 = i25.next()).method,
-                                args: t52.value
+                                throw new SyntaxError('Tone.Expr: Expected ) in a function call "' + t.value + '"');
+                            }(t = i.next());
+                            if ("value" === t.type) return {
+                                method: (t = i.next()).method,
+                                args: t.value
                             };
-                            if (r18(t52, "(")) {
-                                if (i25.next(), e41 = a(), !r18(t52 = i25.next(), ")")) throw new SyntaxError("Expected )");
-                                return e41;
+                            if (r(t, "(")) {
+                                if (i.next(), e = a(), !r(t = i.next(), ")")) throw new SyntaxError("Expected )");
+                                return e;
                             }
-                            throw new SyntaxError("Tone.Expr: Parse error, cannot process token " + t52.value);
+                            throw new SyntaxError("Tone.Expr: Parse error, cannot process token " + t.value);
                         }();
-                    }() : a(t50 - 1);
-                    for(var n29 = i25.peek(); o4(n29, "binary", t50);)e39 = {
-                        operator: (n29 = i25.next()).value,
-                        method: n29.method,
+                    }() : a(t - 1);
+                    for(var n = i.peek(); o(n, "binary", t);)e = {
+                        operator: (n = i.next()).value,
+                        method: n.method,
                         args: [
-                            e39,
-                            a(t50 - 1)
+                            e,
+                            a(t - 1)
                         ]
-                    }, n29 = i25.peek();
-                    return e39;
+                    }, n = i.peek();
+                    return e;
                 }
                 return a();
             }, u.Expr.prototype._eval = function(t) {
@@ -1929,9 +1929,9 @@
             }, u.Expr.prototype.dispose = function() {
                 u.prototype.dispose.call(this), this._disposeNodes();
             }, u.Expr;
-        }).apply(e36, i23)) || (t47.exports = r15);
+        }).apply(e, i)) || (t.exports = r);
     },
-    function(t54, e43, n) {
+    function(t, e, n) {
         var i, r;
         i = [
             n(0),
@@ -1945,169 +1945,169 @@
             }, e.extend(e.GreaterThan, e.Signal), e.GreaterThan.prototype.dispose = function() {
                 return e.prototype.dispose.call(this), this._param.dispose(), this._param = null, this._gtz.dispose(), this._gtz = null, this;
             }, e.GreaterThan;
-        }).apply(e43, i)) || (t54.exports = r);
+        }).apply(e, i)) || (t.exports = r);
     },
-    function(t55, e, n) {
+    function(t, e, n) {
         var i, r;
         i = [
             n(0),
             n(6),
             n(15)
-        ], void 0 === (r = (function(t56) {
+        ], void 0 === (r = (function(t) {
             "use strict";
-            return t56.Abs = function() {
-                this._abs = this.input = this.output = new t56.WaveShaper(function(t) {
+            return t.Abs = function() {
+                this._abs = this.input = this.output = new t.WaveShaper(function(t) {
                     return 0 === t ? 0 : Math.abs(t);
                 }, 127);
-            }, t56.extend(t56.Abs, t56.SignalBase), t56.Abs.prototype.dispose = function() {
-                return t56.prototype.dispose.call(this), this._abs.dispose(), this._abs = null, this;
-            }, t56.Abs;
-        }).apply(e, i)) || (t55.exports = r);
+            }, t.extend(t.Abs, t.SignalBase), t.Abs.prototype.dispose = function() {
+                return t.prototype.dispose.call(this), this._abs.dispose(), this._abs = null, this;
+            }, t.Abs;
+        }).apply(e, i)) || (t.exports = r);
     },
-    function(t57, e44, n) {
+    function(t, e, n) {
         var i, r;
         i = [
             n(0),
             n(6),
             n(1),
             n(13)
-        ], void 0 === (r = (function(e45) {
+        ], void 0 === (r = (function(e) {
             "use strict";
-            return e45.Modulo = function(t) {
-                this.createInsOuts(1, 0), this._shaper = new e45.WaveShaper(Math.pow(2, 16)), this._multiply = new e45.Multiply, this._subtract = this.output = new e45.Subtract, this._modSignal = new e45.Signal(t), this.input.fan(this._shaper, this._subtract), this._modSignal.connect(this._multiply, 0, 0), this._shaper.connect(this._multiply, 0, 1), this._multiply.connect(this._subtract, 0, 1), this._setWaveShaper(t);
-            }, e45.extend(e45.Modulo, e45.SignalBase), e45.Modulo.prototype._setWaveShaper = function(e) {
+            return e.Modulo = function(t) {
+                this.createInsOuts(1, 0), this._shaper = new e.WaveShaper(Math.pow(2, 16)), this._multiply = new e.Multiply, this._subtract = this.output = new e.Subtract, this._modSignal = new e.Signal(t), this.input.fan(this._shaper, this._subtract), this._modSignal.connect(this._multiply, 0, 0), this._shaper.connect(this._multiply, 0, 1), this._multiply.connect(this._subtract, 0, 1), this._setWaveShaper(t);
+            }, e.extend(e.Modulo, e.SignalBase), e.Modulo.prototype._setWaveShaper = function(e) {
                 this._shaper.setMap(function(t) {
                     return Math.floor((t + 1e-4) / e);
                 });
-            }, Object.defineProperty(e45.Modulo.prototype, "value", {
+            }, Object.defineProperty(e.Modulo.prototype, "value", {
                 get: function() {
                     return this._modSignal.value;
                 },
                 set: function(t) {
                     this._modSignal.value = t, this._setWaveShaper(t);
                 }
-            }), e45.Modulo.prototype.dispose = function() {
-                return e45.prototype.dispose.call(this), this._shaper.dispose(), this._shaper = null, this._multiply.dispose(), this._multiply = null, this._subtract.dispose(), this._subtract = null, this._modSignal.dispose(), this._modSignal = null, this;
-            }, e45.Modulo;
-        }).apply(e44, i)) || (t57.exports = r);
+            }), e.Modulo.prototype.dispose = function() {
+                return e.prototype.dispose.call(this), this._shaper.dispose(), this._shaper = null, this._multiply.dispose(), this._multiply = null, this._subtract.dispose(), this._subtract = null, this._modSignal.dispose(), this._modSignal = null, this;
+            }, e.Modulo;
+        }).apply(e, i)) || (t.exports = r);
     },
-    function(t58, e46, n) {
+    function(t, e, n) {
         var i, r;
         i = [
             n(0),
             n(6)
-        ], void 0 === (r = (function(e47) {
+        ], void 0 === (r = (function(e) {
             "use strict";
-            return e47.Pow = function(t) {
-                this._exp = this.defaultArg(t, 1), this._expScaler = this.input = this.output = new e47.WaveShaper(this._expFunc(this._exp), 8192);
-            }, e47.extend(e47.Pow, e47.SignalBase), Object.defineProperty(e47.Pow.prototype, "value", {
+            return e.Pow = function(t) {
+                this._exp = this.defaultArg(t, 1), this._expScaler = this.input = this.output = new e.WaveShaper(this._expFunc(this._exp), 8192);
+            }, e.extend(e.Pow, e.SignalBase), Object.defineProperty(e.Pow.prototype, "value", {
                 get: function() {
                     return this._exp;
                 },
                 set: function(t) {
                     this._exp = t, this._expScaler.setMap(this._expFunc(this._exp));
                 }
-            }), e47.Pow.prototype._expFunc = function(e) {
+            }), e.Pow.prototype._expFunc = function(e) {
                 return function(t) {
                     return Math.pow(Math.abs(t), e);
                 };
-            }, e47.Pow.prototype.dispose = function() {
-                return e47.prototype.dispose.call(this), this._expScaler.dispose(), this._expScaler = null, this;
-            }, e47.Pow;
-        }).apply(e46, i)) || (t58.exports = r);
+            }, e.Pow.prototype.dispose = function() {
+                return e.prototype.dispose.call(this), this._expScaler.dispose(), this._expScaler = null, this;
+            }, e.Pow;
+        }).apply(e, i)) || (t.exports = r);
     },
-    function(t59, e, n) {
+    function(t, e, n) {
         var i, r;
         i = [
             n(0),
             n(6),
             n(2)
-        ], void 0 === (r = (function(t60) {
+        ], void 0 === (r = (function(t) {
             "use strict";
-            return t60.AudioToGain = function() {
-                this._norm = this.input = this.output = new t60.WaveShaper(function(t) {
+            return t.AudioToGain = function() {
+                this._norm = this.input = this.output = new t.WaveShaper(function(t) {
                     return (t + 1) / 2;
                 });
-            }, t60.extend(t60.AudioToGain, t60.SignalBase), t60.AudioToGain.prototype.dispose = function() {
-                return t60.prototype.dispose.call(this), this._norm.dispose(), this._norm = null, this;
-            }, t60.AudioToGain;
-        }).apply(e, i)) || (t59.exports = r);
+            }, t.extend(t.AudioToGain, t.SignalBase), t.AudioToGain.prototype.dispose = function() {
+                return t.prototype.dispose.call(this), this._norm.dispose(), this._norm = null, this;
+            }, t.AudioToGain;
+        }).apply(e, i)) || (t.exports = r);
     },
-    function(t61, e, n) {
+    function(t, e, n) {
         var i, r;
         i = [
             n(0),
             n(6)
-        ], void 0 === (r = (function(t62) {
+        ], void 0 === (r = (function(t) {
             "use strict";
-            return t62.EqualPowerGain = function() {
-                this._eqPower = this.input = this.output = new t62.WaveShaper((function(t) {
+            return t.EqualPowerGain = function() {
+                this._eqPower = this.input = this.output = new t.WaveShaper((function(t) {
                     return Math.abs(t) < .001 ? 0 : this.equalPowerScale(t);
                 }).bind(this), 4096);
-            }, t62.extend(t62.EqualPowerGain, t62.SignalBase), t62.EqualPowerGain.prototype.dispose = function() {
-                return t62.prototype.dispose.call(this), this._eqPower.dispose(), this._eqPower = null, this;
-            }, t62.EqualPowerGain;
-        }).apply(e, i)) || (t61.exports = r);
+            }, t.extend(t.EqualPowerGain, t.SignalBase), t.EqualPowerGain.prototype.dispose = function() {
+                return t.prototype.dispose.call(this), this._eqPower.dispose(), this._eqPower = null, this;
+            }, t.EqualPowerGain;
+        }).apply(e, i)) || (t.exports = r);
     },
-    function(t63, e48, n) {
+    function(t, e, n) {
         var i, r;
         i = [
             n(0),
             n(19),
             n(9)
-        ], void 0 === (r = (function(e49) {
+        ], void 0 === (r = (function(e) {
             "use strict";
-            return e49.TimelineState = function(t) {
-                e49.Timeline.call(this), this._initial = t;
-            }, e49.extend(e49.TimelineState, e49.Timeline), e49.TimelineState.prototype.getValueAtTime = function(t) {
+            return e.TimelineState = function(t) {
+                e.Timeline.call(this), this._initial = t;
+            }, e.extend(e.TimelineState, e.Timeline), e.TimelineState.prototype.getValueAtTime = function(t) {
                 var e = this.get(t);
                 return null !== e ? e.state : this._initial;
-            }, e49.TimelineState.prototype.setStateAtTime = function(t, e) {
+            }, e.TimelineState.prototype.setStateAtTime = function(t, e) {
                 this.add({
                     state: t,
                     time: e
                 });
-            }, e49.TimelineState;
-        }).apply(e48, i)) || (t63.exports = r);
+            }, e.TimelineState;
+        }).apply(e, i)) || (t.exports = r);
     },
-    function(t64, e50, n30) {
+    function(t, e, n) {
         "use strict";
-        n30.r(e50);
-        n30(24), n30(25);
-        var c1 = n30(3);
-        var o5 = new function t65() {
+        n.r(e);
+        n(24), n(25);
+        var c = n(3);
+        var o = new function t() {
             !function(t, e) {
                 if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
-            }(this, t65), this.input = c1.a.createGain(), this.output = c1.a.createGain(), this.limiter = c1.a.createDynamicsCompressor(), this.limiter.threshold.value = -3, this.limiter.ratio.value = 20, this.limiter.knee.value = 1, this.audiocontext = c1.a, this.output.disconnect(), this.input.connect(this.limiter), this.limiter.connect(this.output), this.meter = c1.a.createGain(), this.fftMeter = c1.a.createGain(), this.output.connect(this.meter), this.output.connect(this.fftMeter), this.output.connect(this.audiocontext.destination), this.soundArray = [], this.parts = [], this.extensions = [];
+            }(this, t), this.input = c.a.createGain(), this.output = c.a.createGain(), this.limiter = c.a.createDynamicsCompressor(), this.limiter.threshold.value = -3, this.limiter.ratio.value = 20, this.limiter.knee.value = 1, this.audiocontext = c.a, this.output.disconnect(), this.input.connect(this.limiter), this.limiter.connect(this.output), this.meter = c.a.createGain(), this.fftMeter = c.a.createGain(), this.output.connect(this.meter), this.output.connect(this.fftMeter), this.output.connect(this.audiocontext.destination), this.soundArray = [], this.parts = [], this.extensions = [];
         };
         p5.prototype.getOutputVolume = function() {
-            return o5.output.gain.value;
+            return o.output.gain.value;
         }, p5.prototype.outputVolume = function(t) {
             var e = 1 < arguments.length && void 0 !== arguments[1] ? arguments[1] : 0, n = 2 < arguments.length && void 0 !== arguments[2] ? arguments[2] : 0;
             if ("number" == typeof t) {
-                var i = o5.audiocontext.currentTime, r = o5.output.gain.value;
-                o5.output.gain.cancelScheduledValues(i + n), o5.output.gain.linearRampToValueAtTime(r, i + n), o5.output.gain.linearRampToValueAtTime(t, i + n + e);
+                var i = o.audiocontext.currentTime, r = o.output.gain.value;
+                o.output.gain.cancelScheduledValues(i + n), o.output.gain.linearRampToValueAtTime(r, i + n), o.output.gain.linearRampToValueAtTime(t, i + n + e);
             } else {
-                if (!t) return o5.output.gain;
-                t.connect(o5.output.gain);
+                if (!t) return o.output.gain;
+                t.connect(o.output.gain);
             }
-        }, p5.prototype.soundOut = p5.soundOut = o5, p5.soundOut._silentNode = o5.audiocontext.createGain(), p5.soundOut._silentNode.gain.value = 0, p5.soundOut._silentNode.connect(o5.audiocontext.destination);
-        var p1 = o5, i26 = n30(5), s2 = n30.n(i26);
-        function f1(t66) {
-            return (f1 = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(t) {
+        }, p5.prototype.soundOut = p5.soundOut = o, p5.soundOut._silentNode = o.audiocontext.createGain(), p5.soundOut._silentNode.gain.value = 0, p5.soundOut._silentNode.connect(o.audiocontext.destination);
+        var p = o, i = n(5), s = n.n(i);
+        function f(t) {
+            return (f = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(t) {
                 return typeof t;
             } : function(t) {
                 return t && "function" == typeof Symbol && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t;
-            })(t66);
+            })(t);
         }
-        function l1(t) {
+        function l(t) {
             var e = Math.log(t / 440) / Math.log(2);
             return Math.round(12 * e) + 69;
         }
-        function r19(t) {
+        function r(t) {
             return 440 * Math.pow(2, (t - 69) / 12);
         }
-        function h1(t) {
+        function h(t) {
             if ("string" != typeof t) return t;
             var e = {
                 A: 21,
@@ -2125,15 +2125,15 @@
                 case "b":
                     e -= 1;
             }
-            return r19(e);
+            return r(e);
         }
-        function a2(t) {
-            var e, n = u2(e = t.getChannelData(0), 1 < t.numberOfChannels ? t.getChannelData(1) : e), i = new window.ArrayBuffer(44 + 2 * n.length), r = new window.DataView(i);
-            d(r, 0, "RIFF"), r.setUint32(4, 36 + 2 * n.length, !0), d(r, 8, "WAVE"), d(r, 12, "fmt "), r.setUint32(16, 16, !0), r.setUint16(20, 1, !0), r.setUint16(22, 2, !0), r.setUint32(24, p1.audiocontext.sampleRate, !0), r.setUint32(28, 4 * p1.audiocontext.sampleRate, !0), r.setUint16(32, 4, !0), r.setUint16(34, 16, !0), d(r, 36, "data"), r.setUint32(40, 2 * n.length, !0);
+        function a(t) {
+            var e, n = u(e = t.getChannelData(0), 1 < t.numberOfChannels ? t.getChannelData(1) : e), i = new window.ArrayBuffer(44 + 2 * n.length), r = new window.DataView(i);
+            d(r, 0, "RIFF"), r.setUint32(4, 36 + 2 * n.length, !0), d(r, 8, "WAVE"), d(r, 12, "fmt "), r.setUint32(16, 16, !0), r.setUint16(20, 1, !0), r.setUint16(22, 2, !0), r.setUint32(24, p.audiocontext.sampleRate, !0), r.setUint32(28, 4 * p.audiocontext.sampleRate, !0), r.setUint16(32, 4, !0), r.setUint16(34, 16, !0), d(r, 36, "data"), r.setUint32(40, 2 * n.length, !0);
             for(var o = n.length, s = 44, a = 0; a < o; a++)r.setInt16(s, 32767 * n[a], !0), s += 2;
             return r;
         }
-        function u2(t, e) {
+        function u(t, e) {
             for(var n = t.length + e.length, i = new Float32Array(n), r = 0, o = 0; o < n;)i[o++] = t[r], i[o++] = e[r], r++;
             return i;
         }
@@ -2141,19 +2141,19 @@
             for(var i = n.length, r = 0; r < i; r++)t.setUint8(e + r, n.charCodeAt(r));
         }
         function y(t) {
-            var e = t, n = new AudioWorkletNode(p1.audiocontext, s2.a.soundFileProcessor);
+            var e = t, n = new AudioWorkletNode(p.audiocontext, s.a.soundFileProcessor);
             return n instanceof ScriptProcessorNode && (e = n.bufferSize), n.disconnect(), n = null, e;
         }
-        var m = function(t67, e, n) {
+        var m = function(t, e, n) {
             var i, r, o = new Error;
-            return o.name = t67, o.originalStack = o.stack + e, i = o.stack + e, o.failedPath = n, r = i.split("\n").filter(function(t) {
+            return o.name = t, o.originalStack = o.stack + e, i = o.stack + e, o.failedPath = n, r = i.split("\n").filter(function(t) {
                 return !t.match(/(p5.|native code|globalInit)/g);
             }), o.stack = r.join("\n"), o;
         }, v = [
-            n30(27).default,
-            n30(28).default,
-            n30(29).default
-        ], _ = p1.audiocontext, g = !1;
+            n(27).default,
+            n(28).default,
+            n(29).default
+        ], _ = p.audiocontext, g = !1;
         function b(t, e) {
             if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
         }
@@ -2169,7 +2169,7 @@
         p5.prototype.registerMethod("init", function() {
             if (!g) {
                 this.preload || window.preload || (this.preload = function() {}), this._incrementPreload();
-                var t68 = (function() {
+                var t = (function() {
                     g = !0, this._decrementPreload();
                 }).bind(this);
                 Promise.all(v.map(function(t) {
@@ -2179,15 +2179,15 @@
                         type: "application/javascript"
                     }), n = URL.createObjectURL(e);
                     return _.audioWorklet.addModule(n);
-                })).then(t68);
+                })).then(t);
             }
         });
-        var x, S = p1.audiocontext;
+        var x, S = p.audiocontext;
         void 0 !== S.createStereoPanner ? x = function() {
-            function n31(t, e) {
-                b(this, n31), this.stereoPanner = this.input = S.createStereoPanner(), t.connect(this.stereoPanner), this.stereoPanner.connect(e);
+            function n(t, e) {
+                b(this, n), this.stereoPanner = this.input = S.createStereoPanner(), t.connect(this.stereoPanner), this.stereoPanner.connect(e);
             }
-            return w(n31, [
+            return w(n, [
                 {
                     key: "pan",
                     value: function(t, e) {
@@ -2211,12 +2211,12 @@
                         this.stereoPanner && this.stereoPanner.disconnect();
                     }
                 }
-            ]), n31;
+            ]), n;
         }() : x = function() {
-            function i27(t, e, n) {
-                b(this, i27), this.input = S.createGain(), t.connect(this.input), this.left = S.createGain(), this.right = S.createGain(), this.left.channelInterpretation = "discrete", this.right.channelInterpretation = "discrete", 1 < n ? (this.splitter = S.createChannelSplitter(2), this.input.connect(this.splitter), this.splitter.connect(this.left, 1), this.splitter.connect(this.right, 0)) : (this.input.connect(this.left), this.input.connect(this.right)), this.output = S.createChannelMerger(2), this.left.connect(this.output, 0, 1), this.right.connect(this.output, 0, 0), this.output.connect(e);
+            function i(t, e, n) {
+                b(this, i), this.input = S.createGain(), t.connect(this.input), this.left = S.createGain(), this.right = S.createGain(), this.left.channelInterpretation = "discrete", this.right.channelInterpretation = "discrete", 1 < n ? (this.splitter = S.createChannelSplitter(2), this.input.connect(this.splitter), this.splitter.connect(this.left, 1), this.splitter.connect(this.right, 0)) : (this.input.connect(this.left), this.input.connect(this.right)), this.output = S.createChannelMerger(2), this.left.connect(this.output, 0, 1), this.right.connect(this.output, 0, 0), this.output.connect(e);
             }
-            return w(i27, [
+            return w(i, [
                 {
                     key: "pan",
                     value: function(t, e) {
@@ -2242,15 +2242,15 @@
                         this.output && this.output.disconnect();
                     }
                 }
-            ]), i27;
+            ]), i;
         }();
         var k = x;
-        function P(t70) {
+        function P(t) {
             return (P = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(t) {
                 return typeof t;
             } : function(t) {
                 return t && "function" == typeof Symbol && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t;
-            })(t70);
+            })(t);
         }
         function A(t, e) {
             for(var n = 0; n < e.length; n++){
@@ -2264,19 +2264,19 @@
         function C(t, e, n, i) {
             O(this, C), this.callback = t, this.time = e, this.id = n, this.val = i;
         }
-        var R = p1.audiocontext;
+        var R = p.audiocontext;
         var q = function() {
-            function o6(t71, e51, n32, i) {
-                if (O(this, o6), void 0 !== t71) {
-                    if ("string" == typeof t71 || "string" == typeof t71[0]) {
-                        var r = p5.prototype._checkFileFormats(t71);
+            function o(t, e, n, i) {
+                if (O(this, o), void 0 !== t) {
+                    if ("string" == typeof t || "string" == typeof t[0]) {
+                        var r = p5.prototype._checkFileFormats(t);
                         this.url = r;
-                    } else if ("object" === P(t71) && !(window.File && window.FileReader && window.FileList && window.Blob)) throw "Unable to load file because the File API is not supported";
-                    t71.file && (t71 = t71.file), this.file = t71;
+                    } else if ("object" === P(t) && !(window.File && window.FileReader && window.FileList && window.Blob)) throw "Unable to load file because the File API is not supported";
+                    t.file && (t = t.file), this.file = t;
                 }
-                this._onended = function() {}, this._looping = !1, this._playing = !1, this._paused = !1, this._pauseTime = 0, this._cues = [], this._cueIDCounter = 0, this._lastPos = 0, this._counterNode = null, this._workletNode = null, this.bufferSourceNodes = [], this.bufferSourceNode = null, this.buffer = null, this.playbackRate = 1, this.input = p1.audiocontext.createGain(), this.output = p1.audiocontext.createGain(), this.reversed = !1, this.startTime = 0, this.endTime = null, this.pauseTime = 0, this.mode = "sustain", this.startMillis = null, this.panPosition = 0, this.panner = new k(this.output, p1.input, 2), (this.url || this.file) && this.load(e51, n32), p1.soundArray.push(this), this._whileLoading = "function" == typeof i ? i : function() {}, this._clearOnEnd = (function(t72) {
-                    var e52 = t72.target, n = this;
-                    e52._playing = !1, e52.removeEventListener("ended", n._clearOnEnd), n._onended(n), n.bufferSourceNodes.map(function(t, e) {
+                this._onended = function() {}, this._looping = !1, this._playing = !1, this._paused = !1, this._pauseTime = 0, this._cues = [], this._cueIDCounter = 0, this._lastPos = 0, this._counterNode = null, this._workletNode = null, this.bufferSourceNodes = [], this.bufferSourceNode = null, this.buffer = null, this.playbackRate = 1, this.input = p.audiocontext.createGain(), this.output = p.audiocontext.createGain(), this.reversed = !1, this.startTime = 0, this.endTime = null, this.pauseTime = 0, this.mode = "sustain", this.startMillis = null, this.panPosition = 0, this.panner = new k(this.output, p.input, 2), (this.url || this.file) && this.load(e, n), p.soundArray.push(this), this._whileLoading = "function" == typeof i ? i : function() {}, this._clearOnEnd = (function(t) {
+                    var e = t.target, n = this;
+                    e._playing = !1, e.removeEventListener("ended", n._clearOnEnd), n._onended(n), n.bufferSourceNodes.map(function(t, e) {
                         return e;
                     }).reverse().forEach(function(t) {
                         !1 === n.bufferSourceNodes[t]._playing && n.bufferSourceNodes.splice(t, 1);
@@ -2285,7 +2285,7 @@
             }
             return function(t, e, n) {
                 e && A(t.prototype, e), n && A(t, n);
-            }(o6, [
+            }(o, [
                 {
                     key: "load",
                     value: function(n, i) {
@@ -2307,22 +2307,22 @@
                                     });
                                 } else {
                                     if (!r.panner) return;
-                                    var t74 = new m("loadSound", o, r.url), e53 = "Unable to load " + r.url + ". The request status was: " + s.status + " (" + s.statusText + ")";
-                                    i && (t74.message = e53, i(t74));
+                                    var t = new m("loadSound", o, r.url), e = "Unable to load " + r.url + ". The request status was: " + s.status + " (" + s.statusText + ")";
+                                    i && (t.message = e, i(t));
                                 }
                             }, s.onerror = function() {
                                 var t = new m("loadSound", o, r.url), e = "There was no response from the server at " + r.url + ". Check the url and internet connectivity.";
                                 i && (t.message = e, i(t));
                             }, s.send();
                         } else if (void 0 !== this.file) {
-                            var t73 = new FileReader;
-                            t73.onload = function() {
-                                r.panner && R.decodeAudioData(t73.result, function(t) {
+                            var t = new FileReader;
+                            t.onload = function() {
+                                r.panner && R.decodeAudioData(t.result, function(t) {
                                     r.panner && (r.buffer = t, r.panner.inputChannels(t.numberOfChannels), n && n(r));
                                 });
-                            }, t73.onerror = function(t) {
+                            }, t.onerror = function(t) {
                                 r.panner && onerror && onerror(t);
-                            }, t73.readAsArrayBuffer(this.file);
+                            }, t.readAsArrayBuffer(this.file);
                         }
                     }
                 },
@@ -2346,7 +2346,7 @@
                     value: function(t, e, n, i, r) {
                         if (this.output) {
                             var o, s, a = t || 0;
-                            if (a < 0 && (a = 0), a += p1.audiocontext.currentTime, void 0 !== e && this.rate(e), void 0 !== n && this.setVolume(n), !this.buffer) throw "not ready to play file, buffer has yet to load. Try preload()";
+                            if (a < 0 && (a = 0), a += p.audiocontext.currentTime, void 0 !== e && this.rate(e), void 0 !== n && this.setVolume(n), !this.buffer) throw "not ready to play file, buffer has yet to load. Try preload()";
                             if (this._pauseTime = 0, "restart" === this.mode && this.buffer && this.bufferSourceNode && (this.bufferSourceNode.stop(a), this._counterNode.stop(a)), "untildone" !== this.mode || !this.isPlaying()) {
                                 if (this.bufferSourceNode = this._initSourceNode(), delete this._counterNode, this._counterNode = this._initCounterNode(), i) {
                                     if (!(0 <= i && i < this.buffer.duration)) throw "start time out of range";
@@ -2362,7 +2362,7 @@
                     value: function(t) {
                         var e = t.toLowerCase();
                         if ("restart" === e && this.buffer && this.bufferSourceNode) for(var n = 0; n < this.bufferSourceNodes.length - 1; n++){
-                            var i = p1.audiocontext.currentTime;
+                            var i = p.audiocontext.currentTime;
                             this.bufferSourceNodes[n].stop(i);
                         }
                         if ("restart" !== e && "sustain" !== e && "untildone" !== e) throw 'Invalid play mode. Must be either "restart" or "sustain"';
@@ -2372,7 +2372,7 @@
                 {
                     key: "pause",
                     value: function(t) {
-                        var e = (t || 0) + p1.audiocontext.currentTime;
+                        var e = (t || 0) + p.audiocontext.currentTime;
                         this.isPlaying() && this.buffer && this.bufferSourceNode ? (this._paused = !0, this._playing = !1, this.pauseTime = this.currentTime(), this.bufferSourceNode.stop(e), this._counterNode.stop(e), this._pauseTime = this.currentTime()) : this._pauseTime = 0;
                     }
                 },
@@ -2417,7 +2417,7 @@
                         var e = t || 0;
                         if ("sustain" === this.mode || "untildone" === this.mode) this.stopAll(e), this._playing = !1, this.pauseTime = 0, this._paused = !1;
                         else if (this.buffer && this.bufferSourceNode) {
-                            var n = p1.audiocontext.currentTime, i = e || 0;
+                            var n = p.audiocontext.currentTime, i = e || 0;
                             this.pauseTime = 0, this.bufferSourceNode.stop(n + i), this._counterNode.stop(n + i), this._playing = !1, this._paused = !1;
                         }
                     }
@@ -2425,7 +2425,7 @@
                 {
                     key: "stopAll",
                     value: function(t) {
-                        var e = p1.audiocontext.currentTime, n = t || 0;
+                        var e = p.audiocontext.currentTime, n = t || 0;
                         if (this.buffer && this.bufferSourceNode) {
                             for(var i in this.bufferSourceNodes){
                                 var r = this.bufferSourceNodes[i];
@@ -2461,7 +2461,7 @@
                         var e = !1;
                         if (void 0 === t) return this.playbackRate;
                         if (0 === (this.playbackRate = t) ? t = 1e-13 : t < 0 && !this.reversed ? (t = Math.abs(t), e = !0) : 0 < t && this.reversed && (e = !0), this.bufferSourceNode) {
-                            var n = p1.audiocontext.currentTime;
+                            var n = p.audiocontext.currentTime;
                             this.bufferSourceNode.playbackRate.cancelScheduledValues(n), this.bufferSourceNode.playbackRate.linearRampToValueAtTime(Math.abs(t), n), this._counterNode.playbackRate.cancelScheduledValues(n), this._counterNode.playbackRate.linearRampToValueAtTime(Math.abs(t), n);
                         }
                         return e && this.reverseBuffer(), this.playbackRate;
@@ -2470,7 +2470,7 @@
                 {
                     key: "setPitch",
                     value: function(t) {
-                        var e = r19(t) / r19(60);
+                        var e = r(t) / r(60);
                         this.rate(e);
                     }
                 },
@@ -2484,7 +2484,7 @@
                     key: "setVolume",
                     value: function(t, e, n) {
                         if ("number" == typeof t) {
-                            var i = e || 0, r = n || 0, o = p1.audiocontext.currentTime, s = this.output.gain.value;
+                            var i = e || 0, r = n || 0, o = p.audiocontext.currentTime, s = this.output.gain.value;
                             this.output.gain.cancelScheduledValues(o + r), this.output.gain.linearRampToValueAtTime(s, o + r), this.output.gain.linearRampToValueAtTime(t, o + r + i);
                         } else {
                             if (!t) return this.output.gain;
@@ -2570,8 +2570,8 @@
                 {
                     key: "dispose",
                     value: function() {
-                        var t = p1.audiocontext.currentTime, e = p1.soundArray.indexOf(this);
-                        if (p1.soundArray.splice(e, 1), this.stop(t), this.buffer && this.bufferSourceNode) {
+                        var t = p.audiocontext.currentTime, e = p.soundArray.indexOf(this);
+                        if (p.soundArray.splice(e, 1), this.stop(t), this.buffer && this.bufferSourceNode) {
                             for(var n = 0; n < this.bufferSourceNodes.length - 1; n++)if (null !== this.bufferSourceNodes[n]) {
                                 this.bufferSourceNodes[n].disconnect();
                                 try {
@@ -2592,7 +2592,7 @@
                 {
                     key: "connect",
                     value: function(t) {
-                        t ? t.hasOwnProperty("input") ? this.panner.connect(t.input) : this.panner.connect(t) : this.panner.connect(p1.input);
+                        t ? t.hasOwnProperty("input") ? this.panner.connect(t.input) : this.panner.connect(t) : this.panner.connect(p.input);
                     }
                 },
                 {
@@ -2624,20 +2624,20 @@
                 {
                     key: "_initCounterNode",
                     value: function() {
-                        var e54 = this, n33 = this, t75 = R.currentTime, i28 = R.createBufferSource(), r20 = y(256);
-                        return n33._workletNode && (n33._workletNode.disconnect(), delete n33._workletNode), n33._workletNode = new AudioWorkletNode(R, s2.a.soundFileProcessor, {
+                        var e = this, n = this, t = R.currentTime, i = R.createBufferSource(), r = y(256);
+                        return n._workletNode && (n._workletNode.disconnect(), delete n._workletNode), n._workletNode = new AudioWorkletNode(R, s.a.soundFileProcessor, {
                             processorOptions: {
-                                bufferSize: r20
+                                bufferSize: r
                             }
-                        }), n33._workletNode.port.onmessage = function(t) {
+                        }), n._workletNode.port.onmessage = function(t) {
                             if ("position" === t.data.name) {
                                 if (0 === t.data.position) return;
-                                e54._lastPos = t.data.position, e54._onTimeUpdate(n33._lastPos);
+                                e._lastPos = t.data.position, e._onTimeUpdate(n._lastPos);
                             }
-                        }, i28.buffer = function(t) {
+                        }, i.buffer = function(t) {
                             for(var e = t.length, n = R.createBuffer(1, t.length, R.sampleRate), i = n.getChannelData(0), r = 0; r < e; r++)i[r] = r;
                             return n;
-                        }(n33.buffer), i28.playbackRate.setValueAtTime(n33.playbackRate, t75), i28.connect(n33._workletNode), n33._workletNode.connect(p5.soundOut._silentNode), i28;
+                        }(n.buffer), i.playbackRate.setValueAtTime(n.playbackRate, t), i.connect(n._workletNode), n._workletNode.connect(p5.soundOut._silentNode), i;
                     }
                 },
                 {
@@ -2693,7 +2693,7 @@
                 {
                     key: "getBlob",
                     value: function() {
-                        var t = a2(this.buffer);
+                        var t = a(this.buffer);
                         return new Blob([
                             t
                         ], {
@@ -2701,7 +2701,7 @@
                         });
                     }
                 }
-            ]), o6;
+            ]), o;
         }();
         var E = q;
         function N(t, e) {
@@ -2711,19 +2711,19 @@
             }
         }
         var B = function() {
-            function e55(t76) {
+            function e(t) {
                 !function(t, e) {
                     if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
-                }(this, e55), this.bufferSize = y(2048), this.audiocontext = p1.audiocontext, this._workletNode = new AudioWorkletNode(this.audiocontext, s2.a.amplitudeProcessor, {
+                }(this, e), this.bufferSize = y(2048), this.audiocontext = p.audiocontext, this._workletNode = new AudioWorkletNode(this.audiocontext, s.a.amplitudeProcessor, {
                     outputChannelCount: [
                         1
                     ],
                     parameterData: {
-                        smoothing: t76 || 0
+                        smoothing: t || 0
                     },
                     processorOptions: {
                         normalize: !1,
-                        smoothing: t76 || 0,
+                        smoothing: t || 0,
                         numInputChannels: 2,
                         bufferSize: this.bufferSize
                     }
@@ -2735,21 +2735,21 @@
                 ], this.stereoVolNorm = [
                     0,
                     0
-                ], this.normalize = !1, this._workletNode.connect(this.output), this.output.gain.value = 0, this.output.connect(this.audiocontext.destination), p1.meter.connect(this._workletNode), p1.soundArray.push(this);
+                ], this.normalize = !1, this._workletNode.connect(this.output), this.output.gain.value = 0, this.output.connect(this.audiocontext.destination), p.meter.connect(this._workletNode), p.soundArray.push(this);
             }
             return function(t, e, n) {
                 e && N(t.prototype, e), n && N(t, n);
-            }(e55, [
+            }(e, [
                 {
                     key: "setInput",
                     value: function(t, e) {
-                        p1.meter.disconnect(), e && (this._workletNode.parameters.get("smoothing").value = e), null == t ? p1.meter.connect(this._workletNode) : t ? (t.connect(this._workletNode), this._workletNode.disconnect(), this._workletNode.connect(this.output)) : p1.meter.connect(this._workletNode);
+                        p.meter.disconnect(), e && (this._workletNode.parameters.get("smoothing").value = e), null == t ? p.meter.connect(this._workletNode) : t ? (t.connect(this._workletNode), this._workletNode.disconnect(), this._workletNode.connect(this.output)) : p.meter.connect(this._workletNode);
                     }
                 },
                 {
                     key: "connect",
                     value: function(t) {
-                        t ? t.hasOwnProperty("input") ? this.output.connect(t.input) : this.output.connect(t) : this.output.connect(this.panner.connect(p1.input));
+                        t ? t.hasOwnProperty("input") ? this.output.connect(t.input) : this.output.connect(t) : this.output.connect(this.panner.connect(p.input));
                     }
                 },
                 {
@@ -2785,11 +2785,11 @@
                 {
                     key: "dispose",
                     value: function() {
-                        var t = p1.soundArray.indexOf(this);
-                        p1.soundArray.splice(t, 1), this.input && (this.input.disconnect(), delete this.input), this.output && (this.output.disconnect(), delete this.output), this._workletNode.disconnect(), delete this._workletNode;
+                        var t = p.soundArray.indexOf(this);
+                        p.soundArray.splice(t, 1), this.input && (this.input.disconnect(), delete this.input), this.output && (this.output.disconnect(), delete this.output), this._workletNode.disconnect(), delete this._workletNode;
                     }
                 }
-            ]), e55;
+            ]), e;
         }();
         function V(t, e) {
             for(var n = 0; n < e.length; n++){
@@ -2798,10 +2798,10 @@
             }
         }
         var j = function() {
-            function n34(t77, e56) {
+            function n(t, e) {
                 !function(t, e) {
                     if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
-                }(this, n34), this.input = this.analyser = p1.audiocontext.createAnalyser(), Object.defineProperties(this, {
+                }(this, n), this.input = this.analyser = p.audiocontext.createAnalyser(), Object.defineProperties(this, {
                     bins: {
                         get: function() {
                             return this.analyser.fftSize / 2;
@@ -2822,7 +2822,7 @@
                         configurable: !0,
                         enumerable: !0
                     }
-                }), this.smooth(t77), this.bins = e56 || 1024, p1.fftMeter.connect(this.analyser), this.freqDomain = new Uint8Array(this.analyser.frequencyBinCount), this.timeDomain = new Uint8Array(this.analyser.frequencyBinCount), this.bass = [
+                }), this.smooth(t), this.bins = e || 1024, p.fftMeter.connect(this.analyser), this.freqDomain = new Uint8Array(this.analyser.frequencyBinCount), this.timeDomain = new Uint8Array(this.analyser.frequencyBinCount), this.bass = [
                     20,
                     140
                 ], this.lowMid = [
@@ -2837,21 +2837,21 @@
                 ], this.treble = [
                     5200,
                     14e3
-                ], p1.soundArray.push(this);
+                ], p.soundArray.push(this);
             }
             return function(t, e, n) {
                 e && V(t.prototype, e), n && V(t, n);
-            }(n34, [
+            }(n, [
                 {
                     key: "setInput",
                     value: function(t) {
-                        t ? (t.output ? t.output.connect(this.analyser) : t.connect && t.connect(this.analyser), p1.fftMeter.disconnect()) : p1.fftMeter.connect(this.analyser);
+                        t ? (t.output ? t.output.connect(this.analyser) : t.connect && t.connect(this.analyser), p.fftMeter.disconnect()) : p.fftMeter.connect(this.analyser);
                     }
                 },
                 {
                     key: "waveform",
                     value: function() {
-                        for(var t78, e, n = new Array, i = 0; i < arguments.length; i++)"number" == typeof arguments[i] && (t78 = arguments[i], this.analyser.fftSize = 2 * t78), "string" == typeof arguments[i] && (e = arguments[i]);
+                        for(var t, e, n = new Array, i = 0; i < arguments.length; i++)"number" == typeof arguments[i] && (t = arguments[i], this.analyser.fftSize = 2 * t), "string" == typeof arguments[i] && (e = arguments[i]);
                         if (e && !p5.prototype._isSafari()) return function(t) {
                             t.timeDomain instanceof Float32Array == !1 && (t.timeDomain = new Float32Array(t.analyser.frequencyBinCount));
                         }(this, this.timeDomain), this.analyser.getFloatTimeDomainData(this.timeDomain), this.timeDomain;
@@ -2868,8 +2868,8 @@
                 {
                     key: "analyze",
                     value: function() {
-                        for(var t79, e = 0; e < arguments.length; e++)"number" == typeof arguments[e] && (this.bins = arguments[e], this.analyser.fftSize = 2 * this.bins), "string" == typeof arguments[e] && (t79 = arguments[e]);
-                        return t79 && "db" === t79.toLowerCase() ? (function(t) {
+                        for(var t, e = 0; e < arguments.length; e++)"number" == typeof arguments[e] && (this.bins = arguments[e], this.analyser.fftSize = 2 * this.bins), "string" == typeof arguments[e] && (t = arguments[e]);
+                        return t && "db" === t.toLowerCase() ? (function(t) {
                             t.freqDomain instanceof Float32Array == !1 && (t.freqDomain = new Float32Array(t.analyser.frequencyBinCount));
                         }(this), this.analyser.getFloatFrequencyData(this.freqDomain), this.freqDomain) : (function(t) {
                             t.freqDomain instanceof Uint8Array == !1 && (t.freqDomain = new Uint8Array(t.analyser.frequencyBinCount));
@@ -2879,7 +2879,7 @@
                 {
                     key: "getEnergy",
                     value: function(t, e) {
-                        var n = p1.audiocontext.sampleRate / 2;
+                        var n = p.audiocontext.sampleRate / 2;
                         if ("bass" === t ? (t = this.bass[0], e = this.bass[1]) : "lowMid" === t ? (t = this.lowMid[0], e = this.lowMid[1]) : "mid" === t ? (t = this.mid[0], e = this.mid[1]) : "highMid" === t ? (t = this.highMid[0], e = this.highMid[1]) : "treble" === t && (t = this.treble[0], e = this.treble[1]), "number" != typeof t) throw "invalid input for getEnergy()";
                         if (e) {
                             if (t && e) {
@@ -2905,7 +2905,7 @@
                 {
                     key: "getCentroid",
                     value: function() {
-                        for(var t = p1.audiocontext.sampleRate / 2, e = 0, n = 0, i = 0; i < this.freqDomain.length; i++)e += i * this.freqDomain[i], n += this.freqDomain[i];
+                        for(var t = p.audiocontext.sampleRate / 2, e = 0, n = 0, i = 0; i < this.freqDomain.length; i++)e += i * this.freqDomain[i], n += this.freqDomain[i];
                         var r = 0;
                         return 0 !== n && (r = e / n), r * (t / this.freqDomain.length);
                     }
@@ -2919,8 +2919,8 @@
                 {
                     key: "dispose",
                     value: function() {
-                        var t = p1.soundArray.indexOf(this);
-                        p1.soundArray.splice(t, 1), this.analyser && (this.analyser.disconnect(), delete this.analyser);
+                        var t = p.soundArray.indexOf(this);
+                        p.soundArray.splice(t, 1), this.analyser && (this.analyser.disconnect(), delete this.analyser);
                     }
                 },
                 {
@@ -2933,7 +2933,7 @@
                 {
                     key: "logAverages",
                     value: function(t) {
-                        for(var e = p1.audiocontext.sampleRate / 2, n = this.freqDomain, i = n.length, r = new Array(t.length), o = 0, s = 0; s < i; s++)Math.round(s * e / this.freqDomain.length) > t[o].hi && o++, r[o] = void 0 !== r[o] ? (r[o] + n[s]) / 2 : n[s];
+                        for(var e = p.audiocontext.sampleRate / 2, n = this.freqDomain, i = n.length, r = new Array(t.length), o = 0, s = 0; s < i; s++)Math.round(s * e / this.freqDomain.length) > t[o].hi && o++, r[o] = void 0 !== r[o] ? (r[o] + n[s]) / 2 : n[s];
                         return r;
                     }
                 },
@@ -2946,32 +2946,32 @@
                             hi: i * Math.pow(2, 1 / (2 * n))
                         };
                         r.push(o);
-                        for(var s = p1.audiocontext.sampleRate / 2; o.hi < s;){
+                        for(var s = p.audiocontext.sampleRate / 2; o.hi < s;){
                             var a = {};
                             a.lo = o.hi, a.ctr = o.ctr * Math.pow(2, 1 / n), a.hi = a.ctr * Math.pow(2, 1 / (2 * n)), r.push(a), o = a;
                         }
                         return r;
                     }
                 }
-            ]), n34;
-        }(), M = n30(4), F = n30.n(M), D = n30(1), I = n30.n(D), U = n30(8), G = n30.n(U);
-        function L(t80) {
+            ]), n;
+        }(), M = n(4), F = n.n(M), D = n(1), I = n.n(D), U = n(8), G = n.n(U);
+        function L(t) {
             return (L = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(t) {
                 return typeof t;
             } : function(t) {
                 return t && "function" == typeof Symbol && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t;
-            })(t80);
+            })(t);
         }
-        function z(t81, e) {
+        function z(t, e) {
             return !e || "object" !== L(e) && "function" != typeof e ? function(t) {
                 if (void 0 !== t) return t;
                 throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-            }(t81) : e;
+            }(t) : e;
         }
-        function W(t82) {
+        function W(t) {
             return (W = Object.setPrototypeOf ? Object.getPrototypeOf : function(t) {
                 return t.__proto__ || Object.getPrototypeOf(t);
-            })(t82);
+            })(t);
         }
         function Z(t, e) {
             if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function");
@@ -2983,10 +2983,10 @@
                 }
             }), e && X(t, e);
         }
-        function X(t83, e57) {
+        function X(t, e) {
             return (X = Object.setPrototypeOf || function(t, e) {
                 return t.__proto__ = e, t;
-            })(t83, e57);
+            })(t, e);
         }
         function Y(t, e) {
             if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
@@ -3003,8 +3003,8 @@
             return n === t.mathOps.length - 1 && t.mathOps.push(i), 0 < s && (o = t.mathOps[s - 1]), o.disconnect(), o.connect(e), e.connect(i), t.mathOps[n] = e, t;
         }
         var Q = function() {
-            function r21(t, e) {
-                if (Y(this, r21), "string" == typeof t) {
+            function r(t, e) {
+                if (Y(this, r), "string" == typeof t) {
                     var n = e;
                     e = t, t = n;
                 }
@@ -3012,23 +3012,23 @@
                     var i = e;
                     e = t, t = i;
                 }
-                this.started = !1, this.phaseAmount = void 0, this.oscillator = p1.audiocontext.createOscillator(), this.f = t || 440, this.oscillator.type = e || "sine", this.oscillator.frequency.setValueAtTime(this.f, p1.audiocontext.currentTime), this.output = p1.audiocontext.createGain(), this._freqMods = [], this.output.gain.value = .5, this.output.gain.setValueAtTime(.5, p1.audiocontext.currentTime), this.oscillator.connect(this.output), this.panPosition = 0, this.connection = p1.input, this.panner = new k(this.output, this.connection, 1), this.mathOps = [
+                this.started = !1, this.phaseAmount = void 0, this.oscillator = p.audiocontext.createOscillator(), this.f = t || 440, this.oscillator.type = e || "sine", this.oscillator.frequency.setValueAtTime(this.f, p.audiocontext.currentTime), this.output = p.audiocontext.createGain(), this._freqMods = [], this.output.gain.value = .5, this.output.gain.setValueAtTime(.5, p.audiocontext.currentTime), this.oscillator.connect(this.output), this.panPosition = 0, this.connection = p.input, this.panner = new k(this.output, this.connection, 1), this.mathOps = [
                     this.output
-                ], p1.soundArray.push(this), this.fade = this.amp;
+                ], p.soundArray.push(this), this.fade = this.amp;
             }
             return function(t, e, n) {
                 e && H(t.prototype, e), n && H(t, n);
-            }(r21, [
+            }(r, [
                 {
                     key: "start",
                     value: function(t, e) {
                         if (this.started) {
-                            var n = p1.audiocontext.currentTime;
+                            var n = p.audiocontext.currentTime;
                             this.stop(n);
                         }
                         if (!this.started) {
                             var i = e || this.f, r = this.oscillator.type;
-                            for(var o in this.oscillator && (this.oscillator.disconnect(), delete this.oscillator), this.oscillator = p1.audiocontext.createOscillator(), this.oscillator.frequency.value = Math.abs(i), this.oscillator.type = r, this.oscillator.connect(this.output), t = t || 0, this.oscillator.start(t + p1.audiocontext.currentTime), this.freqNode = this.oscillator.frequency, this._freqMods)void 0 !== this._freqMods[o].connect && this._freqMods[o].connect(this.oscillator.frequency);
+                            for(var o in this.oscillator && (this.oscillator.disconnect(), delete this.oscillator), this.oscillator = p.audiocontext.createOscillator(), this.oscillator.frequency.value = Math.abs(i), this.oscillator.type = r, this.oscillator.connect(this.output), t = t || 0, this.oscillator.start(t + p.audiocontext.currentTime), this.freqNode = this.oscillator.frequency, this._freqMods)void 0 !== this._freqMods[o].connect && this._freqMods[o].connect(this.oscillator.frequency);
                             this.started = !0;
                         }
                     }
@@ -3037,7 +3037,7 @@
                     key: "stop",
                     value: function(t) {
                         if (this.started) {
-                            var e = t || 0, n = p1.audiocontext.currentTime;
+                            var e = t || 0, n = p.audiocontext.currentTime;
                             this.oscillator.stop(e + n), this.started = !1;
                         }
                     }
@@ -3047,7 +3047,7 @@
                     value: function(t, e, n) {
                         var i = 1 < arguments.length && void 0 !== e ? e : 0, r = 2 < arguments.length && void 0 !== n ? n : 0;
                         if ("number" == typeof t) {
-                            var o = p1.audiocontext.currentTime;
+                            var o = p.audiocontext.currentTime;
                             this.output.gain.linearRampToValueAtTime(t, o + r + i);
                         } else {
                             if (!t) return this.output.gain;
@@ -3070,7 +3070,7 @@
                             t.output && (t = t.output), t.connect(this.oscillator.frequency), this._freqMods.push(t);
                         } else {
                             this.f = t;
-                            var o = p1.audiocontext.currentTime;
+                            var o = p.audiocontext.currentTime;
                             0 === i ? this.oscillator.frequency.setValueAtTime(t, r + o) : 0 < t ? this.oscillator.frequency.exponentialRampToValueAtTime(t, r + i + o) : this.oscillator.frequency.linearRampToValueAtTime(t, r + i + o), this.phaseAmount && this.phase(this.phaseAmount);
                         }
                     }
@@ -3096,7 +3096,7 @@
                 {
                     key: "connect",
                     value: function(t) {
-                        t ? t.hasOwnProperty("input") ? (this.panner.connect(t.input), this.connection = t.input) : (this.panner.connect(t), this.connection = t) : this.panner.connect(p1.input);
+                        t ? t.hasOwnProperty("input") ? (this.panner.connect(t.input), this.connection = t.input) : (this.panner.connect(t), this.connection = t) : this.panner.connect(p.input);
                     }
                 },
                 {
@@ -3120,9 +3120,9 @@
                 {
                     key: "dispose",
                     value: function() {
-                        var t = p1.soundArray.indexOf(this);
-                        if (p1.soundArray.splice(t, 1), this.oscillator) {
-                            var e = p1.audiocontext.currentTime;
+                        var t = p.soundArray.indexOf(this);
+                        if (p.soundArray.splice(t, 1), this.oscillator) {
+                            var e = p.audiocontext.currentTime;
                             this.stop(e), this.disconnect(), this.panner = null, this.oscillator = null;
                         }
                         this.osc2 && this.osc2.dispose();
@@ -3131,8 +3131,8 @@
                 {
                     key: "phase",
                     value: function(t) {
-                        var e = p5.prototype.map(t, 0, 1, 0, 1 / this.f), n = p1.audiocontext.currentTime;
-                        this.phaseAmount = t, this.dNode || (this.dNode = p1.audiocontext.createDelay(), this.oscillator.disconnect(), this.oscillator.connect(this.dNode), this.dNode.connect(this.output)), this.dNode.delayTime.setValueAtTime(e, n);
+                        var e = p5.prototype.map(t, 0, 1, 0, 1 / this.f), n = p.audiocontext.currentTime;
+                        this.phaseAmount = t, this.dNode || (this.dNode = p.audiocontext.createDelay(), this.oscillator.disconnect(), this.oscillator.connect(this.dNode), this.dNode.connect(this.output)), this.dNode.delayTime.setValueAtTime(e, n);
                     }
                 },
                 {
@@ -3158,7 +3158,7 @@
                         return $(this, s, this.mathOps.length - 1, this.output, G.a);
                     }
                 }
-            ]), r21;
+            ]), r;
         }(), J = function() {
             function e(t) {
                 return Y(this, e), z(this, W(e).call(this, t, "sine"));
@@ -3179,13 +3179,13 @@
                 return Y(this, e), z(this, W(e).call(this, t, "square"));
             }
             return Z(e, Q), e;
-        }(), nt = Q, it = n30(7), rt = n30.n(it);
+        }(), nt = Q, it = n(7), rt = n.n(it);
         p5.Envelope = function(t, e, n, i, r, o) {
-            this.aTime = t || .1, this.aLevel = e || 1, this.dTime = n || .5, this.dLevel = i || 0, this.rTime = r || 0, this.rLevel = o || 0, this._rampHighPercentage = .98, this._rampLowPercentage = .02, this.output = p1.audiocontext.createGain(), this.control = new rt.a, this._init(), this.control.connect(this.output), this.connection = null, this.mathOps = [
+            this.aTime = t || .1, this.aLevel = e || 1, this.dTime = n || .5, this.dLevel = i || 0, this.rTime = r || 0, this.rLevel = o || 0, this._rampHighPercentage = .98, this._rampLowPercentage = .02, this.output = p.audiocontext.createGain(), this.control = new rt.a, this._init(), this.control.connect(this.output), this.connection = null, this.mathOps = [
                 this.control
-            ], this.isExponential = !1, this.sourceToClear = null, this.wasTriggered = !1, p1.soundArray.push(this);
+            ], this.isExponential = !1, this.sourceToClear = null, this.wasTriggered = !1, p.soundArray.push(this);
         }, p5.Envelope.prototype._init = function() {
-            var t = p1.audiocontext.currentTime;
+            var t = p.audiocontext.currentTime;
             this.control.setTargetAtTime(1e-5, t, .001), this._setRampAD(this.aTime, this.dTime);
         }, p5.Envelope.prototype.set = function(t, e, n, i, r, o) {
             this.aTime = t, this.aLevel = e, this.dTime = n || 0, this.dLevel = i || 0, this.rTime = r || 0, this.rLevel = o || 0, this._setRampAD(t, n);
@@ -3211,24 +3211,24 @@
             var i = e || 0;
             t && this.connection !== t && this.connect(t), this.triggerAttack(t, i), this.triggerRelease(t, i + this.aTime + this.dTime + ~~n);
         }, p5.Envelope.prototype.triggerAttack = function(t, e) {
-            var n = p1.audiocontext.currentTime + (e || 0);
+            var n = p.audiocontext.currentTime + (e || 0);
             this.lastAttack = n, this.wasTriggered = !0, t && this.connection !== t && this.connect(t);
             var i = this.control.getValueAtTime(n);
             !0 === this.isExponential ? this.control.exponentialRampToValueAtTime(this.checkExpInput(i), n) : this.control.linearRampToValueAtTime(i, n), n += this.aTime, !0 === this.isExponential ? (this.control.exponentialRampToValueAtTime(this.checkExpInput(this.aLevel), n), i = this.checkExpInput(this.control.getValueAtTime(n)), this.control.cancelScheduledValues(n), this.control.exponentialRampToValueAtTime(i, n)) : (this.control.linearRampToValueAtTime(this.aLevel, n), i = this.control.getValueAtTime(n), this.control.cancelScheduledValues(n), this.control.linearRampToValueAtTime(i, n)), n += this.dTime, !0 === this.isExponential ? (this.control.exponentialRampToValueAtTime(this.checkExpInput(this.dLevel), n), i = this.checkExpInput(this.control.getValueAtTime(n)), this.control.cancelScheduledValues(n), this.control.exponentialRampToValueAtTime(i, n)) : (this.control.linearRampToValueAtTime(this.dLevel, n), i = this.control.getValueAtTime(n), this.control.cancelScheduledValues(n), this.control.linearRampToValueAtTime(i, n));
         }, p5.Envelope.prototype.triggerRelease = function(t, e) {
             if (this.wasTriggered) {
-                var n = p1.audiocontext.currentTime + (e || 0);
+                var n = p.audiocontext.currentTime + (e || 0);
                 t && this.connection !== t && this.connect(t);
                 var i = this.control.getValueAtTime(n);
                 !0 === this.isExponential ? this.control.exponentialRampToValueAtTime(this.checkExpInput(i), n) : this.control.linearRampToValueAtTime(i, n), n += this.rTime, !0 === this.isExponential ? (this.control.exponentialRampToValueAtTime(this.checkExpInput(this.rLevel), n), i = this.checkExpInput(this.control.getValueAtTime(n)), this.control.cancelScheduledValues(n), this.control.exponentialRampToValueAtTime(i, n)) : (this.control.linearRampToValueAtTime(this.rLevel, n), i = this.control.getValueAtTime(n), this.control.cancelScheduledValues(n), this.control.linearRampToValueAtTime(i, n)), this.wasTriggered = !1;
             }
         }, p5.Envelope.prototype.ramp = function(t, e, n, i) {
-            var r = p1.audiocontext.currentTime + (e || 0), o = this.checkExpInput(n), s = void 0 !== i ? this.checkExpInput(i) : void 0;
+            var r = p.audiocontext.currentTime + (e || 0), o = this.checkExpInput(n), s = void 0 !== i ? this.checkExpInput(i) : void 0;
             t && this.connection !== t && this.connect(t);
             var a = this.checkExpInput(this.control.getValueAtTime(r));
             a < o ? (this.control.setTargetAtTime(o, r, this._rampAttackTC), r += this._rampAttackTime) : o < a && (this.control.setTargetAtTime(o, r, this._rampDecayTC), r += this._rampDecayTime), void 0 !== s && (o < s ? this.control.setTargetAtTime(s, r, this._rampAttackTC) : s < o && this.control.setTargetAtTime(s, r, this._rampDecayTC));
         }, p5.Envelope.prototype.connect = function(t) {
-            ((this.connection = t) instanceof p5.Oscillator || t instanceof p5.SoundFile || t instanceof p5.AudioIn || t instanceof p5.Reverb || t instanceof p5.Noise || t instanceof p5.Filter || t instanceof p5.Delay) && (t = t.output.gain), t instanceof AudioParam && t.setValueAtTime(0, p1.audiocontext.currentTime), this.output.connect(t);
+            ((this.connection = t) instanceof p5.Oscillator || t instanceof p5.SoundFile || t instanceof p5.AudioIn || t instanceof p5.Reverb || t instanceof p5.Noise || t instanceof p5.Filter || t instanceof p5.Delay) && (t = t.output.gain), t instanceof AudioParam && t.setValueAtTime(0, p.audiocontext.currentTime), this.output.connect(t);
         }, p5.Envelope.prototype.disconnect = function() {
             this.output && this.output.disconnect();
         }, p5.Envelope.prototype.add = function(t) {
@@ -3241,19 +3241,19 @@
             var r = new G.a(t, e, n, i), o = this.mathOps.length, s = this.output;
             return p5.prototype._mathChain(this, r, o, s, G.a);
         }, p5.Envelope.prototype.dispose = function() {
-            var t = p1.soundArray.indexOf(this);
-            p1.soundArray.splice(t, 1), this.disconnect(), this.control && (this.control.dispose(), this.control = null);
+            var t = p.soundArray.indexOf(this);
+            p.soundArray.splice(t, 1), this.disconnect(), this.control && (this.control.dispose(), this.control = null);
             for(var e = 1; e < this.mathOps.length; e++)this.mathOps[e].dispose();
         }, p5.Env = function(t, e, n, i, r, o) {
             p5.Envelope.call(this, t, e, n, i, r, o);
         }, p5.Env.prototype = Object.create(p5.Envelope.prototype);
         var ot = p5.Envelope;
-        function st(t84) {
+        function st(t) {
             return (st = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(t) {
                 return typeof t;
             } : function(t) {
                 return t && "function" == typeof Symbol && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t;
-            })(t84);
+            })(t);
         }
         function at(t, e) {
             for(var n = 0; n < e.length; n++){
@@ -3261,27 +3261,27 @@
                 i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(t, i.key, i);
             }
         }
-        function ut(t85, e) {
+        function ut(t, e) {
             return !e || "object" !== st(e) && "function" != typeof e ? function(t) {
                 if (void 0 !== t) return t;
                 throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-            }(t85) : e;
+            }(t) : e;
         }
-        function ct(t86) {
+        function ct(t) {
             return (ct = Object.setPrototypeOf ? Object.getPrototypeOf : function(t) {
                 return t.__proto__ || Object.getPrototypeOf(t);
-            })(t86);
+            })(t);
         }
-        function lt(t87, e58) {
+        function lt(t, e) {
             return (lt = Object.setPrototypeOf || function(t, e) {
                 return t.__proto__ = e, t;
-            })(t87, e58);
+            })(t, e);
         }
         var ht = function() {
-            for(var t = 2 * p1.audiocontext.sampleRate, e = p1.audiocontext.createBuffer(1, t, p1.audiocontext.sampleRate), n = e.getChannelData(0), i = 0; i < t; i++)n[i] = 2 * Math.random() - 1;
+            for(var t = 2 * p.audiocontext.sampleRate, e = p.audiocontext.createBuffer(1, t, p.audiocontext.sampleRate), n = e.getChannelData(0), i = 0; i < t; i++)n[i] = 2 * Math.random() - 1;
             return e.type = "white", e;
         }(), pt = function() {
-            var t, e, n, i, r, o, s, a = 2 * p1.audiocontext.sampleRate, u = p1.audiocontext.createBuffer(1, a, p1.audiocontext.sampleRate), c = u.getChannelData(0);
+            var t, e, n, i, r, o, s, a = 2 * p.audiocontext.sampleRate, u = p.audiocontext.createBuffer(1, a, p.audiocontext.sampleRate), c = u.getChannelData(0);
             t = e = n = i = r = o = s = 0;
             for(var l = 0; l < a; l++){
                 var h = 2 * Math.random() - 1;
@@ -3289,17 +3289,17 @@
             }
             return u.type = "pink", u;
         }(), ft = function() {
-            for(var t = 2 * p1.audiocontext.sampleRate, e = p1.audiocontext.createBuffer(1, t, p1.audiocontext.sampleRate), n = e.getChannelData(0), i = 0, r = 0; r < t; r++){
+            for(var t = 2 * p.audiocontext.sampleRate, e = p.audiocontext.createBuffer(1, t, p.audiocontext.sampleRate), n = e.getChannelData(0), i = 0, r = 0; r < t; r++){
                 var o = 2 * Math.random() - 1;
                 n[r] = (i + .02 * o) / 1.02, i = n[r], n[r] *= 3.5;
             }
             return e.type = "brown", e;
         }(), dt = function() {
-            function i(t88) {
-                var e59, n;
+            function i(t) {
+                var e, n;
                 return function(t, e) {
                     if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
-                }(this, i), delete (e59 = ut(this, ct(i).call(this))).f, delete e59.freq, delete e59.oscillator, n = "brown" === t88 ? ft : "pink" === t88 ? pt : ht, e59.buffer = n, e59;
+                }(this, i), delete (e = ut(this, ct(i).call(this))).f, delete e.freq, delete e.oscillator, n = "brown" === t ? ft : "pink" === t ? pt : ht, e.buffer = n, e;
             }
             return function(t, e) {
                 if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function");
@@ -3330,7 +3330,7 @@
                                 this.buffer = ht;
                         }
                         if (this.started) {
-                            var e = p1.audiocontext.currentTime;
+                            var e = p.audiocontext.currentTime;
                             this.stop(e), this.start(e + .01);
                         }
                     }
@@ -3344,33 +3344,33 @@
                 {
                     key: "start",
                     value: function() {
-                        this.started && this.stop(), this.noise = p1.audiocontext.createBufferSource(), this.noise.buffer = this.buffer, this.noise.loop = !0, this.noise.connect(this.output);
-                        var t = p1.audiocontext.currentTime;
+                        this.started && this.stop(), this.noise = p.audiocontext.createBufferSource(), this.noise.buffer = this.buffer, this.noise.loop = !0, this.noise.connect(this.output);
+                        var t = p.audiocontext.currentTime;
                         this.noise.start(t), this.started = !0;
                     }
                 },
                 {
                     key: "stop",
                     value: function() {
-                        var t = p1.audiocontext.currentTime;
+                        var t = p.audiocontext.currentTime;
                         this.noise && (this.noise.stop(t), this.started = !1);
                     }
                 },
                 {
                     key: "dispose",
                     value: function() {
-                        var t = p1.audiocontext.currentTime, e = p1.soundArray.indexOf(this);
-                        p1.soundArray.splice(e, 1), this.noise && (this.noise.disconnect(), this.stop(t)), this.output && this.output.disconnect(), this.panner && this.panner.disconnect(), this.output = null, this.panner = null, this.buffer = null, this.noise = null;
+                        var t = p.audiocontext.currentTime, e = p.soundArray.indexOf(this);
+                        p.soundArray.splice(e, 1), this.noise && (this.noise.disconnect(), this.stop(t)), this.output && this.output.disconnect(), this.panner && this.panner.disconnect(), this.output = null, this.panner = null, this.buffer = null, this.noise = null;
                     }
                 }
             ]), i;
-        }(), yt = n30(2), mt = n30.n(yt);
-        function vt(t89) {
+        }(), yt = n(2), mt = n.n(yt);
+        function vt(t) {
             return (vt = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(t) {
                 return typeof t;
             } : function(t) {
                 return t && "function" == typeof Symbol && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t;
-            })(t89);
+            })(t);
         }
         function _t(t, e) {
             for(var n = 0; n < e.length; n++){
@@ -3378,33 +3378,33 @@
                 i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(t, i.key, i);
             }
         }
-        function gt(t90, e) {
+        function gt(t, e) {
             return !e || "object" !== vt(e) && "function" != typeof e ? function(t) {
                 if (void 0 !== t) return t;
                 throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-            }(t90) : e;
+            }(t) : e;
         }
-        function bt(t91) {
+        function bt(t) {
             return (bt = Object.setPrototypeOf ? Object.getPrototypeOf : function(t) {
                 return t.__proto__ || Object.getPrototypeOf(t);
-            })(t91);
+            })(t);
         }
-        function Tt(t92, e60) {
+        function Tt(t, e) {
             return (Tt = Object.setPrototypeOf || function(t, e) {
                 return t.__proto__ = e, t;
-            })(t92, e60);
+            })(t, e);
         }
         function wt() {
-            for(var t = p1.audiocontext, e = t.createBuffer(1, 2048, t.sampleRate), n = e.getChannelData(0), i = 0; i < 2048; i++)n[i] = 1;
+            for(var t = p.audiocontext, e = t.createBuffer(1, 2048, t.sampleRate), n = e.getChannelData(0), i = 0; i < 2048; i++)n[i] = 1;
             var r = t.createBufferSource();
             return r.buffer = e, r.loop = !0, r;
         }
         var xt = function() {
-            function r22(t93, e61) {
+            function r(t, e) {
                 var n;
                 !function(t, e) {
                     if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
-                }(this, r22), (n = gt(this, bt(r22).call(this, t93, "sawtooth"))).w = e61 || 0, n.osc2 = new tt(t93), n.dNode = p1.audiocontext.createDelay(), n.dcOffset = wt(), n.dcGain = p1.audiocontext.createGain(), n.dcOffset.connect(n.dcGain), n.dcGain.connect(n.output), n.f = t93 || 440;
+                }(this, r), (n = gt(this, bt(r).call(this, t, "sawtooth"))).w = e || 0, n.osc2 = new tt(t), n.dNode = p.audiocontext.createDelay(), n.dcOffset = wt(), n.dcGain = p.audiocontext.createGain(), n.dcOffset.connect(n.dcGain), n.dcGain.connect(n.output), n.f = t || 440;
                 var i = n.w / n.oscillator.frequency.value;
                 return n.dNode.delayTime.value = i, n.dcGain.gain.value = 1.7 * (.5 - n.w), n.osc2.disconnect(), n.osc2.panner.disconnect(), n.osc2.amp(-1), n.osc2.output.connect(n.dNode), n.dNode.connect(n.output), n.output.gain.value = 1, n.output.connect(n.panner), n;
             }
@@ -3417,9 +3417,9 @@
                         configurable: !0
                     }
                 }), e && Tt(t, e);
-            }(r22, nt), function(t, e, n) {
+            }(r, nt), function(t, e, n) {
                 e && _t(t.prototype, e), n && _t(t, n);
-            }(r22, [
+            }(r, [
                 {
                     key: "width",
                     value: function(t) {
@@ -3442,10 +3442,10 @@
                 {
                     key: "start",
                     value: function(t, e) {
-                        var n = p1.audiocontext.currentTime, i = e || 0;
+                        var n = p.audiocontext.currentTime, i = e || 0;
                         if (!this.started) {
                             var r = t || this.f, o = this.oscillator.type;
-                            this.oscillator = p1.audiocontext.createOscillator(), this.oscillator.frequency.setValueAtTime(r, n), this.oscillator.type = o, this.oscillator.connect(this.output), this.oscillator.start(i + n), this.osc2.oscillator = p1.audiocontext.createOscillator(), this.osc2.oscillator.frequency.setValueAtTime(r, i + n), this.osc2.oscillator.type = o, this.osc2.oscillator.connect(this.osc2.output), this.osc2.start(i + n), this.freqNode = [
+                            this.oscillator = p.audiocontext.createOscillator(), this.oscillator.frequency.setValueAtTime(r, n), this.oscillator.type = o, this.oscillator.connect(this.output), this.oscillator.start(i + n), this.osc2.oscillator = p.audiocontext.createOscillator(), this.osc2.oscillator.frequency.setValueAtTime(r, i + n), this.osc2.oscillator.type = o, this.osc2.oscillator.connect(this.osc2.output), this.osc2.start(i + n), this.freqNode = [
                                 this.oscillator.frequency,
                                 this.osc2.oscillator.frequency
                             ], this.dcOffset = wt(), this.dcOffset.connect(this.dcGain), this.dcOffset.start(i + n), void 0 !== this.mods && void 0 !== this.mods.frequency && (this.mods.frequency.connect(this.freqNode[0]), this.mods.frequency.connect(this.freqNode[1])), this.started = !0, this.osc2.started = !0;
@@ -3456,7 +3456,7 @@
                     key: "stop",
                     value: function(t) {
                         if (this.started) {
-                            var e = t || 0, n = p1.audiocontext.currentTime;
+                            var e = t || 0, n = p.audiocontext.currentTime;
                             this.oscillator.stop(e + n), this.osc2.oscillator && this.osc2.oscillator.stop(e + n), this.dcOffset.stop(e + n), this.started = !1, this.osc2.started = !1;
                         }
                     }
@@ -3467,12 +3467,12 @@
                         var i = 1 < arguments.length && void 0 !== e ? e : 0, r = 2 < arguments.length && void 0 !== n ? n : 0;
                         if ("number" == typeof t) {
                             this.f = t;
-                            var o = p1.audiocontext.currentTime, s = this.oscillator.frequency.value;
+                            var o = p.audiocontext.currentTime, s = this.oscillator.frequency.value;
                             this.oscillator.frequency.cancelScheduledValues(o), this.oscillator.frequency.setValueAtTime(s, o + r), this.oscillator.frequency.exponentialRampToValueAtTime(t, r + i + o), this.osc2.oscillator.frequency.cancelScheduledValues(o), this.osc2.oscillator.frequency.setValueAtTime(s, o + r), this.osc2.oscillator.frequency.exponentialRampToValueAtTime(t, r + i + o), this.freqMod && (this.freqMod.output.disconnect(), this.freqMod = null);
                         } else t.output && (t.output.disconnect(), t.output.connect(this.oscillator.frequency), t.output.connect(this.osc2.oscillator.frequency), this.freqMod = t);
                     }
                 }
-            ]), r22;
+            ]), r;
         }();
         function St(t, e) {
             for(var n = 0; n < e.length; n++){
@@ -3480,29 +3480,29 @@
                 i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(t, i.key, i);
             }
         }
-        p1.inputSources = [];
+        p.inputSources = [];
         var kt = function() {
-            function e62(t94) {
+            function e(t) {
                 !function(t, e) {
                     if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
-                }(this, e62), this.input = p1.audiocontext.createGain(), this.output = p1.audiocontext.createGain(), this.stream = null, this.mediaStream = null, this.currentSource = null, this.enabled = !1, this.amplitude = new B, this.output.connect(this.amplitude.input), window.MediaStreamTrack && window.navigator.mediaDevices && window.navigator.mediaDevices.getUserMedia || (t94 ? t94() : window.alert("This browser does not support MediaStreamTrack and mediaDevices")), p1.soundArray.push(this);
+                }(this, e), this.input = p.audiocontext.createGain(), this.output = p.audiocontext.createGain(), this.stream = null, this.mediaStream = null, this.currentSource = null, this.enabled = !1, this.amplitude = new B, this.output.connect(this.amplitude.input), window.MediaStreamTrack && window.navigator.mediaDevices && window.navigator.mediaDevices.getUserMedia || (t ? t() : window.alert("This browser does not support MediaStreamTrack and mediaDevices")), p.soundArray.push(this);
             }
             return function(t, e, n) {
                 e && St(t.prototype, e), n && St(t, n);
-            }(e62, [
+            }(e, [
                 {
                     key: "start",
                     value: function(e, n) {
                         var i = this;
                         this.stream && this.stop();
-                        var t95 = p1.inputSources[i.currentSource], r = {
+                        var t = p.inputSources[i.currentSource], r = {
                             audio: {
-                                sampleRate: p1.audiocontext.sampleRate,
+                                sampleRate: p.audiocontext.sampleRate,
                                 echoCancellation: !1
                             }
                         };
-                        p1.inputSources[this.currentSource] && (r.audio.deviceId = t95.deviceId), window.navigator.mediaDevices.getUserMedia(r).then(function(t) {
-                            i.stream = t, i.enabled = !0, i.mediaStream = p1.audiocontext.createMediaStreamSource(t), i.mediaStream.connect(i.output), i.amplitude.setInput(i.output), e && e();
+                        p.inputSources[this.currentSource] && (r.audio.deviceId = t.deviceId), window.navigator.mediaDevices.getUserMedia(r).then(function(t) {
+                            i.stream = t, i.enabled = !0, i.mediaStream = p.audiocontext.createMediaStreamSource(t), i.mediaStream.connect(i.output), i.amplitude.setInput(i.output), e && e();
                         }).catch(function(t) {
                             n && n(t);
                         });
@@ -3519,7 +3519,7 @@
                 {
                     key: "connect",
                     value: function(t) {
-                        t ? t.hasOwnProperty("input") ? this.output.connect(t.input) : t.hasOwnProperty("analyser") ? this.output.connect(t.analyser) : this.output.connect(t) : this.output.connect(p1.input);
+                        t ? t.hasOwnProperty("input") ? this.output.connect(t.input) : t.hasOwnProperty("analyser") ? this.output.connect(t.analyser) : this.output.connect(t) : this.output.connect(p.input);
                     }
                 },
                 {
@@ -3539,18 +3539,18 @@
                     value: function(t, e) {
                         if (e) {
                             var n = e || 0, i = this.output.gain.value;
-                            this.output.gain.cancelScheduledValues(p1.audiocontext.currentTime), this.output.gain.setValueAtTime(i, p1.audiocontext.currentTime), this.output.gain.linearRampToValueAtTime(t, n + p1.audiocontext.currentTime);
-                        } else this.output.gain.cancelScheduledValues(p1.audiocontext.currentTime), this.output.gain.setValueAtTime(t, p1.audiocontext.currentTime);
+                            this.output.gain.cancelScheduledValues(p.audiocontext.currentTime), this.output.gain.setValueAtTime(i, p.audiocontext.currentTime), this.output.gain.linearRampToValueAtTime(t, n + p.audiocontext.currentTime);
+                        } else this.output.gain.cancelScheduledValues(p.audiocontext.currentTime), this.output.gain.setValueAtTime(t, p.audiocontext.currentTime);
                     }
                 },
                 {
                     key: "getSources",
                     value: function(i, r) {
                         return new Promise(function(e, n) {
-                            window.navigator.mediaDevices.enumerateDevices().then(function(t96) {
-                                p1.inputSources = t96.filter(function(t) {
+                            window.navigator.mediaDevices.enumerateDevices().then(function(t) {
+                                p.inputSources = t.filter(function(t) {
                                     return "audioinput" === t.kind;
-                                }), e(p1.inputSources), i && i(p1.inputSources);
+                                }), e(p.inputSources), i && i(p.inputSources);
                             }).catch(function(t) {
                                 n(t), r && r(t);
                             });
@@ -3560,18 +3560,18 @@
                 {
                     key: "setSource",
                     value: function(t) {
-                        0 < p1.inputSources.length && t < p1.inputSources.length && (this.currentSource = t), this.stream && this.stream.active && this.start();
+                        0 < p.inputSources.length && t < p.inputSources.length && (this.currentSource = t), this.stream && this.stream.active && this.start();
                     }
                 },
                 {
                     key: "dispose",
                     value: function() {
-                        var t = p1.soundArray.indexOf(this);
-                        p1.soundArray.splice(t, 1), this.stop(), this.output && this.output.disconnect(), this.amplitude && this.amplitude.disconnect(), delete this.amplitude, delete this.output;
+                        var t = p.soundArray.indexOf(this);
+                        p.soundArray.splice(t, 1), this.stop(), this.output && this.output.disconnect(), this.amplitude && this.amplitude.disconnect(), delete this.amplitude, delete this.output;
                     }
                 }
-            ]), e62;
-        }(), Pt = n30(23), At = n30.n(Pt);
+            ]), e;
+        }(), Pt = n(23), At = n.n(Pt);
         function Ot(t, e) {
             for(var n = 0; n < e.length; n++){
                 var i = e[n];
@@ -3579,18 +3579,18 @@
             }
         }
         var Ct = function() {
-            function t97() {
+            function t() {
                 !function(t, e) {
                     if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
-                }(this, t97), this.ac = p1.audiocontext, this.input = this.ac.createGain(), this.output = this.ac.createGain(), this._drywet = new At.a(1), this.wet = this.ac.createGain(), this.input.connect(this._drywet.a), this.wet.connect(this._drywet.b), this._drywet.connect(this.output), this.connect(), p1.soundArray.push(this);
+                }(this, t), this.ac = p.audiocontext, this.input = this.ac.createGain(), this.output = this.ac.createGain(), this._drywet = new At.a(1), this.wet = this.ac.createGain(), this.input.connect(this._drywet.a), this.wet.connect(this._drywet.b), this._drywet.connect(this.output), this.connect(), p.soundArray.push(this);
             }
             return function(t, e, n) {
                 e && Ot(t.prototype, e), n && Ot(t, n);
-            }(t97, [
+            }(t, [
                 {
                     key: "amp",
                     value: function(t, e, n) {
-                        var i = 1 < arguments.length && void 0 !== e ? e : 0, r = 2 < arguments.length && void 0 !== n ? n : 0, o = p1.audiocontext.currentTime, s = o + r, a = s + i + .001, u = this.output.gain.value;
+                        var i = 1 < arguments.length && void 0 !== e ? e : 0, r = 2 < arguments.length && void 0 !== n ? n : 0, o = p.audiocontext.currentTime, s = o + r, a = s + i + .001, u = this.output.gain.value;
                         this.output.gain.cancelScheduledValues(o), this.output.gain.linearRampToValueAtTime(u, s + .001), this.output.gain.linearRampToValueAtTime(t, a);
                     }
                 },
@@ -3626,18 +3626,18 @@
                 {
                     key: "dispose",
                     value: function() {
-                        var t = p1.soundArray.indexOf(this);
-                        p1.soundArray.splice(t, 1), this.input && (this.input.disconnect(), delete this.input), this.output && (this.output.disconnect(), delete this.output), this._drywet && (this._drywet.disconnect(), delete this._drywet), this.wet && (this.wet.disconnect(), delete this.wet), this.ac = void 0;
+                        var t = p.soundArray.indexOf(this);
+                        p.soundArray.splice(t, 1), this.input && (this.input.disconnect(), delete this.input), this.output && (this.output.disconnect(), delete this.output), this._drywet && (this._drywet.disconnect(), delete this._drywet), this.wet && (this.wet.disconnect(), delete this.wet), this.ac = void 0;
                     }
                 }
-            ]), t97;
+            ]), t;
         }();
-        function Rt(t98) {
+        function Rt(t) {
             return (Rt = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(t) {
                 return typeof t;
             } : function(t) {
                 return t && "function" == typeof Symbol && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t;
-            })(t98);
+            })(t);
         }
         function qt(t, e) {
             if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
@@ -3648,28 +3648,28 @@
                 i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(t, i.key, i);
             }
         }
-        function Nt(t99, e) {
+        function Nt(t, e) {
             return !e || "object" !== Rt(e) && "function" != typeof e ? function(t) {
                 if (void 0 !== t) return t;
                 throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-            }(t99) : e;
+            }(t) : e;
         }
-        function Bt(t100, e63, n35) {
-            return (Bt = "undefined" != typeof Reflect && Reflect.get ? Reflect.get : function(t101, e64, n) {
+        function Bt(t, e, n) {
+            return (Bt = "undefined" != typeof Reflect && Reflect.get ? Reflect.get : function(t, e, n) {
                 var i = function(t, e) {
                     for(; !Object.prototype.hasOwnProperty.call(t, e) && null !== (t = Vt(t)););
                     return t;
-                }(t101, e64);
+                }(t, e);
                 if (i) {
-                    var r = Object.getOwnPropertyDescriptor(i, e64);
+                    var r = Object.getOwnPropertyDescriptor(i, e);
                     return r.get ? r.get.call(n) : r.value;
                 }
-            })(t100, e63, n35 || t100);
+            })(t, e, n || t);
         }
-        function Vt(t102) {
+        function Vt(t) {
             return (Vt = Object.setPrototypeOf ? Object.getPrototypeOf : function(t) {
                 return t.__proto__ || Object.getPrototypeOf(t);
-            })(t102);
+            })(t);
         }
         function jt(t, e) {
             if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function");
@@ -3681,19 +3681,19 @@
                 }
             }), e && Mt(t, e);
         }
-        function Mt(t103, e65) {
+        function Mt(t, e) {
             return (Mt = Object.setPrototypeOf || function(t, e) {
                 return t.__proto__ = e, t;
-            })(t103, e65);
+            })(t, e);
         }
         var Ft = function() {
-            function n36(t) {
+            function n(t) {
                 var e;
-                return qt(this, n36), (e = Nt(this, Vt(n36).call(this))).biquad = e.ac.createBiquadFilter(), e.input.connect(e.biquad), e.biquad.connect(e.wet), t && e.setType(t), e._on = !0, e._untoggledType = e.biquad.type, e;
+                return qt(this, n), (e = Nt(this, Vt(n).call(this))).biquad = e.ac.createBiquadFilter(), e.input.connect(e.biquad), e.biquad.connect(e.wet), t && e.setType(t), e._on = !0, e._untoggledType = e.biquad.type, e;
             }
-            return jt(n36, Ct), function(t, e, n) {
+            return jt(n, Ct), function(t, e, n) {
                 e && Et(t.prototype, e), n && Et(t, n);
-            }(n36, [
+            }(n, [
                 {
                     key: "process",
                     value: function(t, e, n, i) {
@@ -3742,10 +3742,10 @@
                 {
                     key: "dispose",
                     value: function() {
-                        Bt(Vt(n36.prototype), "dispose", this).call(this), this.biquad && (this.biquad.disconnect(), delete this.biquad);
+                        Bt(Vt(n.prototype), "dispose", this).call(this), this.biquad && (this.biquad.disconnect(), delete this.biquad);
                     }
                 }
-            ]), n36;
+            ]), n;
         }(), Dt = function() {
             function t() {
                 return qt(this, t), Nt(this, Vt(t).call(this, "lowpass"));
@@ -3762,12 +3762,12 @@
             }
             return jt(t, Ft), t;
         }(), Gt = Ft;
-        function Lt(t104) {
+        function Lt(t) {
             return (Lt = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(t) {
                 return typeof t;
             } : function(t) {
                 return t && "function" == typeof Symbol && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t;
-            })(t104);
+            })(t);
         }
         function zt(t, e) {
             for(var n = 0; n < e.length; n++){
@@ -3775,28 +3775,28 @@
                 i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(t, i.key, i);
             }
         }
-        function Wt(t105, e) {
+        function Wt(t, e) {
             return !e || "object" !== Lt(e) && "function" != typeof e ? function(t) {
                 if (void 0 !== t) return t;
                 throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-            }(t105) : e;
+            }(t) : e;
         }
-        function Zt(t106) {
+        function Zt(t) {
             return (Zt = Object.setPrototypeOf ? Object.getPrototypeOf : function(t) {
                 return t.__proto__ || Object.getPrototypeOf(t);
-            })(t106);
+            })(t);
         }
-        function Xt(t107, e66) {
+        function Xt(t, e) {
             return (Xt = Object.setPrototypeOf || function(t, e) {
                 return t.__proto__ = e, t;
-            })(t107, e66);
+            })(t, e);
         }
         var Yt = function() {
-            function i(t108, e67) {
+            function i(t, e) {
                 var n;
                 return function(t, e) {
                     if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
-                }(this, i), (n = Wt(this, Zt(i).call(this, "peaking"))).disconnect(), n.set(t108, e67), n.biquad.gain.value = 0, delete n.input, delete n.output, delete n._drywet, delete n.wet, n;
+                }(this, i), (n = Wt(this, Zt(i).call(this, "peaking"))).disconnect(), n.set(t, e), n.biquad.gain.value = 0, delete n.input, delete n.output, delete n._drywet, delete n.wet, n;
             }
             return function(t, e) {
                 if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function");
@@ -3834,18 +3834,18 @@
                 {
                     key: "dispose",
                     value: function() {
-                        var t = p1.soundArray.indexOf(this);
-                        p1.soundArray.splice(t, 1), this.disconnect(), delete this.biquad;
+                        var t = p.soundArray.indexOf(this);
+                        p.soundArray.splice(t, 1), this.disconnect(), delete this.biquad;
                     }
                 }
             ]), i;
         }();
-        function Ht(t109) {
+        function Ht(t) {
             return (Ht = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(t) {
                 return typeof t;
             } : function(t) {
                 return t && "function" == typeof Symbol && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t;
-            })(t109);
+            })(t);
         }
         function $t(t, e) {
             for(var n = 0; n < e.length; n++){
@@ -3853,42 +3853,42 @@
                 i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(t, i.key, i);
             }
         }
-        function Qt(t110, e) {
+        function Qt(t, e) {
             return !e || "object" !== Ht(e) && "function" != typeof e ? function(t) {
                 if (void 0 !== t) return t;
                 throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-            }(t110) : e;
+            }(t) : e;
         }
-        function Jt(t111, e68, n37) {
-            return (Jt = "undefined" != typeof Reflect && Reflect.get ? Reflect.get : function(t112, e69, n) {
+        function Jt(t, e, n) {
+            return (Jt = "undefined" != typeof Reflect && Reflect.get ? Reflect.get : function(t, e, n) {
                 var i = function(t, e) {
                     for(; !Object.prototype.hasOwnProperty.call(t, e) && null !== (t = Kt(t)););
                     return t;
-                }(t112, e69);
+                }(t, e);
                 if (i) {
-                    var r = Object.getOwnPropertyDescriptor(i, e69);
+                    var r = Object.getOwnPropertyDescriptor(i, e);
                     return r.get ? r.get.call(n) : r.value;
                 }
-            })(t111, e68, n37 || t111);
+            })(t, e, n || t);
         }
-        function Kt(t113) {
+        function Kt(t) {
             return (Kt = Object.setPrototypeOf ? Object.getPrototypeOf : function(t) {
                 return t.__proto__ || Object.getPrototypeOf(t);
-            })(t113);
+            })(t);
         }
-        function te(t114, e70) {
+        function te(t, e) {
             return (te = Object.setPrototypeOf || function(t, e) {
                 return t.__proto__ = e, t;
-            })(t114, e70);
+            })(t, e);
         }
         var ee = function() {
-            function s(t115) {
-                var e71, n, i, r;
+            function s(t) {
+                var e, n, i, r;
                 !function(t, e) {
                     if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
-                }(this, s), e71 = Qt(this, Kt(s).call(this)), n = 3 === (t115 = 3 === t115 || 8 === t115 ? t115 : 3) ? Math.pow(2, 3) : 2, e71.bands = [];
-                for(var o = 0; o < t115; o++)r = o === t115 - 1 ? (i = 21e3, .01) : 0 === o ? (i = 100, .1) : (i = 1 === o ? 3 === t115 ? 360 * n : 360 : e71.bands[o - 1].freq() * n, 1), e71.bands[o] = e71._newBand(i, r), 0 < o ? e71.bands[o - 1].connect(e71.bands[o].biquad) : e71.input.connect(e71.bands[o].biquad);
-                return e71.bands[t115 - 1].connect(e71.output), e71;
+                }(this, s), e = Qt(this, Kt(s).call(this)), n = 3 === (t = 3 === t || 8 === t ? t : 3) ? Math.pow(2, 3) : 2, e.bands = [];
+                for(var o = 0; o < t; o++)r = o === t - 1 ? (i = 21e3, .01) : 0 === o ? (i = 100, .1) : (i = 1 === o ? 3 === t ? 360 * n : 360 : e.bands[o - 1].freq() * n, 1), e.bands[o] = e._newBand(i, r), 0 < o ? e.bands[o - 1].connect(e.bands[o].biquad) : e.input.connect(e.bands[o].biquad);
+                return e.bands[t - 1].connect(e.output), e;
             }
             return function(t, e) {
                 if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function");
@@ -3938,14 +3938,14 @@
             }
         }
         var ie = function() {
-            function e72(t116) {
+            function e(t) {
                 !function(t, e) {
                     if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
-                }(this, e72), this.ac = p1.audiocontext, this.listener = this.ac.listener;
+                }(this, e), this.ac = p.audiocontext, this.listener = this.ac.listener;
             }
             return function(t, e, n) {
                 e && ne(t.prototype, e), n && ne(t, n);
-            }(e72, [
+            }(e, [
                 {
                     key: "process",
                     value: function(t) {
@@ -4058,14 +4058,14 @@
                         return "number" == typeof t ? (this.listener.upZ.value = t, this.listener.upZ.cancelScheduledValues(this.ac.currentTime + .01 + n), this.listener.upZ.linearRampToValueAtTime(t, this.ac.currentTime + .02 + n)) : t && t.connect(this.listener.upZ), this.listener.upZ.value;
                     }
                 }
-            ]), e72;
+            ]), e;
         }();
-        function re(t117) {
+        function re(t) {
             return (re = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(t) {
                 return typeof t;
             } : function(t) {
                 return t && "function" == typeof Symbol && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t;
-            })(t117);
+            })(t);
         }
         function oe(t, e) {
             for(var n = 0; n < e.length; n++){
@@ -4073,40 +4073,40 @@
                 i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(t, i.key, i);
             }
         }
-        function se(t118, e) {
+        function se(t, e) {
             return !e || "object" !== re(e) && "function" != typeof e ? function(t) {
                 if (void 0 !== t) return t;
                 throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-            }(t118) : e;
+            }(t) : e;
         }
-        function ae(t119, e73, n38) {
-            return (ae = "undefined" != typeof Reflect && Reflect.get ? Reflect.get : function(t120, e74, n) {
+        function ae(t, e, n) {
+            return (ae = "undefined" != typeof Reflect && Reflect.get ? Reflect.get : function(t, e, n) {
                 var i = function(t, e) {
                     for(; !Object.prototype.hasOwnProperty.call(t, e) && null !== (t = ue(t)););
                     return t;
-                }(t120, e74);
+                }(t, e);
                 if (i) {
-                    var r = Object.getOwnPropertyDescriptor(i, e74);
+                    var r = Object.getOwnPropertyDescriptor(i, e);
                     return r.get ? r.get.call(n) : r.value;
                 }
-            })(t119, e73, n38 || t119);
+            })(t, e, n || t);
         }
-        function ue(t121) {
+        function ue(t) {
             return (ue = Object.setPrototypeOf ? Object.getPrototypeOf : function(t) {
                 return t.__proto__ || Object.getPrototypeOf(t);
-            })(t121);
+            })(t);
         }
-        function ce(t122, e75) {
+        function ce(t, e) {
             return (ce = Object.setPrototypeOf || function(t, e) {
                 return t.__proto__ = e, t;
-            })(t122, e75);
+            })(t, e);
         }
         var le = function() {
-            function e76() {
-                var t123;
+            function e() {
+                var t;
                 return function(t, e) {
                     if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
-                }(this, e76), (t123 = se(this, ue(e76).call(this))).panner = t123.ac.createPanner(), t123.panner.panningModel = "HRTF", t123.panner.distanceModel = "linear", t123.panner.connect(t123.output), t123.input.connect(t123.panner), t123;
+                }(this, e), (t = se(this, ue(e).call(this))).panner = t.ac.createPanner(), t.panner.panningModel = "HRTF", t.panner.distanceModel = "linear", t.panner.connect(t.output), t.input.connect(t.panner), t;
             }
             return function(t, e) {
                 if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function");
@@ -4117,9 +4117,9 @@
                         configurable: !0
                     }
                 }), e && ce(t, e);
-            }(e76, Ct), function(t, e, n) {
+            }(e, Ct), function(t, e, n) {
                 e && oe(t.prototype, e), n && oe(t, n);
-            }(e76, [
+            }(e, [
                 {
                     key: "process",
                     value: function(t) {
@@ -4209,17 +4209,17 @@
                 {
                     key: "dispose",
                     value: function() {
-                        ae(ue(e76.prototype), "dispose", this).call(this), this.panner && (this.panner.disconnect(), delete this.panner);
+                        ae(ue(e.prototype), "dispose", this).call(this), this.panner && (this.panner.disconnect(), delete this.panner);
                     }
                 }
-            ]), e76;
+            ]), e;
         }();
-        function he(t124) {
+        function he(t) {
             return (he = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(t) {
                 return typeof t;
             } : function(t) {
                 return t && "function" == typeof Symbol && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t;
-            })(t124);
+            })(t);
         }
         function pe(t, e) {
             for(var n = 0; n < e.length; n++){
@@ -4227,40 +4227,40 @@
                 i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(t, i.key, i);
             }
         }
-        function fe(t125, e) {
+        function fe(t, e) {
             return !e || "object" !== he(e) && "function" != typeof e ? function(t) {
                 if (void 0 !== t) return t;
                 throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-            }(t125) : e;
+            }(t) : e;
         }
-        function de(t126, e77, n39) {
-            return (de = "undefined" != typeof Reflect && Reflect.get ? Reflect.get : function(t127, e78, n) {
+        function de(t, e, n) {
+            return (de = "undefined" != typeof Reflect && Reflect.get ? Reflect.get : function(t, e, n) {
                 var i = function(t, e) {
                     for(; !Object.prototype.hasOwnProperty.call(t, e) && null !== (t = ye(t)););
                     return t;
-                }(t127, e78);
+                }(t, e);
                 if (i) {
-                    var r = Object.getOwnPropertyDescriptor(i, e78);
+                    var r = Object.getOwnPropertyDescriptor(i, e);
                     return r.get ? r.get.call(n) : r.value;
                 }
-            })(t126, e77, n39 || t126);
+            })(t, e, n || t);
         }
-        function ye(t128) {
+        function ye(t) {
             return (ye = Object.setPrototypeOf ? Object.getPrototypeOf : function(t) {
                 return t.__proto__ || Object.getPrototypeOf(t);
-            })(t128);
+            })(t);
         }
-        function me(t129, e79) {
+        function me(t, e) {
             return (me = Object.setPrototypeOf || function(t, e) {
                 return t.__proto__ = e, t;
-            })(t129, e79);
+            })(t, e);
         }
         var ve = function() {
-            function e80() {
-                var t130;
+            function e() {
+                var t;
                 return function(t, e) {
                     if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
-                }(this, e80), (t130 = fe(this, ye(e80).call(this)))._split = t130.ac.createChannelSplitter(2), t130._merge = t130.ac.createChannelMerger(2), t130._leftGain = t130.ac.createGain(), t130._rightGain = t130.ac.createGain(), t130.leftDelay = t130.ac.createDelay(), t130.rightDelay = t130.ac.createDelay(), t130._leftFilter = new Gt, t130._rightFilter = new Gt, t130._leftFilter.disconnect(), t130._rightFilter.disconnect(), t130._leftFilter.biquad.frequency.setValueAtTime(1200, t130.ac.currentTime), t130._rightFilter.biquad.frequency.setValueAtTime(1200, t130.ac.currentTime), t130._leftFilter.biquad.Q.setValueAtTime(.3, t130.ac.currentTime), t130._rightFilter.biquad.Q.setValueAtTime(.3, t130.ac.currentTime), t130.input.connect(t130._split), t130.leftDelay.connect(t130._leftGain), t130.rightDelay.connect(t130._rightGain), t130._leftGain.connect(t130._leftFilter.input), t130._rightGain.connect(t130._rightFilter.input), t130._merge.connect(t130.wet), t130._leftFilter.biquad.gain.setValueAtTime(1, t130.ac.currentTime), t130._rightFilter.biquad.gain.setValueAtTime(1, t130.ac.currentTime), t130.setType(0), t130._maxDelay = t130.leftDelay.delayTime.maxValue, t130.feedback(.5), t130;
+                }(this, e), (t = fe(this, ye(e).call(this)))._split = t.ac.createChannelSplitter(2), t._merge = t.ac.createChannelMerger(2), t._leftGain = t.ac.createGain(), t._rightGain = t.ac.createGain(), t.leftDelay = t.ac.createDelay(), t.rightDelay = t.ac.createDelay(), t._leftFilter = new Gt, t._rightFilter = new Gt, t._leftFilter.disconnect(), t._rightFilter.disconnect(), t._leftFilter.biquad.frequency.setValueAtTime(1200, t.ac.currentTime), t._rightFilter.biquad.frequency.setValueAtTime(1200, t.ac.currentTime), t._leftFilter.biquad.Q.setValueAtTime(.3, t.ac.currentTime), t._rightFilter.biquad.Q.setValueAtTime(.3, t.ac.currentTime), t.input.connect(t._split), t.leftDelay.connect(t._leftGain), t.rightDelay.connect(t._rightGain), t._leftGain.connect(t._leftFilter.input), t._rightGain.connect(t._rightFilter.input), t._merge.connect(t.wet), t._leftFilter.biquad.gain.setValueAtTime(1, t.ac.currentTime), t._rightFilter.biquad.gain.setValueAtTime(1, t.ac.currentTime), t.setType(0), t._maxDelay = t.leftDelay.delayTime.maxValue, t.feedback(.5), t;
             }
             return function(t, e) {
                 if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function");
@@ -4271,9 +4271,9 @@
                         configurable: !0
                     }
                 }), e && me(t, e);
-            }(e80, Ct), function(t, e, n) {
+            }(e, Ct), function(t, e, n) {
                 e && pe(t.prototype, e), n && pe(t, n);
-            }(e80, [
+            }(e, [
                 {
                     key: "process",
                     value: function(t, e, n, i) {
@@ -4321,17 +4321,17 @@
                 {
                     key: "dispose",
                     value: function() {
-                        de(ye(e80.prototype), "dispose", this).call(this), this._split.disconnect(), this._leftFilter.dispose(), this._rightFilter.dispose(), this._merge.disconnect(), this._leftGain.disconnect(), this._rightGain.disconnect(), this.leftDelay.disconnect(), this.rightDelay.disconnect(), this._split = void 0, this._leftFilter = void 0, this._rightFilter = void 0, this._merge = void 0, this._leftGain = void 0, this._rightGain = void 0, this.leftDelay = void 0, this.rightDelay = void 0;
+                        de(ye(e.prototype), "dispose", this).call(this), this._split.disconnect(), this._leftFilter.dispose(), this._rightFilter.dispose(), this._merge.disconnect(), this._leftGain.disconnect(), this._rightGain.disconnect(), this.leftDelay.disconnect(), this.rightDelay.disconnect(), this._split = void 0, this._leftFilter = void 0, this._rightFilter = void 0, this._merge = void 0, this._leftGain = void 0, this._rightGain = void 0, this.leftDelay = void 0, this.rightDelay = void 0;
                     }
                 }
-            ]), e80;
+            ]), e;
         }();
-        function _e(t131) {
+        function _e(t) {
             return (_e = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(t) {
                 return typeof t;
             } : function(t) {
                 return t && "function" == typeof Symbol && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t;
-            })(t131);
+            })(t);
         }
         function ge(t, e) {
             if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
@@ -4345,28 +4345,28 @@
         function Te(t, e, n) {
             return e && be(t.prototype, e), n && be(t, n), t;
         }
-        function we(t132, e) {
+        function we(t, e) {
             return !e || "object" !== _e(e) && "function" != typeof e ? function(t) {
                 if (void 0 !== t) return t;
                 throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-            }(t132) : e;
+            }(t) : e;
         }
-        function xe(t133, e81, n40) {
-            return (xe = "undefined" != typeof Reflect && Reflect.get ? Reflect.get : function(t134, e82, n) {
+        function xe(t, e, n) {
+            return (xe = "undefined" != typeof Reflect && Reflect.get ? Reflect.get : function(t, e, n) {
                 var i = function(t, e) {
                     for(; !Object.prototype.hasOwnProperty.call(t, e) && null !== (t = Se(t)););
                     return t;
-                }(t134, e82);
+                }(t, e);
                 if (i) {
-                    var r = Object.getOwnPropertyDescriptor(i, e82);
+                    var r = Object.getOwnPropertyDescriptor(i, e);
                     return r.get ? r.get.call(n) : r.value;
                 }
-            })(t133, e81, n40 || t133);
+            })(t, e, n || t);
         }
-        function Se(t135) {
+        function Se(t) {
             return (Se = Object.setPrototypeOf ? Object.getPrototypeOf : function(t) {
                 return t.__proto__ || Object.getPrototypeOf(t);
-            })(t135);
+            })(t);
         }
         function ke(t, e) {
             if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function");
@@ -4378,17 +4378,17 @@
                 }
             }), e && Pe(t, e);
         }
-        function Pe(t136, e83) {
+        function Pe(t, e) {
             return (Pe = Object.setPrototypeOf || function(t, e) {
                 return t.__proto__ = e, t;
-            })(t136, e83);
+            })(t, e);
         }
         var Ae = function() {
-            function e84() {
+            function e() {
                 var t;
-                return ge(this, e84), (t = we(this, Se(e84).call(this)))._initConvolverNode(), t.input.gain.value = .5, t._seconds = 3, t._decay = 2, t._reverse = !1, t._buildImpulse(), t;
+                return ge(this, e), (t = we(this, Se(e).call(this)))._initConvolverNode(), t.input.gain.value = .5, t._seconds = 3, t._decay = 2, t._reverse = !1, t._buildImpulse(), t;
             }
-            return ke(e84, Ct), Te(e84, [
+            return ke(e, Ct), Te(e, [
                 {
                     key: "_initConvolverNode",
                     value: function() {
@@ -4433,35 +4433,35 @@
                 {
                     key: "dispose",
                     value: function() {
-                        xe(Se(e84.prototype), "dispose", this).call(this), this._teardownConvolverNode();
+                        xe(Se(e.prototype), "dispose", this).call(this), this._teardownConvolverNode();
                     }
                 }
-            ]), e84;
+            ]), e;
         }(), Oe = function() {
-            function r23(t, e, n) {
+            function r(t, e, n) {
                 var i;
-                return ge(this, r23), (i = we(this, Se(r23).call(this)))._initConvolverNode(), i.input.gain.value = .5, t ? (i.impulses = [], i._loadBuffer(t, e, n)) : (i._seconds = 3, i._decay = 2, i._reverse = !1, i._buildImpulse()), i.impulses = [], i.set = null, i;
+                return ge(this, r), (i = we(this, Se(r).call(this)))._initConvolverNode(), i.input.gain.value = .5, t ? (i.impulses = [], i._loadBuffer(t, e, n)) : (i._seconds = 3, i._decay = 2, i._reverse = !1, i._buildImpulse()), i.impulses = [], i.set = null, i;
             }
-            return ke(r23, Ae), Te(r23, [
+            return ke(r, Ae), Te(r, [
                 {
                     key: "_loadBuffer",
-                    value: function(t137, i, n41) {
-                        var r = p5.prototype._checkFileFormats(t137), o = this, s = (new Error).stack, a = Object(c1.b)(), u = new XMLHttpRequest;
+                    value: function(t, i, n) {
+                        var r = p5.prototype._checkFileFormats(t), o = this, s = (new Error).stack, a = Object(c.b)(), u = new XMLHttpRequest;
                         u.open("GET", r, !0), u.responseType = "arraybuffer", u.onload = function() {
                             if (200 === u.status) a.decodeAudioData(u.response, function(t) {
                                 var e = {}, n = r.split("/");
                                 e.name = n[n.length - 1], e.audioBuffer = t, o.impulses.push(e), o._setBuffer(e.audioBuffer), i && i(e);
                             }, function() {
                                 var t = new m("decodeAudioData", s, o.url), e = "AudioContext error at decodeAudioData for " + o.url;
-                                n41 && (t.msg = e, n41(t));
+                                n && (t.msg = e, n(t));
                             });
                             else {
-                                var t138 = new m("loadConvolver", s, o.url), e85 = "Unable to load " + o.url + ". The request status was: " + u.status + " (" + u.statusText + ")";
-                                n41 && (t138.message = e85, n41(t138));
+                                var t = new m("loadConvolver", s, o.url), e = "Unable to load " + o.url + ". The request status was: " + u.status + " (" + u.statusText + ")";
+                                n && (t.message = e, n(t));
                             }
                         }, u.onerror = function() {
                             var t = new m("loadConvolver", s, o.url), e = "There was no response from the server at " + o.url + ". Check the url and internet connectivity.";
-                            n41 && (t.message = e, n41(t));
+                            n && (t.message = e, n(t));
                         }, u.send();
                     }
                 },
@@ -4497,12 +4497,12 @@
                 {
                     key: "dispose",
                     value: function() {
-                        for(var t in xe(Se(r23.prototype), "dispose", this).call(this), this.impulses)this.impulses[t] && (this.impulses[t] = null);
+                        for(var t in xe(Se(r.prototype), "dispose", this).call(this), this.impulses)this.impulses[t] && (this.impulses[t] = null);
                     }
                 }
-            ]), r23;
+            ]), r;
         }();
-        var Ce = n30(11), Re = n30.n(Ce);
+        var Ce = n(11), Re = n.n(Ce);
         function qe(t, e) {
             for(var n = 0; n < e.length; n++){
                 var i = e[n];
@@ -4510,25 +4510,25 @@
             }
         }
         var Ee = function() {
-            function t139() {
+            function t() {
                 !function(t, e) {
                     if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
-                }(this, t139), this.clock = new Re.a({
+                }(this, t), this.clock = new Re.a({
                     callback: this.ontick.bind(this)
                 }), this.syncedParts = [], this.bpm = 120, this._init(), this.prevTick = 0, this.tatumTime = 0, this.tickCallback = function() {};
             }
             return function(t, e, n) {
                 e && qe(t.prototype, e), n && qe(t, n);
-            }(t139, [
+            }(t, [
                 {
                     key: "ontick",
-                    value: function(t140) {
-                        var e86 = t140 - this.prevTick, i = t140 - p1.audiocontext.currentTime;
-                        if (!(e86 - this.tatumTime <= -0.02)) {
-                            this.prevTick = t140;
+                    value: function(t) {
+                        var e = t - this.prevTick, i = t - p.audiocontext.currentTime;
+                        if (!(e - this.tatumTime <= -0.02)) {
+                            this.prevTick = t;
                             var r = this;
-                            this.syncedParts.forEach(function(t141) {
-                                t141.isPlaying && (t141.incrementStep(i), t141.phrases.forEach(function(t) {
+                            this.syncedParts.forEach(function(t) {
+                                t.isPlaying && (t.incrementStep(i), t.phrases.forEach(function(t) {
                                     var e = t.sequence, n = r.metroTicks % e.length;
                                     0 !== e[n] && (r.metroTicks < e.length || !t.looping) && t.callback(i, e[n]);
                                 }));
@@ -4539,7 +4539,7 @@
                 {
                     key: "setBPM",
                     value: function(t, e) {
-                        var n = 1 < arguments.length && void 0 !== e ? e : 0, i = 60 / (t * this.tatums), r = p1.audiocontext.currentTime;
+                        var n = 1 < arguments.length && void 0 !== e ? e : 0, i = 60 / (t * this.tatums), r = p.audiocontext.currentTime;
                         this.tatumTime = i, this.clock.frequency.setValueAtTime(this.clock.frequency.value, r), this.clock.frequency.linearRampToValueAtTime(t, r + n), this.bpm = t;
                     }
                 },
@@ -4572,14 +4572,14 @@
                 {
                     key: "start",
                     value: function(t) {
-                        var e = t || 0, n = p1.audiocontext.currentTime;
+                        var e = t || 0, n = p.audiocontext.currentTime;
                         this.clock.start(n + e), this.setBPM(this.bpm);
                     }
                 },
                 {
                     key: "stop",
                     value: function(t) {
-                        var e = t || 0, n = p1.audiocontext.currentTime;
+                        var e = t || 0, n = p.audiocontext.currentTime;
                         this.clock.stop(n + e);
                     }
                 },
@@ -4589,7 +4589,7 @@
                         this.tatums = 1 / t / 4;
                     }
                 }
-            ]), t139;
+            ]), t;
         }();
         function Ne(t, e) {
             for(var n = 0; n < e.length; n++){
@@ -4605,16 +4605,16 @@
         }
         var je = 120;
         p5.prototype.setBPM = function(t, e) {
-            for(var n in je = t, p1.parts)p1.parts[n] && p1.parts[n].setBPM(t, e);
+            for(var n in je = t, p.parts)p.parts[n] && p.parts[n].setBPM(t, e);
         };
         function Me(t, e, n) {
             Ve(this, Me), this.phraseStep = 0, this.name = t, this.callback = e, this.sequence = n;
         }
         var Fe = function() {
-            function n42(t, e) {
-                Ve(this, n42), this.length = t || 0, this.partStep = 0, this.phrases = [], this.isPlaying = !1, this.noLoop(), this.tatums = e || .0625, this.metro = new Ee, this.metro._init(), this.metro.beatLength(this.tatums), this.metro.setBPM(je), p1.parts.push(this), this.callback = function() {};
+            function n(t, e) {
+                Ve(this, n), this.length = t || 0, this.partStep = 0, this.phrases = [], this.isPlaying = !1, this.noLoop(), this.tatums = e || .0625, this.metro = new Ee, this.metro._init(), this.metro.beatLength(this.tatums), this.metro.setBPM(je), p.parts.push(this), this.callback = function() {};
             }
-            return Be(n42, [
+            return Be(n, [
                 {
                     key: "setBPM",
                     value: function(t, e) {
@@ -4711,17 +4711,17 @@
                         this.callback = t;
                     }
                 }
-            ]), n42;
+            ]), n;
         }(), De = function() {
-            function n43() {
-                Ve(this, n43), this.parts = [], this.currentPart = new Array(arguments.length);
+            function n() {
+                Ve(this, n), this.parts = [], this.currentPart = new Array(arguments.length);
                 var t = this;
                 for(var e in arguments)this.parts[e] = arguments[e], this.parts[e].nextPart = this.parts[e + 1], this.parts[e].onended = function() {
                     t.resetPart(e), Ie(t);
                 };
                 this.looping = !1;
             }
-            return Be(n43, [
+            return Be(n, [
                 {
                     key: "onended",
                     value: function() {
@@ -4781,7 +4781,7 @@
                         for(var n in this.parts)this.parts[n] && this.parts[n].setBPM(t, e);
                     }
                 }
-            ]), n43;
+            ]), n;
         }();
         function Ie(t) {
             t.currentPart++, t.currentPart >= t.parts.length ? (t.scoreStep = 0, t.onended()) : (t.scoreStep = 0, t.parts[t.currentPart - 1].stop(), t.parts[t.currentPart].start());
@@ -4793,10 +4793,10 @@
             }
         }
         var Ge = function() {
-            function i29(t142, e87) {
+            function i(t, e) {
                 !function(t, e) {
                     if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
-                }(this, i29), Object.defineProperty(this, "bpm", {
+                }(this, i), Object.defineProperty(this, "bpm", {
                     get: function() {
                         return this._bpm;
                     },
@@ -4821,11 +4821,11 @@
                     get: function() {
                         return this.clock.ticks;
                     }
-                }), this.callback = t142, this.musicalTimeMode = "number" != typeof this._interval, this._interval = e87 || 1, this._timeSignature = 4, this._bpm = 60, this.isPlaying = !1, this.maxIterations = 1 / 0;
+                }), this.callback = t, this.musicalTimeMode = "number" != typeof this._interval, this._interval = e || 1, this._timeSignature = 4, this._bpm = 60, this.isPlaying = !1, this.maxIterations = 1 / 0;
                 var n = this;
                 this.clock = new Re.a({
                     callback: function(t) {
-                        var e = t - p1.audiocontext.currentTime;
+                        var e = t - p.audiocontext.currentTime;
                         0 < e && n.iterations <= n.maxIterations && n.callback(e);
                     },
                     frequency: this._calcFreq()
@@ -4833,35 +4833,35 @@
             }
             return function(t, e, n) {
                 e && Ue(t.prototype, e), n && Ue(t, n);
-            }(i29, [
+            }(i, [
                 {
                     key: "start",
                     value: function(t) {
-                        var e = t || 0, n = p1.audiocontext.currentTime;
+                        var e = t || 0, n = p.audiocontext.currentTime;
                         this.isPlaying || (this.clock.start(n + e), this.isPlaying = !0);
                     }
                 },
                 {
                     key: "stop",
                     value: function(t) {
-                        var e = t || 0, n = p1.audiocontext.currentTime;
+                        var e = t || 0, n = p.audiocontext.currentTime;
                         this.isPlaying && (this.clock.stop(n + e), this.isPlaying = !1);
                     }
                 },
                 {
                     key: "pause",
                     value: function(t) {
-                        var e = t || 0, n = p1.audiocontext.currentTime;
+                        var e = t || 0, n = p.audiocontext.currentTime;
                         this.isPlaying && (this.clock.pause(n + e), this.isPlaying = !1);
                     }
                 },
                 {
                     key: "syncedStart",
                     value: function(t, e) {
-                        var n = e || 0, i = p1.audiocontext.currentTime;
+                        var n = e || 0, i = p.audiocontext.currentTime;
                         if (t.isPlaying) {
                             if (t.isPlaying) {
-                                var r = t.clock._nextTick - p1.audiocontext.currentTime;
+                                var r = t.clock._nextTick - p.audiocontext.currentTime;
                                 this.clock.start(i + r), this.isPlaying = !0;
                             }
                         } else t.clock.start(i + n), t.isPlaying = !0, this.clock.start(i + n), this.isPlaying = !0;
@@ -4903,14 +4903,14 @@
                         return this._timeSignature / t;
                     }
                 }
-            ]), i29;
+            ]), i;
         }();
-        function Le(t143) {
+        function Le(t) {
             return (Le = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(t) {
                 return typeof t;
             } : function(t) {
                 return t && "function" == typeof Symbol && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t;
-            })(t143);
+            })(t);
         }
         function ze(t, e) {
             for(var n = 0; n < e.length; n++){
@@ -4918,40 +4918,40 @@
                 i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(t, i.key, i);
             }
         }
-        function We(t144, e) {
+        function We(t, e) {
             return !e || "object" !== Le(e) && "function" != typeof e ? function(t) {
                 if (void 0 !== t) return t;
                 throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-            }(t144) : e;
+            }(t) : e;
         }
-        function Ze(t145, e88, n44) {
-            return (Ze = "undefined" != typeof Reflect && Reflect.get ? Reflect.get : function(t146, e89, n) {
+        function Ze(t, e, n) {
+            return (Ze = "undefined" != typeof Reflect && Reflect.get ? Reflect.get : function(t, e, n) {
                 var i = function(t, e) {
                     for(; !Object.prototype.hasOwnProperty.call(t, e) && null !== (t = Xe(t)););
                     return t;
-                }(t146, e89);
+                }(t, e);
                 if (i) {
-                    var r = Object.getOwnPropertyDescriptor(i, e89);
+                    var r = Object.getOwnPropertyDescriptor(i, e);
                     return r.get ? r.get.call(n) : r.value;
                 }
-            })(t145, e88, n44 || t145);
+            })(t, e, n || t);
         }
-        function Xe(t147) {
+        function Xe(t) {
             return (Xe = Object.setPrototypeOf ? Object.getPrototypeOf : function(t) {
                 return t.__proto__ || Object.getPrototypeOf(t);
-            })(t147);
+            })(t);
         }
-        function Ye(t148, e90) {
+        function Ye(t, e) {
             return (Ye = Object.setPrototypeOf || function(t, e) {
                 return t.__proto__ = e, t;
-            })(t148, e90);
+            })(t, e);
         }
         var He = function() {
-            function e91() {
-                var t149;
+            function e() {
+                var t;
                 return function(t, e) {
                     if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
-                }(this, e91), (t149 = We(this, Xe(e91).call(this))).compressor = t149.ac.createDynamicsCompressor(), t149.input.connect(t149.compressor), t149.compressor.connect(t149.wet), t149;
+                }(this, e), (t = We(this, Xe(e).call(this))).compressor = t.ac.createDynamicsCompressor(), t.input.connect(t.compressor), t.compressor.connect(t.wet), t;
             }
             return function(t, e) {
                 if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function");
@@ -4962,9 +4962,9 @@
                         configurable: !0
                     }
                 }), e && Ye(t, e);
-            }(e91, Ct), function(t, e, n) {
+            }(e, Ct), function(t, e, n) {
                 e && ze(t.prototype, e), n && ze(t, n);
-            }(e91, [
+            }(e, [
                 {
                     key: "process",
                     value: function(t, e, n, i, r, o) {
@@ -5021,10 +5021,10 @@
                 {
                     key: "dispose",
                     value: function() {
-                        Ze(Xe(e91.prototype), "dispose", this).call(this), this.compressor && (this.compressor.disconnect(), delete this.compressor);
+                        Ze(Xe(e.prototype), "dispose", this).call(this), this.compressor && (this.compressor.disconnect(), delete this.compressor);
                     }
                 }
-            ]), e91;
+            ]), e;
         }();
         function $e(t, e) {
             for(var n = 0; n < e.length; n++){
@@ -5033,10 +5033,10 @@
             }
         }
         var Qe = function() {
-            function r(t150, e92, n, i) {
+            function r(t, e, n, i) {
                 !function(t, e) {
                     if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
-                }(this, r), this.framesPerPeak = i || 20, this.framesSinceLastPeak = 0, this.decayRate = .95, this.threshold = n || .35, this.cutoff = 0, this.cutoffMult = 1.5, this.energy = 0, this.penergy = 0, this.currentValue = 0, this.isDetected = !1, this.f1 = t150 || 40, this.f2 = e92 || 2e4, this._onPeak = function() {};
+                }(this, r), this.framesPerPeak = i || 20, this.framesSinceLastPeak = 0, this.decayRate = .95, this.threshold = n || .35, this.cutoff = 0, this.cutoffMult = 1.5, this.energy = 0, this.penergy = 0, this.currentValue = 0, this.isDetected = !1, this.f1 = t || 40, this.f2 = e || 2e4, this._onPeak = function() {};
             }
             return function(t, e, n) {
                 e && $e(t.prototype, e), n && $e(t, n);
@@ -5065,19 +5065,19 @@
                 i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(t, i.key, i);
             }
         }
-        var Ke = p1.audiocontext, tn = function() {
-            function e93() {
+        var Ke = p.audiocontext, tn = function() {
+            function e() {
                 !function(t, e) {
                     if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
-                }(this, e93), this.input = Ke.createGain(), this.output = Ke.createGain(), this._inputChannels = 2, this._outputChannels = 2;
-                var t151 = y(1024);
-                this._workletNode = new AudioWorkletNode(Ke, s2.a.recorderProcessor, {
+                }(this, e), this.input = Ke.createGain(), this.output = Ke.createGain(), this._inputChannels = 2, this._outputChannels = 2;
+                var t = y(1024);
+                this._workletNode = new AudioWorkletNode(Ke, s.a.recorderProcessor, {
                     outputChannelCount: [
                         this._outputChannels
                     ],
                     processorOptions: {
                         numInputChannels: this._inputChannels,
-                        bufferSize: t151
+                        bufferSize: t
                     }
                 }), this._workletNode.port.onmessage = (function(t) {
                     if ("buffers" === t.data.name) {
@@ -5087,11 +5087,11 @@
                         ];
                         this._callback(e);
                     }
-                }).bind(this), this._callback = function() {}, this._workletNode.connect(p5.soundOut._silentNode), this.setInput(), p1.soundArray.push(this);
+                }).bind(this), this._callback = function() {}, this._workletNode.connect(p5.soundOut._silentNode), this.setInput(), p.soundArray.push(this);
             }
             return function(t, e, n) {
                 e && Je(t.prototype, e), n && Je(t, n);
-            }(e93, [
+            }(e, [
                 {
                     key: "setInput",
                     value: function(t) {
@@ -5100,10 +5100,10 @@
                 },
                 {
                     key: "record",
-                    value: function(e, t152, n) {
+                    value: function(e, t, n) {
                         this._workletNode.port.postMessage({
                             name: "start",
-                            duration: t152
+                            duration: t
                         }), e && n ? this._callback = function(t) {
                             e.setBuffer(t), n();
                         } : e && (this._callback = function(t) {
@@ -5122,18 +5122,18 @@
                 {
                     key: "dispose",
                     value: function() {
-                        var t = p1.soundArray.indexOf(this);
-                        p1.soundArray.splice(t, 1), this._callback = function() {}, this.input && this.input.disconnect(), this.input = null, this._workletNode = null;
+                        var t = p.soundArray.indexOf(this);
+                        p.soundArray.splice(t, 1), this._callback = function() {}, this.input && this.input.disconnect(), this.input = null, this._workletNode = null;
                     }
                 }
-            ]), e93;
+            ]), e;
         }();
-        function en(t153) {
+        function en(t) {
             return (en = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(t) {
                 return typeof t;
             } : function(t) {
                 return t && "function" == typeof Symbol && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t;
-            })(t153);
+            })(t);
         }
         function nn(t, e) {
             for(var n = 0; n < e.length; n++){
@@ -5141,47 +5141,47 @@
                 i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(t, i.key, i);
             }
         }
-        function rn(t154, e) {
+        function rn(t, e) {
             return !e || "object" !== en(e) && "function" != typeof e ? function(t) {
                 if (void 0 !== t) return t;
                 throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-            }(t154) : e;
+            }(t) : e;
         }
-        function on(t155, e94, n45) {
-            return (on = "undefined" != typeof Reflect && Reflect.get ? Reflect.get : function(t156, e95, n) {
+        function on(t, e, n) {
+            return (on = "undefined" != typeof Reflect && Reflect.get ? Reflect.get : function(t, e, n) {
                 var i = function(t, e) {
                     for(; !Object.prototype.hasOwnProperty.call(t, e) && null !== (t = sn(t)););
                     return t;
-                }(t156, e95);
+                }(t, e);
                 if (i) {
-                    var r = Object.getOwnPropertyDescriptor(i, e95);
+                    var r = Object.getOwnPropertyDescriptor(i, e);
                     return r.get ? r.get.call(n) : r.value;
                 }
-            })(t155, e94, n45 || t155);
+            })(t, e, n || t);
         }
-        function sn(t157) {
+        function sn(t) {
             return (sn = Object.setPrototypeOf ? Object.getPrototypeOf : function(t) {
                 return t.__proto__ || Object.getPrototypeOf(t);
-            })(t157);
+            })(t);
         }
-        function an(t158, e96) {
+        function an(t, e) {
             return (an = Object.setPrototypeOf || function(t, e) {
                 return t.__proto__ = e, t;
-            })(t158, e96);
+            })(t, e);
         }
         function un(t) {
             for(var e, n = "number" == typeof t ? t : 50, i = new Float32Array(44100), r = Math.PI / 180, o = 0; o < 44100; ++o)e = 2 * o / 44100 - 1, i[o] = (3 + n) * e * 20 * r / (Math.PI + n * Math.abs(e));
             return i;
         }
         var cn = function() {
-            function r(t159, e97) {
+            function r(t, e) {
                 var n;
                 if (function(t, e) {
                     if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
-                }(this, r), n = rn(this, sn(r).call(this)), void 0 === t159 && (t159 = .25), "number" != typeof t159) throw new Error("amount must be a number");
-                if (void 0 === e97 && (e97 = "2x"), "string" != typeof e97) throw new Error("oversample must be a String");
-                var i = p5.prototype.map(t159, 0, 1, 0, 2e3);
-                return n.waveShaperNode = n.ac.createWaveShaper(), n.amount = i, n.waveShaperNode.curve = un(i), n.waveShaperNode.oversample = e97, n.input.connect(n.waveShaperNode), n.waveShaperNode.connect(n.wet), n;
+                }(this, r), n = rn(this, sn(r).call(this)), void 0 === t && (t = .25), "number" != typeof t) throw new Error("amount must be a number");
+                if (void 0 === e && (e = "2x"), "string" != typeof e) throw new Error("oversample must be a String");
+                var i = p5.prototype.map(t, 0, 1, 0, 2e3);
+                return n.waveShaperNode = n.ac.createWaveShaper(), n.amount = i, n.waveShaperNode.curve = un(i), n.waveShaperNode.oversample = e, n.input.connect(n.waveShaperNode), n.waveShaperNode.connect(n.wet), n;
             }
             return function(t, e) {
                 if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function");
@@ -5238,14 +5238,14 @@
             }
         }
         var hn = function() {
-            function t160() {
+            function t() {
                 !function(t, e) {
                     if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
-                }(this, t160), this.ac = p1.audiocontext, this.input = this.ac.createGain(), this.output = this.ac.createGain(), this.input.gain.value = .5, this.input.connect(this.output), p1.soundArray.push(this);
+                }(this, t), this.ac = p.audiocontext, this.input = this.ac.createGain(), this.output = this.ac.createGain(), this.input.gain.value = .5, this.input.connect(this.output), p.soundArray.push(this);
             }
             return function(t, e, n) {
                 e && ln(t.prototype, e), n && ln(t, n);
-            }(t160, [
+            }(t, [
                 {
                     key: "setInput",
                     value: function(t) {
@@ -5268,18 +5268,18 @@
                 {
                     key: "amp",
                     value: function(t, e, n) {
-                        var i = 1 < arguments.length && void 0 !== e ? e : 0, r = 2 < arguments.length && void 0 !== n ? n : 0, o = p1.audiocontext.currentTime, s = this.output.gain.value;
+                        var i = 1 < arguments.length && void 0 !== e ? e : 0, r = 2 < arguments.length && void 0 !== n ? n : 0, o = p.audiocontext.currentTime, s = this.output.gain.value;
                         this.output.gain.cancelScheduledValues(o), this.output.gain.linearRampToValueAtTime(s, o + r), this.output.gain.linearRampToValueAtTime(t, o + r + i);
                     }
                 },
                 {
                     key: "dispose",
                     value: function() {
-                        var t = p1.soundArray.indexOf(this);
-                        p1.soundArray.splice(t, 1), this.output && (this.output.disconnect(), delete this.output), this.input && (this.input.disconnect(), delete this.input);
+                        var t = p.soundArray.indexOf(this);
+                        p.soundArray.splice(t, 1), this.output && (this.output.disconnect(), delete this.output), this.input && (this.input.disconnect(), delete this.input);
                     }
                 }
-            ]), t160;
+            ]), t;
         }();
         function pn(t, e) {
             for(var n = 0; n < e.length; n++){
@@ -5288,14 +5288,14 @@
             }
         }
         var fn = function() {
-            function t161() {
+            function t() {
                 !function(t, e) {
                     if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
-                }(this, t161), this.ac = p1.audiocontext, this.output = this.ac.createGain(), this.connect(), p1.soundArray.push(this);
+                }(this, t), this.ac = p.audiocontext, this.output = this.ac.createGain(), this.connect(), p.soundArray.push(this);
             }
             return function(t, e, n) {
                 e && pn(t.prototype, e), n && pn(t, n);
-            }(t161, [
+            }(t, [
                 {
                     key: "play",
                     value: function(t, e, n, i) {}
@@ -5315,7 +5315,7 @@
                 {
                     key: "connect",
                     value: function(t) {
-                        var e = t || p1.input;
+                        var e = t || p.input;
                         this.output.connect(e.input ? e.input : e);
                     }
                 },
@@ -5331,14 +5331,14 @@
                         this.output && (this.output.disconnect(), delete this.output);
                     }
                 }
-            ]), t161;
+            ]), t;
         }();
-        function dn(t162) {
+        function dn(t) {
             return (dn = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(t) {
                 return typeof t;
             } : function(t) {
                 return t && "function" == typeof Symbol && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t;
-            })(t162);
+            })(t);
         }
         function yn(t, e) {
             for(var n = 0; n < e.length; n++){
@@ -5350,36 +5350,36 @@
             if (void 0 === t) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
             return t;
         }
-        function vn(t163, e98, n46) {
-            return (vn = "undefined" != typeof Reflect && Reflect.get ? Reflect.get : function(t164, e99, n) {
+        function vn(t, e, n) {
+            return (vn = "undefined" != typeof Reflect && Reflect.get ? Reflect.get : function(t, e, n) {
                 var i = function(t, e) {
                     for(; !Object.prototype.hasOwnProperty.call(t, e) && null !== (t = _n(t)););
                     return t;
-                }(t164, e99);
+                }(t, e);
                 if (i) {
-                    var r = Object.getOwnPropertyDescriptor(i, e99);
+                    var r = Object.getOwnPropertyDescriptor(i, e);
                     return r.get ? r.get.call(n) : r.value;
                 }
-            })(t163, e98, n46 || t163);
+            })(t, e, n || t);
         }
-        function _n(t165) {
+        function _n(t) {
             return (_n = Object.setPrototypeOf ? Object.getPrototypeOf : function(t) {
                 return t.__proto__ || Object.getPrototypeOf(t);
-            })(t165);
+            })(t);
         }
-        function gn(t166, e100) {
+        function gn(t, e) {
             return (gn = Object.setPrototypeOf || function(t, e) {
                 return t.__proto__ = e, t;
-            })(t166, e100);
+            })(t, e);
         }
         var bn = function() {
-            function e101() {
-                var t167;
+            function e() {
+                var t;
                 return function(t, e) {
                     if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
-                }(this, e101), (t167 = function(t, e) {
+                }(this, e), (t = function(t, e) {
                     return !e || "object" !== dn(e) && "function" != typeof e ? mn(t) : e;
-                }(this, _n(e101).call(this))).oscillator = new nt, t167.env = new ot, t167.env.setRange(1, 0), t167.env.setExp(!0), t167.setADSR(.02, .25, .05, .35), t167.oscillator.disconnect(), t167.oscillator.connect(t167.output), t167.env.disconnect(), t167.env.setInput(t167.output.gain), t167.oscillator.output.gain.value = 1, t167.oscillator.start(), t167.connect(), p1.soundArray.push(mn(t167)), Object.defineProperties(mn(t167), {
+                }(this, _n(e).call(this))).oscillator = new nt, t.env = new ot, t.env.setRange(1, 0), t.env.setExp(!0), t.setADSR(.02, .25, .05, .35), t.oscillator.disconnect(), t.oscillator.connect(t.output), t.env.disconnect(), t.env.setInput(t.output.gain), t.oscillator.output.gain.value = 1, t.oscillator.start(), t.connect(), p.soundArray.push(mn(t)), Object.defineProperties(mn(t), {
                     attack: {
                         get: function() {
                             return this.env.aTime;
@@ -5412,7 +5412,7 @@
                             this.env.setADSR(this.env.aTime, this.env.dTime, this.env.sPercent, t);
                         }
                     }
-                }), t167;
+                }), t;
             }
             return function(t, e) {
                 if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function");
@@ -5423,9 +5423,9 @@
                         configurable: !0
                     }
                 }), e && gn(t, e);
-            }(e101, fn), function(t, e, n) {
+            }(e, fn), function(t, e, n) {
                 e && yn(t.prototype, e), n && yn(t, n);
-            }(e101, [
+            }(e, [
                 {
                     key: "play",
                     value: function(t, e, n, i) {
@@ -5435,7 +5435,7 @@
                 {
                     key: "triggerAttack",
                     value: function(t, e, n) {
-                        var i = 2 < arguments.length && void 0 !== n ? n : 0, r = h1(t), o = e || .1;
+                        var i = 2 < arguments.length && void 0 !== n ? n : 0, r = h(t), o = e || .1;
                         this.oscillator.freq(r, 0, i), this.env.ramp(this.output.gain, i, o);
                     }
                 },
@@ -5462,7 +5462,7 @@
                 {
                     key: "connect",
                     value: function(t) {
-                        var e = t || p1.input;
+                        var e = t || p.input;
                         this.output.connect(e.input ? e.input : e);
                     }
                 },
@@ -5475,10 +5475,10 @@
                 {
                     key: "dispose",
                     value: function() {
-                        vn(_n(e101.prototype), "dispose", this).call(this), this.env && this.env.dispose(), this.oscillator && this.oscillator.dispose();
+                        vn(_n(e.prototype), "dispose", this).call(this), this.env && this.env.dispose(), this.oscillator && this.oscillator.dispose();
                     }
                 }
-            ]), e101;
+            ]), e;
         }();
         function Tn(t, e) {
             for(var n = 0; n < e.length; n++){
@@ -5487,10 +5487,10 @@
             }
         }
         var wn = function() {
-            function r(t168, e102, n, i) {
+            function r(t, e, n, i) {
                 !function(t, e) {
                     if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
-                }(this, r), this.isDetected = !1, this.freqLow = t168, this.freqHigh = e102, this.treshold = n, this.energy = 0, this.penergy = 0, this.sensitivity = 500, this.callback = i;
+                }(this, r), this.isDetected = !1, this.freqLow = t, this.freqHigh = e, this.treshold = n, this.energy = 0, this.penergy = 0, this.sensitivity = 500, this.callback = i;
             }
             return function(t, e, n) {
                 e && Tn(t.prototype, e), n && Tn(t, n);
@@ -5517,14 +5517,14 @@
             }
         }
         var Sn = function() {
-            function n47(t169, e103) {
+            function n(t, e) {
                 !function(t, e) {
                     if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
-                }(this, n47), this.audiovoices = [], this.notes = {}, this._newest = 0, this._oldest = 0, this.maxVoices = e103 || 8, this.AudioVoice = void 0 === t169 ? p5.MonoSynth : t169, this._voicesInUse = new rt.a(0), this.output = p1.audiocontext.createGain(), this.connect(), this._allocateVoices(), p1.soundArray.push(this);
+                }(this, n), this.audiovoices = [], this.notes = {}, this._newest = 0, this._oldest = 0, this.maxVoices = e || 8, this.AudioVoice = void 0 === t ? p5.MonoSynth : t, this._voicesInUse = new rt.a(0), this.output = p.audiocontext.createGain(), this.connect(), this._allocateVoices(), p.soundArray.push(this);
             }
             return function(t, e, n) {
                 e && xn(t.prototype, e), n && xn(t, n);
-            }(n47, [
+            }(n, [
                 {
                     key: "_allocateVoices",
                     value: function() {
@@ -5541,7 +5541,7 @@
                 {
                     key: "noteADSR",
                     value: function(t, e, n, i, r, o) {
-                        var s = 5 < arguments.length && void 0 !== o ? o : 0, a = p1.audiocontext.currentTime + s;
+                        var s = 5 < arguments.length && void 0 !== o ? o : 0, a = p.audiocontext.currentTime + s;
                         this.audiovoices[this.notes[t].getValueAtTime(a)].setADSR(e, n, i, r);
                     }
                 },
@@ -5556,8 +5556,8 @@
                 {
                     key: "noteAttack",
                     value: function(t, e, n) {
-                        var i, r = 2 < arguments.length && void 0 !== n ? n : 0, o = p1.audiocontext.currentTime + r, s = h1(t), a = e || .1;
-                        this.notes[s] && null !== this.notes[s].getValueAtTime(o) && this.noteRelease(s, 0), this._voicesInUse.getValueAtTime(o) < this.maxVoices ? i = Math.max(~~this._voicesInUse.getValueAtTime(o), 0) : (i = this._oldest, oldestNote = l1(this.audiovoices[this._oldest].oscillator.freq().value), this.noteRelease(oldestNote), this._oldest = (this._oldest + 1) % (this.maxVoices - 1)), this.notes[s] = new rt.a, this.notes[s].setValueAtTime(i, o);
+                        var i, r = 2 < arguments.length && void 0 !== n ? n : 0, o = p.audiocontext.currentTime + r, s = h(t), a = e || .1;
+                        this.notes[s] && null !== this.notes[s].getValueAtTime(o) && this.noteRelease(s, 0), this._voicesInUse.getValueAtTime(o) < this.maxVoices ? i = Math.max(~~this._voicesInUse.getValueAtTime(o), 0) : (i = this._oldest, oldestNote = l(this.audiovoices[this._oldest].oscillator.freq().value), this.noteRelease(oldestNote), this._oldest = (this._oldest + 1) % (this.maxVoices - 1)), this.notes[s] = new rt.a, this.notes[s].setValueAtTime(i, o);
                         var u = null === this._voicesInUse._searchBefore(o) ? 0 : this._voicesInUse._searchBefore(o).value;
                         if (this._voicesInUse.setValueAtTime(u + 1, o), this._updateAfter(o, 1), this._newest = i, "number" == typeof a) {
                             var c = 1 / this._voicesInUse.getValueAtTime(o) * 2;
@@ -5578,10 +5578,10 @@
                 },
                 {
                     key: "noteRelease",
-                    value: function(t170, e) {
-                        var n = p1.audiocontext.currentTime, i = e || 0, r = n + i;
-                        if (t170) {
-                            var o = h1(t170);
+                    value: function(t, e) {
+                        var n = p.audiocontext.currentTime, i = e || 0, r = n + i;
+                        if (t) {
+                            var o = h(t);
                             if (this.notes[o] && null !== this.notes[o].getValueAtTime(r)) {
                                 var s = Math.max(~~this._voicesInUse.getValueAtTime(r).value, 1);
                                 this._voicesInUse.setValueAtTime(s - 1, r), 0 < s && this._updateAfter(r, -1), this.audiovoices[this.notes[o].getValueAtTime(r)].triggerRelease(i), this.notes[o].dispose(), delete this.notes[o], this._newest = 0 === this._newest ? 0 : (this._newest - 1) % (this.maxVoices - 1);
@@ -5594,7 +5594,7 @@
                 {
                     key: "connect",
                     value: function(t) {
-                        var e = t || p1.input;
+                        var e = t || p.input;
                         this.output.connect(e.input ? e.input : e);
                     }
                 },
@@ -5612,17 +5612,17 @@
                         }), this.output && (this.output.disconnect(), delete this.output);
                     }
                 }
-            ]), n47;
+            ]), n;
         }();
         function kn() {
             !function(t, e) {
                 if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
             }(this, kn);
         }
-        p5.prototype.getAudioContext = c1.b, p5.prototype.userStartAudio = c1.c, p5.prototype.sampleRate = function() {
-            return p1.audiocontext.sampleRate;
-        }, p5.prototype.freqToMidi = l1, p5.prototype.midiToFreq = r19, p5.prototype.noteToFreq = h1, p5.prototype.soundFormats = function() {
-            p1.extensions = [];
+        p5.prototype.getAudioContext = c.b, p5.prototype.userStartAudio = c.c, p5.prototype.sampleRate = function() {
+            return p.audiocontext.sampleRate;
+        }, p5.prototype.freqToMidi = l, p5.prototype.midiToFreq = r, p5.prototype.noteToFreq = h, p5.prototype.soundFormats = function() {
+            p.extensions = [];
             for(var t = 0; t < arguments.length; t++){
                 if (arguments[t] = arguments[t].toLowerCase(), !(-1 < [
                     "mp3",
@@ -5631,10 +5631,10 @@
                     "m4a",
                     "aac"
                 ].indexOf(arguments[t]))) throw arguments[t] + " is not a valid sound format!";
-                p1.extensions.push(arguments[t]);
+                p.extensions.push(arguments[t]);
             }
         }, p5.prototype.disposeSound = function() {
-            for(var t = 0; t < p1.soundArray.length; t++)p1.soundArray[t].dispose();
+            for(var t = 0; t < p.soundArray.length; t++)p.soundArray[t].dispose();
         }, p5.prototype._checkFileFormats = function(t) {
             var e;
             if ("string" == typeof t) {
@@ -5646,8 +5646,8 @@
                     "m4a",
                     "aac"
                 ].indexOf(n)) {
-                    if (!p5.prototype.isFileSupported(n)) for(var i = e.split("."), r = i[i.length - 1], o = 0; o < p1.extensions.length; o++){
-                        var s = p1.extensions[o];
+                    if (!p5.prototype.isFileSupported(n)) for(var i = e.split("."), r = i[i.length - 1], o = 0; o < p.extensions.length; o++){
+                        var s = p.extensions[o];
                         if (p5.prototype.isFileSupported(s)) {
                             r = "", 2 === i.length && (r += i[0]);
                             for(var a = 1; a <= i.length - 2; a++)r += "." + i[a];
@@ -5655,14 +5655,14 @@
                             break;
                         }
                     }
-                } else for(var u = 0; u < p1.extensions.length; u++){
-                    var c = p1.extensions[u];
+                } else for(var u = 0; u < p.extensions.length; u++){
+                    var c = p.extensions[u];
                     if (p5.prototype.isFileSupported(c)) {
                         e = e + "." + c;
                         break;
                     }
                 }
-            } else if ("object" === f1(t)) for(var l = 0; l < t.length; l++){
+            } else if ("object" === f(t)) for(var l = 0; l < t.length; l++){
                 var h = t[l].split(".").pop();
                 if (p5.prototype.isFileSupported(h)) {
                     e = t[l];
@@ -5673,8 +5673,8 @@
         }, p5.prototype._mathChain = function(t, e, n, i, r) {
             for(var o in t.mathOps)t.mathOps[o] instanceof r && (t.mathOps[o].dispose(), (n = o) < t.mathOps.length - 1 && (i = t.mathOps[o + 1]));
             return t.mathOps[n - 1].disconnect(), t.mathOps[n - 1].connect(e), e.connect(i), t.mathOps[n] = e, t;
-        }, p5.prototype.convertToWav = a2, p5.prototype.interleave = u2, p5.prototype.writeUTFBytes = d, p5.prototype.safeBufferSize = y, p5.prototype.saveSound = function(t, e) {
-            var n = a2(t.buffer);
+        }, p5.prototype.convertToWav = a, p5.prototype.interleave = u, p5.prototype.writeUTFBytes = d, p5.prototype.safeBufferSize = y, p5.prototype.saveSound = function(t, e) {
+            var n = a(t.buffer);
             p5.prototype.writeFile([
                 n
             ], e, "wav");
@@ -5684,9 +5684,9 @@
             return new q(t, function() {
                 "function" == typeof e && e.apply(r, arguments), "function" == typeof r._decrementPreload && r._decrementPreload();
             }, n, i);
-        }, p5.prototype.registerPreloadMethod("loadSound", p5.prototype), p5.Amplitude = B, p5.FFT = j, p5.Oscillator = nt, p5.SinOsc = J, p5.TriOsc = K, p5.SawOsc = tt, p5.SqrOsc = et, p5.Noise = dt, p5.Pulse = xt, p5.AudioIn = kt, p5.Effect = Ct, p5.Filter = Gt, p5.LowPass = Dt, p5.HighPass = It, p5.BandPass = Ut, p5.EQ = ee, p5.listener3D = ie, p5.Panner3D = le, p5.Delay = ve, p5.Reverb = Ae, p5.Convolver = Oe, p5.prototype.createConvolver = function(t171, e, n) {
+        }, p5.prototype.registerPreloadMethod("loadSound", p5.prototype), p5.Amplitude = B, p5.FFT = j, p5.Oscillator = nt, p5.SinOsc = J, p5.TriOsc = K, p5.SawOsc = tt, p5.SqrOsc = et, p5.Noise = dt, p5.Pulse = xt, p5.AudioIn = kt, p5.Effect = Ct, p5.Filter = Gt, p5.LowPass = Dt, p5.HighPass = It, p5.BandPass = Ut, p5.EQ = ee, p5.listener3D = ie, p5.Panner3D = le, p5.Delay = ve, p5.Reverb = Ae, p5.Convolver = Oe, p5.prototype.createConvolver = function(t, e, n) {
             -1 < window.location.origin.indexOf("file://") && "undefined" === window.cordova && alert("This sketch may require a server to load external files. Please see http://bit.ly/1qcInwS");
-            var i = this, r = new Oe(t171, function(t) {
+            var i = this, r = new Oe(t, function(t) {
                 "function" == typeof e && e(t), "function" == typeof i._decrementPreload && i._decrementPreload();
             }, n);
             return r.impulses = [], r;

@@ -1,4 +1,4 @@
-const BASE_PATH = "";
+const BASE_PATH = '';
 let game = {
     username: undefined,
     connected: false,
@@ -21,49 +21,49 @@ let assets = {
 };
 const constant = {
     adjectives: [
-        "fortunate",
-        "bewildering",
-        "long",
-        "merciless",
-        "determined",
-        "painless",
-        "long long long",
-        "cautious",
-        "depressing",
-        "thoughtful",
-        "courageous",
-        "optimistic",
-        "exuberant",
-        "difficult",
-        "confusing",
-        "quick",
-        "cheerful",
-        "hopeless",
-        "glorious",
-        "short",
-        "charming",
-        "confusing",
-        "lonely",
-        "unknown",
-        "painful",
-        "unfortunate",
-        "infinite",
-        "difficult",
-        "comfortable",
-        "dull",
-        "elegant",
-        "perfect"
+        'fortunate',
+        'bewildering',
+        'long',
+        'merciless',
+        'determined',
+        'painless',
+        'long long long',
+        'cautious',
+        'depressing',
+        'thoughtful',
+        'courageous',
+        'optimistic',
+        'exuberant',
+        'difficult',
+        'confusing',
+        'quick',
+        'cheerful',
+        'hopeless',
+        'glorious',
+        'short',
+        'charming',
+        'confusing',
+        'lonely',
+        'unknown',
+        'painful',
+        'unfortunate',
+        'infinite',
+        'difficult',
+        'comfortable',
+        'dull',
+        'elegant',
+        'perfect'
     ]
 };
 let SCALE = 1, OFFSET_X = 0, OFFSET_Y = 0;
 function preload() {
-    assets.font = loadFont("static/koubit_001.ttf");
-    assets.sfx.complete = loadSound("static/sfx/complete.wav");
-    assets.sfx.hit = loadSound("static/sfx/hit.wav");
-    assets.sfx.land = loadSound("static/sfx/land.wav");
-    assets.sfx.pass = loadSound("static/sfx/pass.wav");
-    assets.sfx.reset = loadSound("static/sfx/reset.wav");
-    assets.sfx.score = loadSound("static/sfx/score.wav");
+    assets.font = loadFont('static/koubit_001.ttf');
+    assets.sfx.complete = loadSound('static/sfx/complete.wav');
+    assets.sfx.hit = loadSound('static/sfx/hit.wav');
+    assets.sfx.land = loadSound('static/sfx/land.wav');
+    assets.sfx.pass = loadSound('static/sfx/pass.wav');
+    assets.sfx.reset = loadSound('static/sfx/reset.wav');
+    assets.sfx.score = loadSound('static/sfx/score.wav');
 }
 async function setup() {
     textFont(assets.font);
@@ -71,10 +71,10 @@ async function setup() {
     windowResized();
 }
 function isLoggedIn() {
-    return !!localStorage.getItem("nathan_golfing_journey_id");
+    return !!localStorage.getItem('nathan_golfing_journey_id');
 }
 function getAdjective() {
-    let adj = localStorage.getItem("nathan_golfing_journey_adjective");
+    let adj = localStorage.getItem('nathan_golfing_journey_adjective');
     if (adj == undefined) return undefined;
     return constant.adjectives[parseInt(adj)];
 }
@@ -83,15 +83,15 @@ async function connectNew(username) {
         username
     }).then((res)=>res.data);
     if (!json.success) {
-        temp.usernameFailReason = json.error || "unknown error";
+        temp.usernameFailReason = json.error || 'unknown error';
         temp.attemptingToSignUp = false;
         return;
     }
-    localStorage.setItem("nathan_golfing_journey_id", json.id);
+    localStorage.setItem('nathan_golfing_journey_id', json.id);
 }
 async function connect() {
-    if (!localStorage.getItem("nathan_golfing_journey_id")) return false;
-    id = localStorage.getItem("nathan_golfing_journey_id");
+    if (!localStorage.getItem('nathan_golfing_journey_id')) return false;
+    id = localStorage.getItem('nathan_golfing_journey_id');
     game.levels = [];
     game.chat = [];
     game.world = {};
@@ -109,7 +109,7 @@ async function connect() {
         query: "id=" + id,
         path: `${BASE_PATH}/socket.io`
     });
-    game.socket.on("accept", (data)=>{
+    game.socket.on('accept', (data)=>{
         if (!data.success) {
             temp.connectionError = data.error;
             return;
@@ -117,10 +117,10 @@ async function connect() {
         game.username = data.username;
         game.connected = true;
     });
-    game.socket.on("levels", (data)=>{
+    game.socket.on('levels', (data)=>{
         game.levels = data.levels;
     });
-    game.socket.on("world", (data)=>{
+    game.socket.on('world', (data)=>{
         game.prevWorld = {
             ...game.world
         };
@@ -132,10 +132,10 @@ async function connect() {
             return message.tick > game.world.tick - 200;
         });
     });
-    game.socket.on("chat", (data)=>{
+    game.socket.on('chat', (data)=>{
         game.chat.unshift(data);
     });
-    game.socket.on("reload", async (data)=>{
+    game.socket.on('reload', async (data)=>{
         game.socket.disconnect();
         await connect();
     });
@@ -151,12 +151,12 @@ function keyTyped() {
     if (!game.started) {
         if (getAdjective()) {
             if (temp.usernameTyped == undefined) temp.usernameTyped = "";
-            if (key != "Enter" && temp.usernameTyped.length <= 16) temp.usernameTyped += key;
+            if (key != 'Enter' && temp.usernameTyped.length <= 16) temp.usernameTyped += key;
         }
         return;
     }
     if (game.chatting) {
-        if (temp.typing.length < 63 && key != "Enter") temp.typing += key;
+        if (temp.typing.length < 63 && key != 'Enter') temp.typing += key;
     }
 }
 function keyPressed() {
@@ -185,7 +185,7 @@ function keyPressed() {
     if (keyCode == ENTER) {
         if (game.chatting) {
             game.chatting = false;
-            if (temp.typing.trim().length > 0) game.socket.emit("chat_request", {
+            if (temp.typing.trim().length > 0) game.socket.emit('chat_request', {
                 message: temp.typing
             });
         } else {
@@ -209,7 +209,7 @@ function mousePressed() {
 function mouseReleased() {
     if (!game.started) return;
     if (game.input.aiming) {
-        game.socket.emit("stroke", game.input);
+        game.socket.emit('stroke', game.input);
         assets.sfx.hit.play();
     }
     game.input.aiming = false;
@@ -222,7 +222,7 @@ function update() {
         game.input.aimVelX = aimLength > 0 ? (aimMouseX - game.input.aimX) / aimLength : 0;
         game.input.aimVelY = aimLength > 0 ? (aimMouseY - game.input.aimY) / aimLength : 0;
         game.input.aimPower = min(pow(aimLength / 40, 1), 1);
-        game.socket.emit("aim_input", game.input);
+        game.socket.emit('aim_input', game.input);
     }
     if (game.selfBall) {
         if (game.selfBall.wasReset) {
@@ -264,12 +264,12 @@ function drawLevel(level, offset) {
     stroke(0);
     noFill();
     beginShape();
-    for (let v1 of level.points)vertex((v1.x + offset) * SCALE, v1.y * SCALE);
+    for (let v of level.points)vertex((v.x + offset) * SCALE, v.y * SCALE);
     endShape();
     fill(50, 150, 230);
-    for(let i = 0; i < gaps.length / 2 + 1; i += 2){
-        let g1 = gaps[i];
-        let g2 = gaps[i + 1];
+    for(let i1 = 0; i1 < gaps.length / 2 + 1; i1 += 2){
+        let g1 = gaps[i1];
+        let g2 = gaps[i1 + 1];
         rect(g1 * SCALE, 98 * SCALE, (g2 - g1) * SCALE, 1000 * SCALE);
     }
 }
@@ -308,31 +308,31 @@ function drawLevelStats(level, offset) {
                 fill(0);
                 textSize(3 * SCALE);
                 textAlign(LEFT, TOP);
-                text("strokes", posX * SCALE, posY * SCALE);
-                text("time", (posX + 30) * SCALE, posY * SCALE);
+                text('strokes', posX * SCALE, posY * SCALE);
+                text('time', (posX + 30) * SCALE, posY * SCALE);
                 console.log(level.stats.sortedByTime);
                 for(let i1 = 0; i1 < 10; i1++){
                     let scoreId = level.stats.sortedByScore[i1];
                     if (scoreId && game.world.balls[scoreId]) {
-                        let ball = game.world.balls[scoreId].ball;
-                        fill(ball.color[0], ball.color[1], ball.color[2]);
-                        text("#" + (i1 + 1) + " - " + ball.clears[Math.floor(level.id / 100) - 1][0] + " - " + ball.name, posX * SCALE, (posY + (i1 + 1) * 1.5 + 1) * SCALE);
+                        let ball1 = game.world.balls[scoreId].ball;
+                        fill(ball1.color[0], ball1.color[1], ball1.color[2]);
+                        text('#' + (i1 + 1) + ' - ' + ball1.clears[Math.floor(level.id / 100) - 1][0] + ' - ' + ball1.name, posX * SCALE, (posY + (i1 + 1) * 1.5 + 1) * SCALE);
                     }
                     let timeId = level.stats.sortedByTime[i1];
                     if (timeId && game.world.balls[timeId]) {
-                        let ball = game.world.balls[timeId].ball;
-                        let time = ball.clears[Math.floor(level.id / 100) - 1][1];
+                        let ball1 = game.world.balls[timeId].ball;
+                        let time = ball1.clears[Math.floor(level.id / 100) - 1][1];
                         let seconds = floor(time) % 60;
                         let minutes = floor(time / 60) % 60;
                         let hours = floor(time / 3600) % 60;
-                        fill(ball.color[0], ball.color[1], ball.color[2]);
-                        text("#" + (i1 + 1) + " - " + hours + "h " + minutes + "m " + seconds + "s" + " - " + ball.name, (posX + 30) * SCALE, (posY + (i1 + 1) * 1.5 + 1) * SCALE);
+                        fill(ball1.color[0], ball1.color[1], ball1.color[2]);
+                        text('#' + (i1 + 1) + ' - ' + hours + 'h ' + minutes + 'm ' + seconds + 's' + ' - ' + ball1.name, (posX + 30) * SCALE, (posY + (i1 + 1) * 1.5 + 1) * SCALE);
                     }
                 }
                 let myScoreIndex = level.stats.sortedByScore.indexOf(game.selfBall.id);
                 if (myScoreIndex >= 10) {
                     fill(game.selfBall.color[0], game.selfBall.color[1], game.selfBall.color[2]);
-                    text("#" + (myScoreIndex + 1) + " - " + game.selfBall.clears[Math.floor(level.id / 100) - 1][0] + " - " + game.selfBall.name, posX * SCALE, (posY + 18) * SCALE);
+                    text('#' + (myScoreIndex + 1) + ' - ' + game.selfBall.clears[Math.floor(level.id / 100) - 1][0] + ' - ' + game.selfBall.name, posX * SCALE, (posY + 18) * SCALE);
                 }
                 let myTimeIndex = level.stats.sortedByTime.indexOf(game.selfBall.id);
                 if (myTimeIndex >= 10) {
@@ -341,7 +341,7 @@ function drawLevelStats(level, offset) {
                     let minutes = floor(time / 60) % 60;
                     let hours = floor(time / 3600) % 60;
                     fill(game.selfBall.color[0], game.selfBall.color[1], game.selfBall.color[2]);
-                    text("#" + (i + 1) + " - " + hours + "h " + minutes + "m " + seconds + "s" + " - " + ball.name, (posX + 30) * SCALE, (posY + (i + 1) * 1.5 + 1) * SCALE);
+                    text('#' + (i + 1) + ' - ' + hours + 'h ' + minutes + 'm ' + seconds + 's' + ' - ' + ball.name, (posX + 30) * SCALE, (posY + (i + 1) * 1.5 + 1) * SCALE);
                 }
             }
         }
@@ -444,9 +444,9 @@ function draw() {
         }
         if (game.levels) {
             let sum = 20 - game.levels[0].width;
-            for(let i = 0; i < 4; i++){
-                drawLevelFlag(game.levels[i], sum);
-                sum += game.levels[i].width;
+            for(let i1 = 0; i1 < 4; i1++){
+                drawLevelFlag(game.levels[i1], sum);
+                sum += game.levels[i1].width;
             }
         }
         temp.offlineBalls = [
@@ -457,24 +457,24 @@ function draw() {
         ];
         push();
         translate((-game.levels[1].x + 20) * SCALE, 0);
-        for (let id of game.world.sortedBalls){
-            let player = game.world.balls[id];
+        for (let id1 of game.world.sortedBalls){
+            let player = game.world.balls[id1];
             if (!player.online) {
                 if (game.selfBall) {
-                    let ball = player.ball;
-                    if (ball.level >= game.selfBall.level && ball.level <= game.selfBall.level + 2) {
+                    let ball1 = player.ball;
+                    if (ball1.level >= game.selfBall.level && ball1.level <= game.selfBall.level + 2) {
                         stroke(0);
                         fill(255);
-                        let index = ball.level - game.selfBall.level;
+                        let index = ball1.level - game.selfBall.level;
                         if (temp.offlineBalls[index] <= 10) {
                             let level = game.levels[index];
                             let posX = level.x + level.holeX, posY = level.holeY - temp.offlineBalls[index] * 2 - 5;
-                            let fmtBallName = ball.name + " (" + ball.score + ")";
+                            let fmtBallName = ball1.name + ' (' + ball1.score + ')';
                             textSize(3 * SCALE);
                             textAlign(LEFT, CENTER);
                             rect((posX - 1) * SCALE, (posY - 3) * SCALE, 2 * SCALE + textWidth(fmtBallName), 2 * SCALE);
                             noStroke();
-                            fill(ball.color[0], ball.color[1], ball.color[2]);
+                            fill(ball1.color[0], ball1.color[1], ball1.color[2]);
                             text(fmtBallName, posX * SCALE, (posY - 2.5) * SCALE);
                             temp.offlineBalls[index] += 1;
                         }
@@ -487,31 +487,31 @@ function draw() {
             let prevPlayer = game.prevWorld.balls[id1];
             if (player && prevPlayer) {
                 if (player.online) {
-                    let prevBall = prevPlayer.ball, ball = player.ball;
+                    let prevBall = prevPlayer.ball, ball1 = player.ball;
                     let pos = {
-                        x: lerp(prevBall.x, ball.x, subtick),
-                        y: lerp(prevBall.y, ball.y, subtick)
+                        x: lerp(prevBall.x, ball1.x, subtick),
+                        y: lerp(prevBall.y, ball1.y, subtick)
                     };
-                    let ang = lerp(prevBall.rotation, ball.rotation, subtick);
+                    let ang = lerp(prevBall.rotation, ball1.rotation, subtick);
                     stroke(0);
-                    fill(ball.color[0], ball.color[1], ball.color[2]);
+                    fill(ball1.color[0], ball1.color[1], ball1.color[2]);
                     arc(pos.x * SCALE, pos.y * SCALE, 1 * SCALE, 1 * SCALE, ang, ang + PI);
-                    fill(ball.color[0] * 0.8, ball.color[1] * 0.8, ball.color[2] * 0.8);
+                    fill(ball1.color[0] * 0.8, ball1.color[1] * 0.8, ball1.color[2] * 0.8);
                     arc(pos.x * SCALE, pos.y * SCALE, 1 * SCALE, 1 * SCALE, ang + PI, ang + TWO_PI);
                     noStroke();
                     textSize(32);
                     textAlign(CENTER, BOTTOM);
-                    text(ball.name, pos.x * SCALE, (pos.y - 2) * SCALE);
-                    if (game.selfBall && ball.id == game.selfBall.id) {
+                    text(ball1.name, pos.x * SCALE, (pos.y - 2) * SCALE);
+                    if (game.selfBall && ball1.id == game.selfBall.id) {
                         stroke(0);
                         noFill();
                         triangle(pos.x * SCALE, (pos.y - 1) * SCALE, (pos.x - 0.5) * SCALE, (pos.y - 1.5) * SCALE, (pos.x + 0.5) * SCALE, (pos.y - 1.5) * SCALE);
-                    } else if (ball.aiming) {
-                        let aimX = ball.aimX;
-                        let aimY = ball.aimY;
-                        let aimVelX = lerp(prevBall.aimVelX, ball.aimVelX, subtick);
-                        let aimVelY = lerp(prevBall.aimVelY, ball.aimVelY, subtick);
-                        let aimPower = lerp(prevBall.aimPower, ball.aimPower, subtick);
+                    } else if (ball1.aiming) {
+                        let aimX = ball1.aimX;
+                        let aimY = ball1.aimY;
+                        let aimVelX = lerp(prevBall.aimVelX, ball1.aimVelX, subtick);
+                        let aimVelY = lerp(prevBall.aimVelY, ball1.aimVelY, subtick);
+                        let aimPower = lerp(prevBall.aimPower, ball1.aimPower, subtick);
                         let input = {
                             aimX,
                             aimY,
@@ -519,7 +519,7 @@ function draw() {
                             aimVelY,
                             aimPower
                         };
-                        drawAim(input, ball.color, 0.5);
+                        drawAim(input, ball1.color, 0.5);
                     }
                 }
             }
@@ -528,14 +528,14 @@ function draw() {
     pop();
     if (game.levels) {
         let sum = 20 - game.levels[0].width;
-        for(let i = 0; i < 4; i++){
-            drawLevel(game.levels[i], sum);
-            sum += game.levels[i].width;
+        for(let i1 = 0; i1 < 4; i1++){
+            drawLevel(game.levels[i1], sum);
+            sum += game.levels[i1].width;
         }
         sum = 20 - game.levels[0].width;
-        for(let i4 = 0; i4 < 4; i4++){
-            drawLevelStats(game.levels[i4], sum);
-            sum += game.levels[i4].width;
+        for(let i1 = 0; i1 < 4; i1++){
+            drawLevelStats(game.levels[i1], sum);
+            sum += game.levels[i1].width;
         }
     }
     if (game.input.aiming) {
@@ -555,37 +555,37 @@ function draw() {
         text(game.selfBall.name, width / 2, -8);
         textSize(32);
         fill(51);
-        text(game.selfBall.score + " (avg " + nf(game.selfBall.score / max(game.selfBall.level, 1), 0, 2) + ")", width / 2, 32);
-        text(game.selfBall.level + " / 10000 (#" + (selfIndex + 1) + ")", width / 2, 48);
+        text(game.selfBall.score + ' (avg ' + nf(game.selfBall.score / max(game.selfBall.level, 1), 0, 2) + ')', width / 2, 32);
+        text(game.selfBall.level + ' / 10000 (#' + (selfIndex + 1) + ')', width / 2, 48);
         if (game.selfBall.trans > 0) {
             let seconds = floor(game.selfBall.time) % 60;
             let minutes = floor(game.selfBall.time / 60) % 60;
             let hours = floor(game.selfBall.time / 3600) % 60;
-            text(hours + "h " + minutes + "m " + seconds + "s", width / 2, 64);
+            text(hours + 'h ' + minutes + 'm ' + seconds + 's', width / 2, 64);
         }
         textSize(32);
         let top = [];
         let topClosest = [];
         let bottomClosest = [];
-        for(let i = 0; i < 5; i++){
-            let b = game.world.sortedBalls[i];
-            if (b && i < selfIndex) top.push(b);
+        for(let i1 = 0; i1 < 5; i1++){
+            let b = game.world.sortedBalls[i1];
+            if (b && i1 < selfIndex) top.push(b);
         }
-        for(let i5 = 1; i5 <= 5; i5++){
-            let b = game.world.sortedBalls[selfIndex - i5];
+        for(let i1 = 1; i1 <= 5; i1++){
+            let b = game.world.sortedBalls[selfIndex - i1];
             if (b && !top.includes(b)) topClosest.push(b);
         }
-        for(let i6 = 1; i6 <= 10; i6++){
-            let b = game.world.sortedBalls[selfIndex + i6];
+        for(let i1 = 1; i1 <= 10; i1++){
+            let b = game.world.sortedBalls[selfIndex + i1];
             if (b) bottomClosest.push(b);
         }
         textSize(32);
         textAlign(RIGHT, CENTER);
         let k = 0;
         for (let b of top.concat(topClosest.reverse())){
-            let ball = game.world.balls[b].ball;
+            let ball1 = game.world.balls[b].ball;
             fill(250);
-            let nameFmt = "#" + (game.world.sortedBalls.indexOf(b) + 1) + " " + ball.name + " (" + ball.level + "/" + ball.score + ")";
+            let nameFmt = '#' + (game.world.sortedBalls.indexOf(b) + 1) + ' ' + ball1.name + ' (' + ball1.level + '/' + ball1.score + ')';
             let w = textWidth(nameFmt);
             stroke(0);
             let offsetY = top.includes(b) ? 0 : 10;
@@ -597,16 +597,16 @@ function draw() {
             vertex(width - 25 - w, offsetY + 5 + k * 20);
             endShape(CLOSE);
             noStroke();
-            fill(ball.color[0], ball.color[1], ball.color[2]);
+            fill(ball1.color[0], ball1.color[1], ball1.color[2]);
             text(nameFmt, width - 15, offsetY + 10 + k * 20);
             k++;
         }
         k = 0;
         textAlign(LEFT, CENTER);
-        for (let b1 of bottomClosest){
-            let ball = game.world.balls[b1].ball;
+        for (let b of bottomClosest){
+            let ball1 = game.world.balls[b].ball;
             fill(250);
-            let nameFmt = "#" + (game.world.sortedBalls.indexOf(b1) + 1) + " " + ball.name + " (" + ball.level + "/" + ball.score + ")";
+            let nameFmt = '#' + (game.world.sortedBalls.indexOf(b) + 1) + ' ' + ball1.name + ' (' + ball1.level + '/' + ball1.score + ')';
             let w = textWidth(nameFmt);
             stroke(0);
             beginShape();
@@ -617,7 +617,7 @@ function draw() {
             vertex(25 + w, 5 + k * 20);
             endShape(CLOSE);
             noStroke();
-            fill(ball.color[0], ball.color[1], ball.color[2]);
+            fill(ball1.color[0], ball1.color[1], ball1.color[2]);
             text(nameFmt, 15, 10 + k * 20);
             k++;
         }
@@ -635,7 +635,7 @@ function draw() {
         }
         if (game.chatting) {
             fill(51);
-            text(temp.typing + (Math.floor(millis() / 500) % 2 == 0 ? "_" : ""), 5, height - 5);
+            text(temp.typing + (Math.floor(millis() / 500) % 2 == 0 ? '_' : ''), 5, height - 5);
         }
     }
 }
